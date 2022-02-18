@@ -19,7 +19,7 @@ h1 {
 .area .login form input {
   margin-top: 2.5rem;
 }
-.area .login form input[type=submit] {
+.area .login form .login {
   background-color: #008CFF;
   border: 2px solid #008CFF;
   color: white;
@@ -33,7 +33,7 @@ h1 {
   border-radius: 15px;
   cursor: pointer;
 }
-.area .login form input[type=submit]:hover {
+.area .login form .login:hover {
   background-color: white;
   color: #008CFF;
   border: 2px solid #008CFF;
@@ -45,7 +45,7 @@ h1 {
 .area .newAccount form input {
   margin-top: 2.5rem;
 }
-.area .newAccount form input[type=submit] {
+.area .newAccount form .newAccount {
   background-color: #008CFF;
   border: 2px solid #008CFF;
   color: white;
@@ -59,7 +59,7 @@ h1 {
   border-radius: 15px;
   cursor: pointer;
 }
-.area .newAccount form input[type=submit]:hover {
+.area .newAccount form .newAccount:hover {
   background-color: white;
   color: #008CFF;
   border: 2px solid #008CFF;
