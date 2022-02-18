@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.area {
+  margin-top: 5rem;
+  display: flex;
+}
+.area .login {
+  margin-left: 20rem;
+  text-align: center;
+}
+.area .login form input {
+  margin-top: 2.5rem;
+}
+.area .login form input[type=submit] {
+  background-color: #008CFF;
+  border: 2px solid #008CFF;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.area .login form input[type=submit]:hover {
+  background-color: white;
+  color: #008CFF;
+  border: 2px solid #008CFF;
+}
+.area .newAccount {
+  margin-left: 12rem;
+  text-align: center;
+}
+.area .newAccount form input {
+  margin-top: 2.5rem;
+}
+.area .newAccount form input[type=submit] {
+  background-color: #008CFF;
+  border: 2px solid #008CFF;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.area .newAccount form input[type=submit]:hover {
+  background-color: white;
+  color: #008CFF;
+  border: 2px solid #008CFF;
+}
+.area .divider {
+  margin-left: 12rem;
+  border-left: 2px solid black;
+}/*# sourceMappingURL=loginRegister.css.map */

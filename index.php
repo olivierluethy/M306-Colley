@@ -3,11 +3,10 @@ require 'core/bootstrap.php';
 
 $routes = [
 	'/colley/home' => 'ColleyController@index',
-	
+
 	/* Routes for login and registration */
-	'/colley/login' => 'ColleyController@index',
+	'/colley/loginRegister' => 'ColleyController@loginRegister',
 	'/colley/logout' => 'ColleyController@index',
-	'/colley/register' => 'ColleyController@index',
 ];
 
 $db = [
