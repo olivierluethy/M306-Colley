@@ -6,6 +6,8 @@ $routes = [
 
 	/* Routes for login and registration */
 	'/colley/loginRegister' => 'ColleyController@loginRegister',
+	'/colley/login' => 'ColleyController@login',
+	'/colley/register' => 'ColleyController@register',
 	'/colley/logout' => 'ColleyController@index',
 ];
 

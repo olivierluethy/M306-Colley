@@ -16,6 +16,18 @@ class ColleyController
 		require 'app/Views/loginRegister.view.php';
 	}
 
+	/* Damit man sich ein- und ausloggen kann */
+	public function login()
+	{
+		require 'app/Views/login.php';
+	}
+
+	/* Damit man sich ein- und ausloggen kann */
+	public function register()
+	{
+		require 'app/Views/register.php';
+	}
+
 	/* Damit man sich ausloggen kann */
 	public function logout()
 	{

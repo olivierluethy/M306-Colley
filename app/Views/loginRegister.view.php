@@ -14,7 +14,7 @@
             <h2>Login</h2>
             <p>Willkommen zurück bei Colley.</p>
             <p>Bitte melden Sie sich an.</p>
-            <form id="formLogin" action="/action_page.php" method="POST">
+            <form id="formLogin" action="login" method="POST">
                 <label for="email">E-mail:</label>
                 <input type="email" id="email_login" name="email_login"><br><br>
                 <label for="passwort">Passwort:</label>
@@ -27,7 +27,7 @@
             <h2>neuer Account</h2>
             <p>Willkommen bei Colley.</p>
             <p>Noch kein Konto? Kein Problem. Bitte erstellen Sie in Konto.</p>
-            <form id="formRegister" action="/action_page.php">
+            <form id="formRegister" action="register" method="POST">
                 <label for="email">E-mail:</label>
                 <input type="email" id="email_register" name="email_register"><br><br>
                 <label for="passwort">Passwort:</label>
