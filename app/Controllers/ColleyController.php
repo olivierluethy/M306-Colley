@@ -42,5 +42,8 @@ class ColleyController
 		include 'app/Controllers/inc/kalkulation-berechnung.inc.php'; /* Berechnung der Kalkulation selber */
 		require 'app/Views/einkaufskalkulation.view.php';
 	}
-	
+
+	public function bilanz(){
+		require 'app/Views/bilanz.view.php';
+	}
 }
