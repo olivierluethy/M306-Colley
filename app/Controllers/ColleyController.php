@@ -38,4 +38,11 @@ class ColleyController
         require 'app/Views/config.php';
     }
 
+	/* Einkaufskalkulation */
+	public function einkaufskalkulation(){
+		include 'app/Controllers/inc/einkaufskalkulation.inc.php'; /* Array für die for-Schlaufe */
+		include 'app/Controllers/inc/kalkulation-berechnung.inc.php'; /* Berechnung der Kalkulation selber */
+		require 'app/Views/einkaufskalkulation.view.php';
+	}
+	
 }
