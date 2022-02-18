@@ -13,14 +13,55 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <head>
     <meta charset="UTF-8">
     <title>Colley - Homepage</title>
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/welcome.css">
 </head>
 <body>
 
-<nav>
-    <h1>Colley</h1>
-</nav>
+<div class="title">
+    <div class="menu">
+        <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    </div>
+    <div class="text">
+        <h1>Colley</h1>
+        <p>Willkommen bei Colley.</p>
+        <p>Was wollen Sie machen?</p>
+    </div>
+</div>
 
-<script src="public/js/app.js"></script>
+    <div class="optionen">
+        <div class="option">
+            <img src="../assets/NeuesKonto.svg" alt="">
+            <p>Neues Konto</p>
+        </div>
+        <div class="option">
+        <img src="../assets/Bilanz.svg" alt="">
+            <p>Bilanz</p>
+        </div>
+        <div class="option">
+        <img src="../assets/Erfolgsrechnung.svg" alt="">
+            <p>Erfolgsrechnung</p>
+        </div>
+        <div class="option">
+        <img src="../assets/Jahresabschluss.svg" alt="">
+            <p>Jahresabschluss</p>
+        </div>
+        <div class="option">
+        <img src="../assets/Kalkulation.svg" alt="">
+            <p>Kalkulation</p>
+        </div>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Hello {Name}</a>
+        <a href="#">Neues Konto</a>
+        <a href="#">Bilanz</a>
+        <a href="#">Erfolgsrechnung</a>
+        <a href="#">Jahresabschluss</a>
+        <a href="#">Kalkulation</a>
+        <a href="logout">Logout</a>
+    </div>
+
+<script src="../public/js/welcome.js"></script>
 </body>
 </html>

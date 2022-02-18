@@ -8,7 +8,7 @@ $routes = [
 	'/colley/loginRegister' => 'ColleyController@loginRegister',
 	'/colley/login' => 'ColleyController@login',
 	'/colley/register' => 'ColleyController@register',
-	'/colley/logout' => 'ColleyController@index',
+	'/colley/logout' => 'ColleyController@logout',
 ];
 
 $db = [
