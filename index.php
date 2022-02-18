@@ -2,11 +2,16 @@
 require 'core/bootstrap.php';
 
 $routes = [
-	'/hallo/welt' => 'WelcomeController@index',
+	'/colley/home' => 'ColleyController@index',
+	
+	/* Routes for login and registration */
+	'/colley/login' => 'ColleyController@index',
+	'/colley/logout' => 'ColleyController@index',
+	'/colley/register' => 'ColleyController@index',
 ];
 
 $db = [
-	'name'     => 'tasklist',
+	'name'     => 'colley',
 	'username' => 'root',
 	'password' => '',
 ];

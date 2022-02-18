@@ -2,15 +2,14 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Meine Seite</title>
-    <link rel="stylesheet" href="../public/css/app.css">
+    <title>Colley - Homepage</title>
+    <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
 
-<h1 class="welcome">Willkommen im 307-Framework!</h1>
-
-
-<p><?= e($hello) ?></p>
+<nav>
+    <h1>Colley</h1>
+</nav>
 
 <script src="public/js/app.js"></script>
 </body>
