@@ -46,4 +46,8 @@ class ColleyController
 	public function bilanz(){
 		require 'app/Views/bilanz.view.php';
 	}
+
+	public function kontouebersicht(){
+		require 'app/Views/kontouebersicht.view.php';
+	}
 }

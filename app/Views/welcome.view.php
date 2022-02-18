@@ -34,7 +34,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <img src="../assets/NeuesKonto.svg" alt="">
             <p>Neues Konto</p>
         </div>
-        <div class="option">
+        <div onclick="goToBilanz()" class="option">
         <img src="../assets/Bilanz.svg" alt="">
             <p>Bilanz</p>
         </div>
@@ -52,17 +52,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
     </div>
 
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">Hello {Name}</a>
-        <a href="#">Neues Konto</a>
-        <a href="#">Bilanz</a>
-        <a href="#">Erfolgsrechnung</a>
-        <a href="#">Jahresabschluss</a>
-        <a href="#">Kalkulation</a>
-        <a href="logout">Logout</a>
-    </div>
+    <?php
+    include("sideNav.view.php");
+    ?>
 
 <script src="../public/js/sideNavigation.js"></script>
+<script src="../public/js/welcome.js"></script>
 </body>
 </html>

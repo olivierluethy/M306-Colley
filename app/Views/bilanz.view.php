@@ -16,7 +16,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/bilanz.css">
     <link rel="stylesheet" href="../public/css/sideNavigation.css">
-    <title>Bilanz - Homepage</title>
+    <title>Bilanz</title>
 </head>
 <body>
 <div class="title">
@@ -48,16 +48,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
     </div>
 
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">Hello {Name}</a>
-        <a href="#">Neues Konto</a>
-        <a href="#">Bilanz</a>
-        <a href="#">Erfolgsrechnung</a>
-        <a href="#">Jahresabschluss</a>
-        <a href="#">Kalkulation</a>
-        <a href="logout">Logout</a>
-    </div>
+    <?php
+    include("sideNav.view.php");
+    ?>
 
 <script src="../public/js/sideNavigation.js"></script>
 </body>
