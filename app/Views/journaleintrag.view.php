@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="public/css/journaleintrag.css">
     <link rel="stylesheet" href="public/css/sideNavigation.css">
     <link rel="stylesheet" href="public/css/heading.css">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <title>Journaleintrag</title>
 </head>
 <body>

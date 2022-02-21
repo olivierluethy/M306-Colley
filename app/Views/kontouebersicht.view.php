@@ -17,6 +17,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <link rel="stylesheet" href="public/css/kontouebersicht.css">
     <link rel="stylesheet" href="public/css/sideNavigation.css">
     <link rel="stylesheet" href="public/css/heading.css">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <title>Kontoübersicht</title>
 </head>
 <body>
