@@ -13,22 +13,34 @@ window.addEventListener("load", function() {
 
         if (document.querySelector('#email_register') != null) {
             if (document.querySelector('#email_register').value.trim() === '') {
-                document.querySelector('#email_register').insertAdjacentHTML("afterend", "<label class=\"warning\"> Bitte gib eine E-Mail Adresse ein.</label>");
+                document.getElementById('email_register_error').innerHTML = "Bitte gib eine E-Mail Adresse ein.";
                 errors = true;
+            } else {
+                document.getElementById('email_register_error').innerHTML = "";
             }
         }
 
         if (document.querySelector('#passwort_register') != null) {
             if (document.querySelector('#passwort_register').value.trim() === '') {
-                document.querySelector('#passwort_register').insertAdjacentHTML("afterend", "<label class=\"warning\"> Bitte gib ein Passwort ein.</label>");
+                document.getElementById('passwort_register_error').innerHTML = "Bitte gib ein Passwort ein.";
                 errors = true;
+            } else if (document.querySelector('#passwort_register').value.length < 6) {
+                document.getElementById('passwort_register_error').innerHTML = "Das Passwort muss mindestens 6 Zeichen enthalten";
+                errors = true;
+            } else {
+                document.getElementById('passwort_register_error').innerHTML = "";
             }
         }
 
         if (document.querySelector('#passwort_verify') != null) {
             if (document.querySelector('#passwort_verify').value.trim() === '') {
-                document.querySelector('#passwort_verify').insertAdjacentHTML("afterend", "<label class=\"warning\"> Bitte gib das Passwort noch einmal ein.</label>");
+                document.getElementById('passwortverify_register_error').innerHTML = "Bitte gib das Passwort noch einmal ein.";
                 errors = true;
+            } else if (document.querySelector('#passwort_register').value != document.querySelector('#passwort_verify').value) {
+                document.getElementById('passwortverify_register_error').innerHTML = "Bitte gib das gleiche Passswort wie oben ein.";
+                errors = true;
+            } else {
+                document.getElementById('passwortverify_register_error').innerHTML = "";
             }
         }
 
