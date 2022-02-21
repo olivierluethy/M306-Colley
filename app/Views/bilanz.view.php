@@ -18,39 +18,47 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <link rel="stylesheet" href="public/css/sideNavigation.css">
     <link rel="stylesheet" href="public/css/heading.css">
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Bilanz</title>
 </head>
 <body>
-<div class="title">
+
     <div class="menu">
         <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776;</span>
     </div>
-    <div class="text">
+    <div class="title">
         <h1>Colley</h1>
         <p>Hier können Sie einen Eintrag ins Journal eingeben, einen Kontoeintrag bearbeiten und Rechnungsnummern vergeben.</p>
     </div>
-</div>
 
-    <div class="optionen">
-        <div class="option">
-            <img style="width: 80%;" src="assets/Kontouebersicht.png" alt="">
-            <p>Kontoübersicht</p>
-        </div>
-        <div class="option">
-        <img src="assets/Journaleintrag.svg" alt="">
-            <p>Journaleintrag</p>
-        </div>
-        <div class="option">
-        <img src="assets/Kontoeintrag.svg" alt="">
-            <p>Kontoeintrag bearbeiten</p>
-        </div>
-        <div class="option">
-        <img src="assets/Rechnungsnummer.svg" alt="">
-            <p>Rechnungsnummer</p>
-        </div>
-    </div>
+    <table>
+        <tr>
+            <th>
+                <div class="option">
+                    <img style="width: 9.5%;" src="assets/Kontouebersicht.png" alt="">
+                    <p>Kontoübersicht</p>
+                </div>
+            </th>
+            <th>
+                <div class="option">
+                    <img src="assets/Journaleintrag.svg" alt="">
+                    <p>Journaleintrag</p>
+                </div>
+            </th>
+            <th>
+                <div class="option">
+                    <img src="assets/Kontoeintrag.svg" alt="">
+                    <p>Kontoeintrag bearbeiten</p>
+                </div>
+            </th>
+            <th>
+                <div class="option">
+                    <img src="assets/Rechnungsnummer.svg" alt="">
+                    <p>Rechnungsnummer</p>
+                </div>
+            </th>
+        </tr>
+    </table>
 
     <?php
     include("sideNav.view.php");

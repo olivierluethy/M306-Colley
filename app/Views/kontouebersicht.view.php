@@ -18,20 +18,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <link rel="stylesheet" href="public/css/sideNavigation.css">
     <link rel="stylesheet" href="public/css/heading.css">
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Kontoübersicht</title>
 </head>
 <body>
-<div class="title">
+
     <div class="menu">
         <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776;</span>
     </div>
-    <div class="text">
+    <div class="title">
         <h1>Colley</h1>
         <p>Hier ist eine Übersicht aller Konten.</p>
     </div>
-</div>
+
 
 <div class="konten">
     <div class="konto">

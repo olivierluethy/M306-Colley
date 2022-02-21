@@ -1,20 +1,20 @@
-.optionen {
-  display: flex;
-  flex-wrap: wrap;
-}
-.optionen .option {
-  border: 1px solid black;
-  margin-left: 5rem;
-  margin-right: 2rem;
+/* Table */
+td {
   text-align: center;
-  width: 12%;
-  transition: 0.5s ease;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+table tr th .option {
+  border: 2px solid black;
+  margin-left: 2rem;
+  margin-right: 2rem;
   cursor: pointer;
+  transition: 0.5s ease;
 }
-.optionen .option img {
-  width: 105%;
-}
-.optionen .option:hover {
+table tr th .option:hover {
   box-shadow: 0 0 10px 5px lightgray;
   transition: 0.5s ease;
 }/*# sourceMappingURL=welcome.css.map */

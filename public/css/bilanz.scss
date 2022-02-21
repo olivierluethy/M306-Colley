@@ -1,20 +1,25 @@
-.optionen {
-    display: flex;
-    flex-wrap: wrap;
-    .option {
-        border: 1px solid black;
-        margin-left: 8rem;
-        margin-right: 2rem;
-        text-align: center;
-        width: 12%;
-        transition: 0.5s ease;
-        cursor: pointer;
-        img {
-            width: 105%;
-        }
-        &:hover {
-            box-shadow: 0 0 10px 5px lightgray;
-            transition: 0.5s ease;
+/* Table */
+
+td {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    tr {
+        th {
+            .option {
+                border: 2px solid black;
+                margin-left: 2rem;
+                margin-right: 2rem;
+                cursor: pointer;
+                transition: 0.5s ease;
+                &:hover {
+                    box-shadow: 0 0 10px 5px lightgray;
+                    transition: 0.5s ease;
+                }
+            }
         }
     }
 }

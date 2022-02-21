@@ -3,12 +3,12 @@
     <h4>Buchhaltungssoftware</h4>
     <hr>
     <a class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="home"><i class="fas fa-home"></i> Startseite</a>
-    <a href="#"><i class="fas fa-stamp"></i> Neues Konto</a>
-    <a href="bilanz"><i class="fas fa-balance-scale"></i> Bilanz</a>
-    <a href="#"><i class="fas fa-chart-line"></i> Erfolgsrechnung</a>
-    <a href="#"><i class="fas fa-book"></i> Jahresabschluss</a>
-    <a href="#"><i class="fas fa-piggy-bank"></i> Kalkulation</a>
+    <a href="home"><img src="assets/home.png" alt="Startseite"> Startseite</a>
+    <a href="#"><img src="assets/account.jpg" alt="Neues Konto"> Neues Konto</a>
+    <a href="bilanz"><img src="assets/balance.png" alt="Bilanz"> Bilanz</a>
+    <a href="#"><img src="assets/chart-line.png" alt="Erfolgsrechnung"> Erfolgsrechnung</a>
+    <a href="#"><img src="assets/jahresabschluss.jpg" alt="Jahresabschluss"> Jahresabschluss</a>
+    <a href="#"><img src="assets/piggy-bank.png" alt="Kalkulation"> Kalkulation</a>
     <hr>
     <div class="eingeloggt">
     <?php

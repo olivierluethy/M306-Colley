@@ -4,18 +4,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.menu {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
 .title {
-  display: flex;
-  width: 100%;
-  margin-bottom: 2rem;
-}
-.title .menu {
-  margin: 5px;
-}
-.title .text {
-  margin-left: 18rem;
   text-align: center;
 }
-.title .text h1 {
+.title h1 {
   text-decoration: underline;
 }/*# sourceMappingURL=heading.css.map */

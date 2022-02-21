@@ -21,42 +21,53 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 <body>
 
-<div class="title">
     <div class="menu">
         <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776;</span>
     </div>
-    <div class="text">
+
+    <div class="title">
         <h1>Colley</h1>
         <p>Willkommen bei Colley.</p>
         <p>Was wollen Sie machen?</p>
     </div>
-</div>
 
-    <div class="optionen">
-        <div class="option">
-            <img src="assets/NeuesKonto.svg" alt="">
-            <p>Neues Konto</p>
-        </div>
-        <div onclick="goToBilanz()" class="option">
-        <img src="assets/Bilanz.svg" alt="">
-            <p>Bilanz</p>
-        </div>
-        <div class="option">
-        <img src="assets/Erfolgsrechnung.svg" alt="">
-            <p>Erfolgsrechnung</p>
-        </div>
-        <div class="option">
-        <img src="assets/Jahresabschluss.svg" alt="">
-            <p>Jahresabschluss</p>
-        </div>
-        <div class="option">
-        <img src="assets/Kalkulation.svg" alt="">
-            <p>Kalkulation</p>
-        </div>
-    </div>
+    <table>
+        <tr>
+            <th>
+                <div class="option">
+                    <img src="assets/NeuesKonto.svg" alt="">
+                    <p>Neues Konto</p>
+                </div>
+            </th>
+            <th>
+                <div class="option">
+                    <img src="assets/Bilanz.svg" alt="">
+                    <p>Bilanz</p>
+                </div>
+            </th>
+            <th>
+                <div class="option">
+                    <img src="assets/Erfolgsrechnung.svg" alt="">
+                    <p>Erfolgsrechnung</p>
+                </div>
+            </th>
+            <th>
+                <div class="option">
+                    <img src="assets/Jahresabschluss.svg" alt="">
+                    <p>Jahresabschluss</p>
+                </div>
+            </th>
+            <th>
+                <div class="option">
+                    <img src="assets/Kalkulation.svg" alt="">
+                    <p>Kalkulation</p>
+                </div>
+            </th>
+        </tr>
+    </table>
 
     <?php
-    include("sideNav.view.php");
+        include("sideNav.view.php");
     ?>
 
 <script src="public/js/sideNavigation.js"></script>

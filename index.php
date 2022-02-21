@@ -2,10 +2,12 @@
 require 'core/bootstrap.php';
 
 $routes = [
+	/* Routes für Grundseiten */
 	'home' => 'ColleyController@index',
 	'bilanz' => 'ColleyController@bilanz',
 	'kontouebersicht' => 'ColleyController@kontouebersicht',
 	'journaleintrag' => 'ColleyController@journaleintrag',
+	'neues-konto' => 'ColleyController@neues_konto',
 
 	/* Routes for login and registration */
 	'loginRegister' => 'ColleyController@loginRegister',

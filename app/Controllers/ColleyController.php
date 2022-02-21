@@ -32,6 +32,7 @@ class ColleyController
 		require 'app/Views/logout.view.php';
 	}
 
+	/* Konfiguration für das Login */
 	public function config(){
         require 'app/Views/config.php';
     }
@@ -62,5 +63,10 @@ class ColleyController
 	/* Journaleinträge */
 	public function journaleintrag(){
 		require 'app/Views/journaleintrag.view.php';
+	}
+
+	/* Um ein neues Konto hinzufügen zu können */
+	public function neues_konto(){
+		require 'app/Views/neues_konto.view.php';
 	}
 }
