@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    display: flex;
+    width: 100%;
+    margin-bottom: 2rem;
+    .menu {
+        margin: 5px;
+    }
+    .text {
+        margin-left: 18rem;
+        text-align: center;
+        h1 {
+            text-decoration: underline;
+        }
+    }
+}
