@@ -13,8 +13,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <head>
     <meta charset="UTF-8">
     <title>Colley - Homepage</title>
-    <link rel="stylesheet" href="../public/css/welcome.css">
-    <link rel="stylesheet" href="../public/css/sideNavigation.css">
+    <link rel="stylesheet" href="public/css/welcome.css">
+    <link rel="stylesheet" href="public/css/sideNavigation.css">
+    <link rel="stylesheet" href="public/css/heading.css">
 </head>
 <body>
 
@@ -31,23 +32,23 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     <div class="optionen">
         <div class="option">
-            <img src="../assets/NeuesKonto.svg" alt="">
+            <img src="assets/NeuesKonto.svg" alt="">
             <p>Neues Konto</p>
         </div>
         <div onclick="goToBilanz()" class="option">
-        <img src="../assets/Bilanz.svg" alt="">
+        <img src="assets/Bilanz.svg" alt="">
             <p>Bilanz</p>
         </div>
         <div class="option">
-        <img src="../assets/Erfolgsrechnung.svg" alt="">
+        <img src="assets/Erfolgsrechnung.svg" alt="">
             <p>Erfolgsrechnung</p>
         </div>
         <div class="option">
-        <img src="../assets/Jahresabschluss.svg" alt="">
+        <img src="assets/Jahresabschluss.svg" alt="">
             <p>Jahresabschluss</p>
         </div>
         <div class="option">
-        <img src="../assets/Kalkulation.svg" alt="">
+        <img src="assets/Kalkulation.svg" alt="">
             <p>Kalkulation</p>
         </div>
     </div>
@@ -56,7 +57,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     include("sideNav.view.php");
     ?>
 
-<script src="../public/js/sideNavigation.js"></script>
-<script src="../public/js/welcome.js"></script>
+<script src="public/js/sideNavigation.js"></script>
+<script src="public/js/welcome.js"></script>
 </body>
 </html>

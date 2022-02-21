@@ -14,8 +14,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/bilanz.css">
-    <link rel="stylesheet" href="../public/css/sideNavigation.css">
+    <link rel="stylesheet" href="public/css/bilanz.css">
+    <link rel="stylesheet" href="public/css/sideNavigation.css">
+    <link rel="stylesheet" href="public/css/heading.css">
     <title>Bilanz</title>
 </head>
 <body>
@@ -31,19 +32,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     <div class="optionen">
         <div class="option">
-            <img style="width: 80%;" src="../assets/Kontouebersicht.png" alt="">
+            <img style="width: 80%;" src="assets/Kontouebersicht.png" alt="">
             <p>Kontoübersicht</p>
         </div>
         <div class="option">
-        <img src="../assets/Journaleintrag.svg" alt="">
+        <img src="assets/Journaleintrag.svg" alt="">
             <p>Journaleintrag</p>
         </div>
         <div class="option">
-        <img src="../assets/Kontoeintrag.svg" alt="">
+        <img src="assets/Kontoeintrag.svg" alt="">
             <p>Kontoeintrag bearbeiten</p>
         </div>
         <div class="option">
-        <img src="../assets/Rechnungsnummer.svg" alt="">
+        <img src="assets/Rechnungsnummer.svg" alt="">
             <p>Rechnungsnummer</p>
         </div>
     </div>
@@ -52,6 +53,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     include("sideNav.view.php");
     ?>
 
-<script src="../public/js/sideNavigation.js"></script>
+<script src="public/js/sideNavigation.js"></script>
 </body>
 </html>

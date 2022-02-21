@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/journaleintrag.css">
-    <link rel="stylesheet" href="../public/css/sideNavigation.css">
+    <link rel="stylesheet" href="public/css/journaleintrag.css">
+    <link rel="stylesheet" href="public/css/sideNavigation.css">
+    <link rel="stylesheet" href="public/css/heading.css">
     <title>Journaleintrag</title>
 </head>
 <body>
@@ -45,6 +46,6 @@
     include("sideNav.view.php");
     ?>
 
-<script src="../public/js/sideNavigation.js"></script>
+<script src="public/js/sideNavigation.js"></script>
 </body>
 </html>

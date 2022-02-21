@@ -2,16 +2,16 @@
 require 'core/bootstrap.php';
 
 $routes = [
-	'/colley/home' => 'ColleyController@index',
-	'/colley/bilanz' => 'ColleyController@bilanz',
-	'/colley/kontouebersicht' => 'ColleyController@kontouebersicht',
-	'/colley/journaleintrag' => 'ColleyController@journaleintrag',
+	'home' => 'ColleyController@index',
+	'bilanz' => 'ColleyController@bilanz',
+	'kontouebersicht' => 'ColleyController@kontouebersicht',
+	'journaleintrag' => 'ColleyController@journaleintrag',
 
 	/* Routes for login and registration */
-	'/colley/loginRegister' => 'ColleyController@loginRegister',
-	'/colley/login' => 'ColleyController@login',
-	'/colley/register' => 'ColleyController@register',
-	'/colley/logout' => 'ColleyController@logout',
+	'loginRegister' => 'ColleyController@loginRegister',
+	'login' => 'ColleyController@login',
+	'register' => 'ColleyController@register',
+	'logout' => 'ColleyController@logout',
 
 	/* Routes für Kalkulationen */
 	'einkaufskalkulation' => 'ColleyController@einkaufskalkulation',
