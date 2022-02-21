@@ -37,11 +37,17 @@ class ColleyController
     }
 
 	/* Einkaufskalkulation */
-	public function einkaufskalkulation(){
-		include 'app/Controllers/inc/einkaufskalkulation.inc.php'; /* Array für die for-Schlaufe */
-		include 'app/Controllers/inc/kalkulation-berechnung.inc.php'; /* Berechnung der Kalkulation selber */
-		require 'app/Views/einkaufskalkulation.view.php';
-	}
+    public function einkaufskalkulation(){
+        include 'app/Controllers/inc/einkaufskalkulation.inc.php'; /* Array für die for-Schlaufe */
+        require 'app/Views/einkaufskalkulation.view.php';
+    }
+
+    public function einkaufskalkulation_berechnen()
+    {
+        include 'app/Controllers/inc/einkaufskalkulation.inc.php'; /* Array für die for-Schlaufe */
+        include 'app/Controllers/inc/kalkulation-berechnung.inc.php'; /* Berechnung der Kalkulation selber */
+        require 'app/Views/ek-berechnen.view.php';
+    }
 
 	/* Bilanz */
 	public function bilanz(){

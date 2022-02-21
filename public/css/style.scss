@@ -4,28 +4,26 @@ body {
 }
 
 /* Header */
-.header{
-    background-color: grey;
+h1{
     text-align: center;
     font-size: 50px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Sub-Header */
-.sub-header{
-    background-color: lightgrey;
+h2{
     text-align: center;
     font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Text in Grid */
-.text{
-    font-size: 1.2em;
+p{
+    font-size: 1.em;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin: 20px;
 }
+
+.center{text-align: center;}
+
 /* Input */
 input{
     height: 15px;
@@ -36,3 +34,11 @@ input{
     background-color: lightgrey;
     border-color: grey;
 }
+
+/* Table */
+.size1{width: 100%;}
+.size30{width: 30%;}
+.size40{width: 40%;}
+.size70{width: 70%;}
+table{border-collapse: collapse;}
+table, th, td{border: 1px solid black;}
