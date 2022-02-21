@@ -43,11 +43,18 @@ class ColleyController
 		require 'app/Views/einkaufskalkulation.view.php';
 	}
 
+	/* Bilanz */
 	public function bilanz(){
 		require 'app/Views/bilanz.view.php';
 	}
 
+	/* Kontoübersicht */
 	public function kontouebersicht(){
 		require 'app/Views/kontouebersicht.view.php';
+	}
+
+	/* Journaleinträge */
+	public function journaleintrag(){
+		require 'app/Views/journaleintrag.view.php';
 	}
 }

@@ -5,6 +5,7 @@ $routes = [
 	'/colley/home' => 'ColleyController@index',
 	'/colley/bilanz' => 'ColleyController@bilanz',
 	'/colley/kontouebersicht' => 'ColleyController@kontouebersicht',
+	'/colley/journaleintrag' => 'ColleyController@journaleintrag',
 
 	/* Routes for login and registration */
 	'/colley/loginRegister' => 'ColleyController@loginRegister',
