@@ -8,69 +8,54 @@ h1 {
   text-align: center;
 }
 
-.area {
-  margin-top: 5rem;
-  display: flex;
+table {
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
-.area .login {
-  margin-left: 21rem;
+table tr th {
   text-align: center;
 }
-.area .login form input {
-  margin-top: 2.5rem;
-}
-.area .login form .login {
+table tr th .login button {
   background-color: #008CFF;
   border: 2px solid #008CFF;
   color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   transition-duration: 0.4s;
   border-radius: 15px;
+  padding: 15px 32px;
   cursor: pointer;
 }
-.area .login form .login:hover {
+table tr th .login button:hover {
   background-color: white;
   color: #008CFF;
   border: 2px solid #008CFF;
 }
-.area .login form p {
+table tr th #email_login_error,
+table tr th #passwort_login_error,
+table tr th #email_register_error,
+table tr th #passwort_register_error,
+table tr th #passwortverify_register_error {
   color: red;
 }
-.area .newAccount {
-  margin-left: 12rem;
-  text-align: center;
-}
-.area .newAccount form input {
-  margin-top: 2.5rem;
-}
-.area .newAccount form .newAccount {
+table tr th .newAccount button {
   background-color: #008CFF;
   border: 2px solid #008CFF;
   color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   transition-duration: 0.4s;
   border-radius: 15px;
+  padding: 15px 32px;
   cursor: pointer;
 }
-.area .newAccount form .newAccount:hover {
+table tr th .newAccount button:hover {
   background-color: white;
   color: #008CFF;
   border: 2px solid #008CFF;
 }
-.area .newAccount form p {
-  color: red;
-}
-.area .divider {
+table tr th .divider {
   margin-left: 12rem;
   border-left: 2px solid black;
+  height: 500px;
 }/*# sourceMappingURL=loginRegister.css.map */

@@ -8,73 +8,60 @@ h1 {
     text-align: center;
 }
 
-.area {
-    margin-top: 5rem;
-    display: flex;
-    .login {
-        margin-left: 21rem;
-        text-align: center;
-        form {
-            input {
-                margin-top: 2.5rem;
-            }
+table {
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    tr {
+        th {
+            text-align: center;
             .login {
-                background-color: #008CFF;
-                border: 2px solid #008CFF;
-                color: white;
-                padding: 16px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                margin: 4px 2px;
-                transition-duration: 0.4s;
-                border-radius: 15px;
-                cursor: pointer;
-                &:hover {
-                    background-color: white;
-                    color: #008CFF;
+                button {
+                    background-color: #008CFF;
                     border: 2px solid #008CFF;
+                    color: white;
+                    font-size: 16px;
+                    transition-duration: 0.4s;
+                    border-radius: 15px;
+                    padding: 15px 32px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: white;
+                        color: #008CFF;
+                        border: 2px solid #008CFF;
+                    }
                 }
             }
-            p {
+            #email_login_error,
+            #passwort_login_error,
+            #email_register_error,
+            #passwort_register_error,
+            #passwortverify_register_error {
                 color: red;
-            }
-        }
-    }
-    .newAccount {
-        margin-left: 12rem;
-        text-align: center;
-        form {
-            input {
-                margin-top: 2.5rem;
             }
             .newAccount {
-                background-color: #008CFF;
-                border: 2px solid #008CFF;
-                color: white;
-                padding: 16px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                margin: 4px 2px;
-                transition-duration: 0.4s;
-                border-radius: 15px;
-                cursor: pointer;
-                &:hover {
-                    background-color: white;
-                    color: #008CFF;
+                button {
+                    background-color: #008CFF;
                     border: 2px solid #008CFF;
+                    color: white;
+                    font-size: 16px;
+                    transition-duration: 0.4s;
+                    border-radius: 15px;
+                    padding: 15px 32px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: white;
+                        color: #008CFF;
+                        border: 2px solid #008CFF;
+                    }
                 }
             }
-            p {
-                color: red;
+            .divider {
+                margin-left: 12rem;
+                border-left: 2px solid black;
+                height: 500px;
             }
         }
-    }
-    .divider {
-        margin-left: 12rem;
-        border-left: 2px solid black;
     }
 }
