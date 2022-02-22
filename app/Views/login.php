@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="public/css/login.css">
     <title>Error Page</title>
 </head>
+
 <body>
-<?php
+    <?php
 // Initialize the session
 session_start();
 session_destroy();
@@ -105,4 +107,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 </body>
+
 </html>

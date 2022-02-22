@@ -1,3 +1,11 @@
+#datum_error,
+#haben_error,
+#soll_error,
+#betrag_error {
+  text-align: center;
+  color: red;
+}
+
 table {
   margin-left: auto;
   margin-right: auto;

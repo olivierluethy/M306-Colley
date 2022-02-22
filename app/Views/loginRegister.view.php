@@ -20,7 +20,12 @@ $_SESSION['email'] = "";
     <h1>Colley</h1>
     <table>
         <tr>
-            <th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
                 <div class="login">
                     <h2>Login</h2>
                     <p>Willkommen zurück bei Colley.</p>
@@ -35,15 +40,16 @@ $_SESSION['email'] = "";
                         <button type="submit">Login</button>
                     </form>
                 </div>
-            </th>
-            <th>
+            </td>
+            <td>
                 <div class="divider"></div>
-            </th>
-            <th>
+            </td>
+            <td>
                 <div class="newAccount">
                     <h2>neuer Account</h2>
                     <p>Willkommen bei Colley.</p>
-                    <p>Noch kein Konto? Kein Problem. Bitte erstellen Sie in Konto.</p>
+                    <p>Noch kein Konto? Kein Problem.</p>
+                    <p>Bitte erstellen Sie ein Konto.</p>
                     <form id="formRegister" action="register" method="POST">
                         <label for="email">E-mail:</label>
                         <input type="email" id="email_register" name="email_register">
@@ -57,7 +63,7 @@ $_SESSION['email'] = "";
                         <button type="submit">Sign Up</button>
                     </form>
                 </div>
-            </th>
+            </td>
         </tr>
     </table>
 

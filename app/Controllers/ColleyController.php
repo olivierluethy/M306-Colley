@@ -5,6 +5,15 @@ class ColleyController
 	/* Die Welcome Seite */
 	public function index()
 	{	
+        session_start();
+
+		// Check if the user is logged in, if not then redirect him to login page
+		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+			header("location: loginRegister");
+			exit;
+		}
+
+      	include("app/Views/sideNav.view.php");
 		require 'app/Views/welcome.view.php';
 	}
 
@@ -21,12 +30,14 @@ class ColleyController
 	}
 
 	/* Damit man sich ein- und ausloggen kann */
+	/* Diese Seite enthält Sachen die angezeigt werden, sobald ein Fehler auftritt */
 	public function login()
 	{
 		require 'app/Views/login.php';
 	}
 
 	/* Damit man sich ein- und ausloggen kann */
+	/* Diese Seite enthält Sachen die angezeigt werden, sobald ein Fehler auftritt */
 	public function register()
 	{
 		require 'app/Views/register.php';
@@ -59,21 +70,57 @@ class ColleyController
 
 	/* Bilanz */
 	public function bilanz(){
+		session_start();
+
+		// Check if the user is logged in, if not then redirect him to login page
+		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+			header("location: loginRegister");
+			exit;
+		}
+
+      	include("app/Views/sideNav.view.php");
 		require 'app/Views/bilanz.view.php';
 	}
 
 	/* Kontoübersicht */
 	public function kontouebersicht(){
+		session_start();
+
+		// Check if the user is logged in, if not then redirect him to login page
+		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+			header("location: loginRegister");
+			exit;
+		}
+
+      	include("app/Views/sideNav.view.php");
 		require 'app/Views/kontouebersicht.view.php';
 	}
 
 	/* Journaleinträge */
 	public function journaleintrag(){
+		session_start();
+
+		// Check if the user is logged in, if not then redirect him to login page
+		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+			header("location: loginRegister");
+			exit;
+		}
+
+      	include("app/Views/sideNav.view.php");
 		require 'app/Views/journaleintrag.view.php';
 	}
 
 	/* Um ein neues Konto hinzufügen zu können */
 	public function neues_konto(){
+		session_start();
+
+		// Check if the user is logged in, if not then redirect him to login page
+		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+			header("location: loginRegister");
+			exit;
+		}
+
+		include("app/Views/sideNav.view.php");
 		require 'app/Views/neues_konto.view.php';
 	}
 }
