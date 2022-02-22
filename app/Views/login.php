@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/login.css">
+    <title>Error Page</title>
+</head>
+<body>
 <?php
 // Initialize the session
 session_start();
@@ -9,6 +19,8 @@ $_SESSION['email'] = "";
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: home");
     exit;
+}else if($_SERVER['REQUEST_METHOD'] !== 'POST'){
+    header("location: loginRegister");
 }
 
 // Include config file
@@ -70,12 +82,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             header("location: home");
                         } else {
                             // Display an error message if password is not valid
-                            $password_err = "The password you entered was not valid.";
+                            echo "<h2>The password you entered was not valid.</h2>";
+                            echo "<a href='loginRegister'><button class='back'>Try again</button></a>";
                         }
                     }
                 } else {
                     // Display an error message if email doesn't exist
-                    $email_err = "No account found with that email.";
+                    echo "<h2>No account found with that email.</h2>";
+                    echo "<a href='loginRegister'><button class='back'>Try again</button></a>";
                 }
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
@@ -90,3 +104,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($link);
 }
 ?>
+</body>
+</html>
