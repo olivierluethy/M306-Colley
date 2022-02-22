@@ -44,7 +44,8 @@ class ColleyController
     }
 
     /* Einkaufskalkulation */
-    public function einkaufskalkulation(){
+    public function einkaufskalkulation()
+    {
         include 'app/Controllers/inc/Einkauf/einkaufskalkulation.inc.php'; /* Array für die for-Schlaufe */
         require 'app/Views/einkaufskalkulation.view.php';
     }
@@ -52,7 +53,7 @@ class ColleyController
     public function einkaufskalkulation_berechnen()
     {
         include 'app/Controllers/inc/Einkauf/einkaufskalkulation.inc.php'; /* Array für die for-Schlaufe */
-        include 'app/Controllers/inc/Einkauf/einkaufskalkulation-berechnung.inc.php'; /* Berechnung der Kalkulation selber */
+        include 'app/Controllers/inc/Einkauf/einkaufskalkulation-berechnung.inc.php'; 
         require 'app/Views/ek-berechnen.view.php';
     }
 

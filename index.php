@@ -3,6 +3,7 @@ require 'core/bootstrap.php';
 
 $routes = [
 	/* Routes für Grundseiten */
+	'' => 'ColleyController@index',
 	'home' => 'ColleyController@index',
 	'bilanz' => 'ColleyController@bilanz',
 	'kontouebersicht' => 'ColleyController@kontouebersicht',

@@ -15,7 +15,7 @@
         <h1>Colley</h1>
             <h2>Einkaufskalkulation</h2>
             <p class="center">Lorem Ipsum</p>
-            <a href="home"><button>zurück</button></a>
+            <!--<a href="home"><button>zurück</button></a>-->
                 <form action="ek-berechnen" method="POST">
                     <table class="size1">
                         <tr>
