@@ -10,6 +10,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <title>Colley - Homepage</title>
@@ -19,6 +20,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
 
     <div class="menu">
@@ -70,7 +72,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         include("sideNav.view.php");
     ?>
 
-<script src="public/js/sideNavigation.js"></script>
-<script src="public/js/welcome.js"></script>
+    <script src="public/js/sideNavigation.js"></script>
+    <script src="public/js/welcome.js"></script>
 </body>
+
 </html>

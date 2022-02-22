@@ -8,4 +8,21 @@ table label {
 }
 table tr {
   height: 5vh;
+}
+table tr td button[type=submit] {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+table tr td button[type=submit]:hover {
+  background-color: black;
+  color: white;
+  transition: 0.5s ease;
 }/*# sourceMappingURL=journaleintrag.css.map */

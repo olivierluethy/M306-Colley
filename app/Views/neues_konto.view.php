@@ -35,19 +35,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
     </div>
 
-    <!-- <form action="/action_page.php">
-        <label for="fname">Kontonummer:</label><br>
-        <input type="number" id="kontonummer" name="kontonummer">
-        <p id="kontonummer_konto_error"></p>
-        <label for="lname">Titel:</label><br>
-        <input type="text" id="titel" name="titel">
-        <p id="titel_konto_error"></p>
-        <label for="lname">Verwendungszweck:</label><br>
-        <textarea name="verwendungszweck" id="verwendungszweck" cols="30" rows="10"></textarea>
-        <p id="verwendungszweck_konto_error"></p>
-        <input type="submit" value="Erstellen">
-    </form> -->
-
     <form action="">
         <table>
             <tr>

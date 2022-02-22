@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="public/css/register.css">
     <title>Error Page</title>
 </head>
+
 <body>
-<?php
+    <?php
 // Check if the user is already logged in, if yes then redirect him to index page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: home");
@@ -110,4 +112,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 </body>
+
 </html>

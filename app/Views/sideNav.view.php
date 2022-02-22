@@ -11,7 +11,7 @@
     <a href="#"><img src="assets/piggy-bank.png" alt="Kalkulation">&nbsp Kalkulation</a>
     <hr>
     <div class="eingeloggt">
-    <?php
+        <?php
     echo "<p>Angemeldet mit:<br>" . $_SESSION['email'] ."</p>";
     ?>
     </div>

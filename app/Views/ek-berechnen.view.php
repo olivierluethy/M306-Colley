@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Colley</title>
 </head>
+
 <body>
     <h1>Colley</h1>
     <h2>Einkaufskalkulation</h2>
@@ -23,18 +25,18 @@
                         <th colspan="4">Angaben</th>
                     </tr>
                     <?php for($i=0; $i<count($ausgabe);$i++): ?>
-                        <tr>
-                            <td><?= $ausgabe[$i][0] ?></td>
-                            <?php if($ausgabe[$i][1] == ''): ?>
-                                <td></td>
-                                <td></td>
-                            <?php else: ?>
-                                <td><?= ${$ausgabe[$i][1]} . ' ' . $ausgabe[$i][3] ?></td>
-                                <td>%</td>
-                            <?php endif ?>
-                            <td>CHF</td>
-                            <td><?= ${$ausgabe[$i][2]} ?></td>
-                        </tr>
+                    <tr>
+                        <td><?= $ausgabe[$i][0] ?></td>
+                        <?php if($ausgabe[$i][1] == ''): ?>
+                        <td></td>
+                        <td></td>
+                        <?php else: ?>
+                        <td><?= ${$ausgabe[$i][1]} . ' ' . $ausgabe[$i][3] ?></td>
+                        <td>%</td>
+                        <?php endif ?>
+                        <td>CHF</td>
+                        <td><?= ${$ausgabe[$i][2]} ?></td>
+                    </tr>
                     <?php endfor ?>
                     <tr>
                         <td colspan="5"><a href="einkaufskalkulation"><button>neu Berechnung</button></a></td>
@@ -45,4 +47,5 @@
         </tr>
     </table>
 </body>
+
 </html>

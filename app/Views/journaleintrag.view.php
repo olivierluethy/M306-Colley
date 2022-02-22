@@ -32,48 +32,53 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <h1>Colley</h1>
         <p>Bitte wählen Sie das Datum, die Konten und geben Sie den Betrag ein.</p>
     </div>
+    <form action="">
 
     <table>
         <tr>
             <td><label for="fname">Datum:</label></td>
-            <td><input type="date" id="fname" name="fname"></td>
+            <td><input type="date" id="date" name="fname"><br>
+            <p id="datum_error"></p>
+        </td>
         </tr>
         <tr>
             <td><label for="fname">Haben:</label></td>
             <td>
-                <select name="cars" id="cars">
-                    <option value="volvo">1000</option>
-                    <option value="saab">1020</option>
-                    <option value="mercedes">1020</option>
-                    <option value="audi">1100</option>
-                    <option value="audi">1200</option>
-                    <option value="audi">1510</option>
-                    <option value="audi">1530</option>
-                    <option value="audi">2000</option>
-                    <option value="audi">2450</option>
-                    <option value="audi">2800</option>
-                    <option value="audi">5000</option>
-                    <option value="audi">5700</option>
-                </select>
+                <select name="haben" id="cars">
+                    <option value="1000">1000</option>
+                    <option value="1020">1020</option>
+                    <option value="1020">1020</option>
+                    <option value="1100">1100</option>
+                    <option value="1200">1200</option>
+                    <option value="1510">1510</option>
+                    <option value="1530">1530</option>
+                    <option value="2000">2000</option>
+                    <option value="2450">2450</option>
+                    <option value="2800">2800</option>
+                    <option value="5000">5000</option>
+                    <option value="5700">5700</option>
+                </select><br>
+                <p id="haben_error"></p>
             </td>
         </tr>
         <tr>
             <td><label for="fname">Soll:</label></td>
             <td>
-                <select name="cars" id="cars">
-                    <option value="volvo">1000</option>
-                    <option value="saab">1020</option>
-                    <option value="mercedes">1020</option>
-                    <option value="audi">1100</option>
-                    <option value="audi">1200</option>
-                    <option value="audi">1510</option>
-                    <option value="audi">1530</option>
-                    <option value="audi">2000</option>
-                    <option value="audi">2450</option>
-                    <option value="audi">2800</option>
-                    <option value="audi">5000</option>
-                    <option value="audi">5700</option>
-                </select>
+                <select name="soll" id="cars">
+                    <option value="1000">1000</option>
+                    <option value="1020">1020</option>
+                    <option value="1020">1020</option>
+                    <option value="1100">1100</option>
+                    <option value="1200">1200</option>
+                    <option value="1510">1510</option>
+                    <option value="1530">1530</option>
+                    <option value="2000">2000</option>
+                    <option value="2450">2450</option>
+                    <option value="2800">2800</option>
+                    <option value="5000">5000</option>
+                    <option value="5700">5700</option>
+                </select><br>
+                <p id="haben_error"></p>
             </td>
         </tr>
         <tr>
@@ -89,15 +94,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
             </td>
             <td>
-                <button>Journaleintrag erstellen</button>
+                <button type="submit">Journaleintrag erstellen</button>
             </td>
         </tr>
     </table>
+    </form>
 
     <?php
       include("sideNav.view.php");
     ?>
 
+    <script src="public/js/clientSideValidationJournaleintrag.js"></script>
     <script src="public/js/sideNavigation.js"></script>
 </body>
 

@@ -7,6 +7,7 @@ $_SESSION['email'] = "";
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@ $_SESSION['email'] = "";
     <link rel="stylesheet" href="public/css/loginRegister.css">
     <title>Login / Register</title>
 </head>
+
 <body>
     <h1>Colley</h1>
     <table>
@@ -40,20 +42,20 @@ $_SESSION['email'] = "";
             <th>
                 <div class="newAccount">
                     <h2>neuer Account</h2>
-                        <p>Willkommen bei Colley.</p>
-                        <p>Noch kein Konto? Kein Problem. Bitte erstellen Sie in Konto.</p>
-                        <form id="formRegister" action="register" method="POST">
-                            <label for="email">E-mail:</label>
-                            <input type="email" id="email_register" name="email_register">
-                            <p id="email_register_error"></p>
-                            <label for="passwort">Passwort:</label>
-                            <input type="password" id="passwort_register" name="passwort_register">
-                            <p id="passwort_register_error"></p>
-                            <label for="passwort_verify">Passwort:</label>
-                            <input type="password" id="passwort_verify" name="passwort_verify">
-                            <p id="passwortverify_register_error"></p>
-                            <button type="submit">Sign Up</button>
-                        </form>
+                    <p>Willkommen bei Colley.</p>
+                    <p>Noch kein Konto? Kein Problem. Bitte erstellen Sie in Konto.</p>
+                    <form id="formRegister" action="register" method="POST">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email_register" name="email_register">
+                        <p id="email_register_error"></p>
+                        <label for="passwort">Passwort:</label>
+                        <input type="password" id="passwort_register" name="passwort_register">
+                        <p id="passwort_register_error"></p>
+                        <label for="passwort_verify">Passwort:</label>
+                        <input type="password" id="passwort_verify" name="passwort_verify">
+                        <p id="passwortverify_register_error"></p>
+                        <button type="submit">Sign Up</button>
+                    </form>
                 </div>
             </th>
         </tr>
@@ -62,4 +64,5 @@ $_SESSION['email'] = "";
     <script src="public/js/clientSideValidationRegister.js"></script>
     <script src="public/js/clientSideValidationLogin.js"></script>
 </body>
+
 </html>
