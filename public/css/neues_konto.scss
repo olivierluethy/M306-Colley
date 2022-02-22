@@ -1,23 +1,41 @@
-form {
-    margin-left: 25rem;
-    p {
-        color: red;
+table {
+    margin-left: auto;
+    margin-right: auto;
+    label {
+        margin-right: 2rem;
+        margin-top: 2rem;
+    }
+    tr {
+        height: 5vh;
+        td {
+            p {
+                margin-top: -5rem;
+                margin-right: 2rem;
+            }
+            button[type=submit] {
+                background-color: white;
+                border: 1px solid black;
+                color: black;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+                transition: 0.5s ease;
+                &:hover {
+                    background-color: black;
+                    color: white;
+                    transition: 0.5s ease;
+                }
+            }
+        }
     }
 }
 
-input[type=submit] {
-    background-color: white;
-    border: 2px solid black;
-    color: black;
-    padding: 15px 32px;
+#kontonummer_konto_error,
+#titel_konto_error,
+#verwendungszweck_konto_error {
+    color: red;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    &:hover {
-        background-color: black;
-        color: white;
-    }
 }

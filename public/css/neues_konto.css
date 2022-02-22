@@ -1,23 +1,39 @@
-form {
-  margin-left: 25rem;
+table {
+  margin-left: auto;
+  margin-right: auto;
 }
-form p {
-  color: red;
+table label {
+  margin-right: 2rem;
+  margin-top: 2rem;
 }
-
-input[type=submit] {
+table tr {
+  height: 5vh;
+}
+table tr td p {
+  margin-top: -5rem;
+  margin-right: 2rem;
+}
+table tr td button[type=submit] {
   background-color: white;
-  border: 2px solid black;
+  border: 1px solid black;
   color: black;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  transition-duration: 0.4s;
   cursor: pointer;
+  transition: 0.5s ease;
 }
-input[type=submit]:hover {
+table tr td button[type=submit]:hover {
   background-color: black;
   color: white;
+  transition: 0.5s ease;
+}
+
+#kontonummer_konto_error,
+#titel_konto_error,
+#verwendungszweck_konto_error {
+  color: red;
+  text-align: center;
 }/*# sourceMappingURL=neues_konto.css.map */

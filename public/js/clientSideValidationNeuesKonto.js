@@ -29,7 +29,7 @@ window.addEventListener("load", function() {
             }
         }
         if (document.querySelector('#verwendungszweck').value.length < 6) {
-            document.getElementById('verwendungszweck_konto_error').innerHTML = "Bitte gib einen Verwenungszweck ein.";
+            document.getElementById('verwendungszweck_konto_error').innerHTML = "Bitte gib einen Verwendungszweck ein.";
             errors = true;
         } else {
             document.getElementById('verwendungszweck_konto_error').innerHTML = "";
