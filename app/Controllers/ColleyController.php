@@ -11,6 +11,12 @@ class ColleyController
 	/* Damit man sich ein- und ausloggen kann */
 	public function loginRegister()
 	{
+		session_start();
+		// Check if the user is already logged in, if yes then redirect him to index page
+		if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    		header("location: home");
+    	exit;
+}
 		require 'app/Views/loginRegister.view.php';
 	}
 
