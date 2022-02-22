@@ -1,110 +1,112 @@
 <?php
-// Einkaufskalkulation
+/**
+ * Menge
+ */
+if(isset($_POST['eMenge'])):
+    if(!empty($_POST['eMenge'])):
+        $MengeMehrfach = $_POST['eMenge'];
+    else:
+        $MengeMehrfach = 1;
+    endif;
+endif;
+$Menge = 1;
 
 /**
  * Katalogpreis
  */
-$katalogpreisProzent = 100;
-
-if(isset($_POST['eKatalogpreisFr'])):
-    if(!empty($_POST['eKatalogpreisFr'])):
-        $katalogpreisFr = $_POST['eKatalogpreisFr'];
+if(isset($_POST['eKatalogpreis'])):
+    if(!empty($_POST['eKatalogpreis'])):
+        $Katalogpreis = $_POST['eKatalogpreis'];
     else:
-        $katalogpreisFr = 0;
+        $Katalogpreis = 0;
     endif;
 endif;
+$KatalogpreisMehrfach = $Katalogpreis * $MengeMehrfach;
+$KatalogpreisPr = 100;
 
 /**
  * Rabatt
  */
-// Definition
-if(isset($_POST['eRabattProzent'])):
-    if(!empty($_POST['eRabattProzent'])):
-        $rabattProzent = $_POST['eRabattProzent'];
-    else:
-        $rabattProzent = '';
-    endif;
-endif;
-
 if(isset($_POST['eRabattFr'])):
     if(!empty($_POST['eRabattFr'])):
-        $rabattFr = $_POST['eRabattFr'];
+        $RabattFr = $_POST['eRabattFr'];
     else:
-        $rabattFr = '';
+        $RabattFr = 0;
+        $RabattFrMehrfach = 0;
     endif;
 endif;
 
-// Prozentberechnung
-if($rabattProzent != '' && $rabattFr == ''):
-    $rabattFr = $katalogpreisFr / 100 * $rabattProzent;
+if(isset($_POST['eRabattPr'])):
+    if(!empty($_POST['eRabattPr'])):
+        $RabattPr = $_POST['eRabattPr'];
+    else:
+        $RabattPr = 0;
+    endif;
 endif;
 
-// Preisberechnung
-if($rabattProzent == '' && $rabattFr != ''):
-    $rabattProzent = $rabattFr / $katalogpreisFr * 100;
-endif;
-
-// Wenn keine Vergünstigung
-if($rabattProzent == '' && $rabattFr == ''):
-    $rabattProzent = 0;
-    $rabattFr = 0;
+if($RabattFr == 0 && $RabattPr != 0):
+    $RabattFr = $Katalogpreis / 100 * $RabattPr;
+    $RabattFrMehrfach = $KatalogpreisMehrfach / 100 * $RabattPr;
+elseif($RabattFr != 0 && $RabattPr == 0):
+    $RabattPr = $RabattFr / $Katalogpreis * 100;
+    $RabattFrMehrfach = $RabattFr;
 endif;
 
 /**
  * Rechnungsbetrag
  */
-$rechnungsbetragFr = $katalogpreisFr - $rabattFr;
-$rechnungsbetragProzent = $katalogpreisProzent - $rabattProzent;
+ $RechnungFr = $Katalogpreis - $RabattFr;
+ $RechnungFrMehrfach = $KatalogpreisMehrfach - $RabattFrMehrfach;
+ $RechnungPr = 100 - $RabattPr;
 
 /**
  * Skonto
  */
-// Definition
-if(isset($_POST['eSkontoProzent'])):
-    if(!empty($_POST['eSkontoProzent'])):
-        $skontoProzent = $_POST['eSkontoProzent'];
-    else:
-        $skontoProzent = '';
-    endif;
-endif;
-
 if(isset($_POST['eSkontoFr'])):
     if(!empty($_POST['eSkontoFr'])):
-        $skontoFr = $_POST['eSkontoFr'];
+        $SkontoFr = $_POST['eSkontoFr'];
     else:
-        $skontoFr = '';
+        $SkontoFr = 0;
+        $SkontoFrMehrfach = 0;
     endif;
 endif;
 
-// Prozentberechnung
-if($skontoProzent != '' && $skontoFr == ''):
-    $skontoFr = $rechnungsbetragFr / 100 * $skontoProzent;
-endif;
-
-// Preisberechnung
-if($skontoProzent == '' && $skontoFr != ''):
-    $skontoProzent = $skontoFr / $rechnungsbetragFr * 100;
-endif;
-
-// Wenn keine Vergünstigung
-if($skontoProzent == '' && $skontoFr == ''):
-    $skontoProzent = 0;
-    $skontoFr = 0;
-endif;
-
-// Zahlung
-$zahlungProzent = 100 - $skontoProzent;
-
-$zahlungFr = $rechnungsbetragFr - $skontoFr;
-
-// Bezugskosten
-if(isset($_POST['eBezugskostenFr'])):
-    if(!empty($_POST['eBezugskostenFr'])):
-        $bezugskostenFr = $_POST['eBezugskostenFr'];
+if(isset($_POST['eSkontoPr'])):
+    if(!empty($_POST['eSkontoPr'])):
+        $SkontoPr = $_POST['eSkontoPr'];
     else:
-        $bezugskostenFr = 0;
+        $SkontoPr = 0;
+        endif;
+endif;
+
+if($SkontoFr == 0 && $SkontoPr != 0):
+    $SkontoFr = $RechnungFr / 100 * $SkontoPr;
+    $SkontoFrMehrfach = $RechnungFrMehrfach / 100 * $SkontoPr;
+elseif($SkontoFr != 0 && $SkontoPr == 0):
+    $SkontoPr = $SkontoFr / $RechnungFr * 100;
+    $SkontoFrMehrfach = $SkontoFr;
+endif;
+
+/**
+ * Zahlung
+ */
+$ZahlungFr = $RechnungFr - $SkontoFr;
+$ZahlungFrMehrfach = $RechnungFrMehrfach - $SkontoFrMehrfach;
+$ZahlungPr = 100 - $SkontoPr;
+
+/**
+ * Bezugskosten
+ */
+if(isset($_POST['eBezugskosten'])):
+    if(!empty($_POST['eBezugskosten'])):
+        $Bezugskosten = $_POST['eBezugskosten'];
+    else:
+        $Bezugskosten = 0;
     endif;
 endif;
 
-// Einstandspreis
-$einstandspreisFr = $zahlungFr - $bezugskostenFr;
+/**
+ * Einstandspreis
+ */
+$Einstandspreis = $ZahlungFr + $Bezugskosten;
+$EinstandspreisMehrfach = $ZahlungFrMehrfach + $Bezugskosten;
