@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/kontouebersicht.css">
-    <link rel="stylesheet" href="public/css/sideNavigation.css">
+    <link rel="stylesheet" href="public/css/olivierstyle.css">
     <link rel="stylesheet" href="public/css/heading.css">
     <title>Kontoübersicht</title>
 </head>
@@ -17,6 +16,10 @@
     include("heading.view.php");
     ?>
 
+<div class="title">
+    <h1>Colley</h1>
+    <h2>Hier ist eine Übersicht aller Konten</h2>
+    </div>
 
     <div class="konten">
         <div class="konto">
@@ -81,7 +84,7 @@
         </div>
     </div>
 
-    <script src="public/js/sideNavigation.js"></script>
+    <script src="public/js/navigate.js"></script>
 </body>
 
 </html>

@@ -13,12 +13,15 @@ $_SESSION['email'] = "";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/loginRegister.css">
+    <link rel="stylesheet" href="public/css/olivierstyle.css">
     <title>Login / Register</title>
 </head>
 
 <body>
-    <h1>Colley</h1>
-    <table>
+    <div class="title">
+        <h1>Colley</h1>
+    </div>
+    <table class="logintable">
         <tr>
             <th></th>
             <th></th>

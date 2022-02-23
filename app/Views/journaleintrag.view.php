@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/journaleintrag.css">
-    <link rel="stylesheet" href="public/css/sideNavigation.css">
     <link rel="stylesheet" href="public/css/heading.css">
+    <link rel="stylesheet" href="public/css/olivierstyle.css">
     <title>Journaleintrag</title>
 </head>
 
 <body>
+
+    <div class="title">
+        <h1>Colley</h1>
+        <h2>Bitte wählen Sie das Datum, die Konten und geben Sie den Betrag ein.</h2>
+    </div>
 
     <?php
     include("heading.view.php");
@@ -22,9 +26,9 @@
     <p id="soll_error"></p>
     <p id="betrag_error"></p>
 
-    <form action="">
+    <form>
 
-        <table>
+        <table class="journaltabelle">
             <tr>
                 <td><label>Datum:</label></td>
                 <td><input type="date" id="date" name="fname"><br>
@@ -90,7 +94,7 @@
     </form>
 
     <script src="public/js/clientSideValidationJournaleintrag.js"></script>
-    <script src="public/js/sideNavigation.js"></script>
+    <script src="public/js/navigate.js"></script>
 </body>
 
 </html>

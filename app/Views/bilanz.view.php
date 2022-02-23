@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/bilanz.css">
-    <link rel="stylesheet" href="public/css/sideNavigation.css">
+    <link rel="stylesheet" href="public/css/olivierstyle.css">
     <link rel="stylesheet" href="public/css/heading.css">
     <title>Bilanz</title>
 </head>
@@ -17,11 +16,17 @@
     include("heading.view.php");
     ?>
 
-    <table>
+    <div class="title">
+        <h1>Colley</h1>
+        <h2>Hier können Sie einen Eintrag ins Journal eingeben, einen Kontoeintrag bearbeiten und Rechnungsnummer
+            vergeben.</h2>
+    </div>
+
+    <table class="normalTable">
         <tr>
             <th>
                 <div class="option">
-                    <img style="width: 9.5%;" src="assets/Kontouebersicht.png" alt="">
+                    <img src="assets/Kontouebersicht.svg" alt="">
                     <p>Kontoübersicht</p>
                 </div>
             </th>
@@ -46,7 +51,7 @@
         </tr>
     </table>
 
-    <script src="public/js/sideNavigation.js"></script>
+    <script src="public/js/navigate.js"></script>
 </body>
 
 </html>

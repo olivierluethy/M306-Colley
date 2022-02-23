@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/neues_konto.css">
-    <link rel="stylesheet" href="public/css/sideNavigation.css">
+    <link rel="stylesheet" href="public/css/olivierstyle.css">
     <link rel="stylesheet" href="public/css/heading.css">
     <title>Neues Konto</title>
 </head>
@@ -16,8 +15,13 @@
     include("heading.view.php");
     ?>
 
-    <form action="">
-        <table>
+<div class="title">
+    <h1>Colley</h1>
+    <h2>Bitte geben Sie die gewünsche Kontonummer, einen Titel und einen Verwendungszweck an.</h2>
+    </div>
+
+    <form>
+        <table class="neuesKontoTabelle">
             <tr>
                 <td><label for="fname">Kontonummer:</label></td>
                 <td><input type="number" id="kontonummer" name="kontonummer"></td>
@@ -51,7 +55,7 @@
     </form>
 
     <script src="public/js/clientSideValidationNeuesKonto.js"></script>
-    <script src="public/js/sideNavigation.js"></script>
+    <script src="public/js/navigate.js"></script>
 </body>
 
 </html>
