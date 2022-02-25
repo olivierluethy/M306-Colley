@@ -123,4 +123,43 @@ class ColleyController
 		include("app/Views/sideNav.view.php");
 		require 'app/Views/neues_konto.view.php';
 	}
+
+	public function rechnungsnummer(){
+		session_start();
+
+		// Check if the user is logged in, if not then redirect him to login page
+		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+			header("location: loginRegister");
+			exit;
+		}
+
+      	include("app/Views/sideNav.view.php");
+		require 'app/Views/rechnungsnummer.view.php';
+	}
+
+	public function erfolgsrechnung(){
+		session_start();
+
+		// Check if the user is logged in, if not then redirect him to login page
+		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+			header("location: loginRegister");
+			exit;
+		}
+
+      	include("app/Views/sideNav.view.php");
+		require 'app/Views/erfolgsrechnung.view.php';
+	}
+
+	public function kalkulation(){
+		session_start();
+
+		// Check if the user is logged in, if not then redirect him to login page
+		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+			header("location: loginRegister");
+			exit;
+		}
+
+      	include("app/Views/sideNav.view.php");
+		require 'app/Views/kalkulation.view.php';
+	}
 }

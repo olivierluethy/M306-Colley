@@ -9,6 +9,9 @@ $routes = [
 	'kontouebersicht' => 'ColleyController@kontouebersicht',
 	'journaleintrag' => 'ColleyController@journaleintrag',
 	'neues-konto' => 'ColleyController@neues_konto',
+	'rechnungsnummer' => 'ColleyController@rechnungsnummer',
+	'erfolgsrechnung' => 'ColleyController@erfolgsrechnung',
+	'kalkulation' => 'ColleyController@kalkulation',
 
 	/* Routes for login and registration */
 	'loginRegister' => 'ColleyController@loginRegister',

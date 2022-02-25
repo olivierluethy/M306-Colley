@@ -28,7 +28,7 @@
 
     <form>
 
-        <table class="journaltabelle">
+        <table class="journaltabelle margin-auto">
             <tr>
                 <td><label>Datum:</label></td>
                 <td><input type="date" id="date" name="fname"><br>

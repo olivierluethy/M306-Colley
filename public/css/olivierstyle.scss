@@ -38,16 +38,26 @@ body {
 #betrag_error,
 #kontonummer_konto_error,
 #titel_konto_error,
-#verwendungszweck_konto_error {
+#verwendungszweck_konto_error,
+#rechnungsnummer_rechnungsnummer_error,
+#journalnummer_rechnungsnummer_error,
+#rechnung_rechnungsnummer_error {
     color: red;
+    text-align: center;
+}
+
+
+/* Allgemeine Tabelleneinstellung */
+
+.margin-auto {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 /* Tabelle für das Login und Register */
 
 .logintable {
-    margin-left: auto;
-    margin-right: auto;
     tr {
         td {
             .login {
@@ -99,11 +109,9 @@ body {
 }
 
 
-/* Tabelle für das Journal */
+/* Tabelle für Rechnungsnummer und Journal */
 
-.journaltabelle {
-    margin-left: auto;
-    margin-right: auto;
+.TabelleKlein {
     label {
         margin-right: 2rem;
         margin-top: 2rem;
@@ -135,8 +143,6 @@ body {
 /* Table für die Seite um neue Konten erfassen zu können */
 
 .neuesKontoTabelle {
-    margin-left: auto;
-    margin-right: auto;
     label {
         margin-right: 2rem;
         margin-top: 2rem;

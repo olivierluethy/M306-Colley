@@ -21,7 +21,7 @@ $_SESSION['email'] = "";
     <div class="title">
         <h1>Colley</h1>
     </div>
-    <table class="logintable">
+    <table class="logintable margin-auto">
         <tr>
             <th></th>
             <th></th>
