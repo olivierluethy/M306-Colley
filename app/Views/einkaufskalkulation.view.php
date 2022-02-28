@@ -6,48 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Colley</title>
 </head>
 
 <body>
     <h1>Colley</h1>
     <h2>Einkaufskalkulation</h2>
-    <p class="center">Lorem Ipsum</p>
-    <!--<a href="home"><button>zurück</button></a>-->
+    <p class="center">Bitte geben Sie den Katalogpreis eines einzelnen Stückes an, da der Kalkulator sonst falsch
+        rechnet.</p>
+
     <form action="ek-berechnen" method="POST">
-        <table class="size1">
+        <!-- Tabelle für Masseingabe -->
+        <table>
             <tr>
-                <td class="size30"></td>
-                <td class="size40">
-                    <table class="size1">
+                <td class="side weiss"></td><!-- Seite / Keinen Rahmen -->
+                <td class="max weiss">
+                    <!-- Eigentliche Tabelle / Keinen Rahmen -->
+                    <table>
+                        <!-- Titelzeile -->
                         <tr>
-                            <th class="size30">Kosten</th>
-                            <th class="size70" colspan="4">Angaben</th>
+                            <th>Kosten</th>
+                            <th colspan="4">Angaben</th>
                         </tr>
-                        <?php for($i=0; $i<count($eingabe);$i++): ?>
+                        <?php for($i=0;$i<count($eingabe); $i++): ?>
                         <tr>
-                            <td><?= $eingabe[$i][0] ?></td>
-                            <?php if(!empty($eingabe[$i][1])): ?>
-                            <td><input type="number" name="<?= $eingabe[$i][1] ?>" id="<?= $eingabe[$i][1] ?>"
-                                    value="<?= $eingabe[$i][3] ?>"></td>
-                            <td>%</td>
-                            <?php else: ?>
-                            <td></td>
-                            <td></td>
-                            <?php endif ?>
-                            <td>CHF</td>
-                            <td><input type="number" name="<?= $eingabe[$i][2] ?>" id="<?= $eingabe[$i][2] ?>"
-                                    value="<?= $eingabe[$i][4] ?>" placeholder="<?= $eingabe[$i][0] ?>"></td>
+                            <!-- Tabellenzeile -->
+                            <th class="max left"><?= $eingabe[$i][0] ?></th>
+                            <!-- Bezeichnung CHF / Anz -->
+                            <td class="max left b-left"><?= $eingabe[$i][1] ?></td>
+                            <!-- Input Betrag -->
+                            <td class="max b-right">
+                                <input type="text" name="<?= $eingabe[$i][2] ?>" id="<?= $eingabe[$i][2] ?>" <?php if($eingabe[$i][0] == 'Katalogpreis'): echo 'required'; endif ?> placeholder="1234.56" class="right" tabindex="<?= $eingabe[$i][5] ?>" value="<?= $eingabe[$i][7] ?>"></td>
+                            <?php if($eingabe[$i][3] != ''): ?>
+                            <!-- Input Prozente -->
+                            <td class="max b-left"><input type="text" name="<?= $eingabe[$i][3] ?>" id="<?= $eingabe[$i][3] ?>" placeholder="1234.56" class="right" tabindex="<?= $eingabe[$i][6] ?>" value="<?= $eingabe[$i][8] ?>"></td>
+                            <!-- Bezeichnung % -->
+                            <td class="max center b-right">%</td>
+                            <!-- Wenn kein Prozente-Input -->
+                            <?php else: echo '<td colspan="2"></td>';?>
+                            <?php endif; ?>
                         </tr>
                         <?php endfor ?>
-                        <tr>
-                            <td colspan="5"><button>Berechnen</button></td>
+                        <tr class="weiss">
+                            <td class="left weiss"><a href="home"><button type="button" tabindex="9">Zurück</button></a></td>
+                            <td class="center weiss" colspan="4"><button type="submit" tabindex="8">Berechnung</button></td>
                         </tr>
                     </table>
                 </td>
-                <td class="size30"></td>
+                <td class="side weiss"></td>
             </tr>
         </table>
     </form>
