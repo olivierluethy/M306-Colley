@@ -24,6 +24,8 @@ $routes = [
 	'ek-berechnen' => 'ColleyController@einkaufskalkulation_berechnen',
 	'ik-erstellen' => 'ColleyController@internekalkulation',
 	'ik-berechnen' => 'ColleyController@internekalkulation_berechnen',
+	'vk-erstellen' => 'ColleyController@verkaufskalkulation',
+	'vk-berechnen' => 'ColleyController@verkaufskalkulation_berechnen',
 ];
 
 $db = [
