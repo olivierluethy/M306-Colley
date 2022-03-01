@@ -26,18 +26,18 @@
                                 <th class="left"><?= $eingabe[$i][0] ?></th>
                                 <td class="center b-left"><?= $eingabe[$i][1] ?></td>
                                 <td class="b-right">
-                                    <input type="text" name="<?= $eingabe[$i][2] ?>" id="<?= $eingabe[$i][2] ?>" tabindex="<?= $eingabe[$i][3] ?>" value="<?= $eingabe[$i][4] ?>" placeholder="<?= $eingabe[$i][8] ?>" <?php if($eingabe[$i][0] == 'Einstandspreis' || $eingabe[$i][0] == 'Menge'): echo 'required'; endif ?>>
+                                    <input type="text" name="<?= $eingabe[$i][2] ?>" id="<?= $eingabe[$i][2] ?>" tabindex="<?= $eingabe[$i][3] ?>" placeholder="<?= $eingabe[$i][8] ?>" <?php if($eingabe[$i][0] == 'Einstandspreis' || $eingabe[$i][0] == 'Menge'): echo 'required'; endif ?>>
                                 </td>
                                 <?php if(!empty($eingabe[$i][5])): ?>
                                     <td class="b-left">
-                                        <input type="text" name="<?= $eingabe[$i][5] ?>" id="<?= $eingabe[$i][5] ?>" tabindex="<?= $eingabe[$i][6] ?>" value="<?= $eingabe[$i][7] ?>" placeholder="<?= $eingabe[$i][8] ?>">
+                                        <input type="text" name="<?= $eingabe[$i][5] ?>" id="<?= $eingabe[$i][5] ?>" tabindex="<?= $eingabe[$i][6] ?>" placeholder="<?= $eingabe[$i][8] ?>">
                                     </td>
                                     <td class="center b-right">%</td>
                                 <?php else: echo '<td colspan="2"></td>'; endif ?>
                             </tr>
                         <?php endfor ?>
                         <tr>
-                            <td class="weiss"><a href="home"><button type="button" tabindex="9">Zurück</button></a></td>
+                            <td class="weiss"><a href="kalkulation"><button type="button" tabindex="9">Zurück</button></a></td>
                             <td class="center weiss" colspan="4"><button type="submit" tabindex="8">Berechnung</button></td>
                         </tr>
                     </table>

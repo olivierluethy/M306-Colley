@@ -1,10 +1,10 @@
 <?php
 $eingabe = array(
-    array('Einstandspreis', 'CHF', 'eEinstandspreis', 1, 1234.56, '', '', '', 1234.56,),
-    array('Versandkosten', 'CHF', 'eKosten', 2, '150', '', '', '', 1234.56,),
-    array('Skonto', 'CHF', 'eSkontoFr', 3, '', 'eSkontoPr', 4, 5, 1234.56,),
-    array('Rabatt', 'CHF', 'eRabattFr', 5, '', 'eRabattPr', 6, 30, 1234.56,),
-    array('Menge', 'Anz', 'eMenge', 7, 2, '', '', '', 1234.56,),
+    array('Einstandspreis', 'CHF', 'eEinstandspreis', 1, '', '', 1234.56,),
+    array('Versandkosten', 'CHF', 'eKosten', 2,  '', '', 1234.56,),
+    array('Skonto', 'CHF', 'eSkontoFr', 3,  'eSkontoPr', 4,  1234.56,),
+    array('Rabatt', 'CHF', 'eRabattFr', 5,  'eRabattPr', 6,  1234.56,),
+    array('Menge', 'Anz', 'eMenge', 7,  '', '', 1234.56,),
 );
 
 $ausgabe = array(

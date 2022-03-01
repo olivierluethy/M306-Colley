@@ -36,10 +36,10 @@
                             <td class="max left b-left"><?= $eingabe[$i][1] ?></td>
                             <!-- Input Betrag -->
                             <td class="max b-right">
-                                <input type="text" name="<?= $eingabe[$i][2] ?>" id="<?= $eingabe[$i][2] ?>" <?php if($eingabe[$i][0] == 'Katalogpreis'): echo 'required'; endif ?> placeholder="1234.56" class="right" tabindex="<?= $eingabe[$i][5] ?>" value="<?= $eingabe[$i][7] ?>"></td>
+                                <input type="text" name="<?= $eingabe[$i][2] ?>" id="<?= $eingabe[$i][2] ?>" <?php if($eingabe[$i][0] == 'Katalogpreis'): echo 'required'; endif ?> placeholder="1234.56" class="right" tabindex="<?= $eingabe[$i][5] ?>"></td>
                             <?php if($eingabe[$i][3] != ''): ?>
                             <!-- Input Prozente -->
-                            <td class="max b-left"><input type="text" name="<?= $eingabe[$i][3] ?>" id="<?= $eingabe[$i][3] ?>" placeholder="1234.56" class="right" tabindex="<?= $eingabe[$i][6] ?>" value="<?= $eingabe[$i][8] ?>"></td>
+                            <td class="max b-left"><input type="text" name="<?= $eingabe[$i][3] ?>" id="<?= $eingabe[$i][3] ?>" placeholder="1234.56" class="right" tabindex="<?= $eingabe[$i][6] ?>"></td>
                             <!-- Bezeichnung % -->
                             <td class="max center b-right">%</td>
                             <!-- Wenn kein Prozente-Input -->

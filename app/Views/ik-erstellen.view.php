@@ -28,10 +28,10 @@
                             <!-- Bezeichnung CHF / Anz -->
                                 <td class="b-left"><?= $eingabe[$i][1] ?></td>
                             <!-- Input CHF / Anz -->
-                                <td class="b-right"><input type="text" name="<?= $eingabe[$i][2] ?>" id="<?= $eingabe[$i][2] ?>" <?php if($eingabe[$i][0] == 'Einstandspreis'): echo 'required'; endif ?> placeholder="1234.56" tabindex="<?= $eingabe[$i][3] ?>" value="<?= $eingabe[$i][4] ?>"></td>
+                                <td class="b-right"><input type="text" name="<?= $eingabe[$i][2] ?>" id="<?= $eingabe[$i][2] ?>" <?php if($eingabe[$i][0] == 'Einstandspreis'): echo 'required'; endif ?> placeholder="1234.56" tabindex="<?= $eingabe[$i][3] ?>"></td>
                                 <?php if($eingabe[$i][5] == ''): echo '<td colspan="2"></td>'; else: ?>
                             <!-- Input % -->
-                                    <td class="b-left"><input type="text" name="<?= $eingabe[$i][5] ?>" id="<?= $eingabe[$i][5] ?>" placeholder="1234.56" tabindex="<?= $eingabe[$i][6] ?>" value="<?= $eingabe[$i][7] ?>"></td>
+                                    <td class="b-left"><input type="text" name="<?= $eingabe[$i][5] ?>" id="<?= $eingabe[$i][5] ?>" placeholder="1234.56" tabindex="<?= $eingabe[$i][6] ?>"></td>
                             <!-- Bezeichnung % -->
                                     <td class="b-right"><?= $eingabe[$i][8] ?></td>
                                 <?php endif ?>

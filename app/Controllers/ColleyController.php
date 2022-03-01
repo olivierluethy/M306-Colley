@@ -55,13 +55,13 @@ class ColleyController
     }
 
     /* Einkaufskalkulation */
-    public function einkaufskalkulation()
+    public function ekerstellen()
     {
         include 'app/Controllers/inc/Einkauf/ek-array.inc.php'; // Array für die for-Schlaufe
-        require 'app/Views/einkaufskalkulation.view.php';
+        require 'app/Views/ek-erstellen.view.php';
     }
 
-    public function einkaufskalkulation_berechnen()
+    public function ekberechnen()
     {
         include 'app/Controllers/inc/Einkauf/ek-array.inc.php'; // Array für die for-Schlaufe
         include 'app/Controllers/inc/Einkauf/ek-berechnung.inc.php'; // Berechnungen
@@ -69,13 +69,13 @@ class ColleyController
     }
 
 	/* Interne Kalkulation */
-	public function internekalkulation()
+	public function ikerstellen()
 	{
 		include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
-		require 'app/Views/internekalkulation.view.php';
+		require 'app/Views/ik-erstellen.view.php';
 	}
 
-	public function internekalkulation_berechnen()
+	public function ikberechnen()
 	{
 		include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
 		include 'app/Controllers/inc/Intern/ik-berechnung.inc.php'; // Berechnungen
@@ -83,13 +83,13 @@ class ColleyController
 	}
 
 	/* Verkaufskalkulation */
-	public function verkaufskalkulation()
+	public function vkerstellen()
 	{
 		include 'app/Controllers/inc/Verkauf/vk-array.inc.php'; // Array für die for-Schlaufe
-		require 'app/Views/verkaufskalkulation.view.php';
+		require 'app/Views/vk-erstellen.view.php';
 	}
 
-	public function verkaufskalkulation_berechnen()
+	public function vkberechnen()
 	{
 		include 'app/Controllers/inc/Verkauf/vk-array.inc.php'; // Array für die for-Schlaufe
 		include 'app/Controllers/inc/Verkauf/vk-berechnung.inc.php'; // Berechnungen

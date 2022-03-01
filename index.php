@@ -20,12 +20,12 @@ $routes = [
 	'logout' => 'ColleyController@logout',
 
 	/* Routes für Kalkulationen */
-	'ek-erstellen' => 'ColleyController@einkaufskalkulation',
-	'ek-berechnen' => 'ColleyController@einkaufskalkulation_berechnen',
-	'ik-erstellen' => 'ColleyController@internekalkulation',
-	'ik-berechnen' => 'ColleyController@internekalkulation_berechnen',
-	'vk-erstellen' => 'ColleyController@verkaufskalkulation',
-	'vk-berechnen' => 'ColleyController@verkaufskalkulation_berechnen',
+	'ek-erstellen' => 'ColleyController@ekertellen',
+	'ek-berechnen' => 'ColleyController@ekberechnen',
+	'ik-erstellen' => 'ColleyController@ikerstellen',
+	'ik-berechnen' => 'ColleyController@ikberechnen',
+	'vk-erstellen' => 'ColleyController@vkerstellen',
+	'vk-berechnen' => 'ColleyController@vkberechnen',
 ];
 
 $db = [
