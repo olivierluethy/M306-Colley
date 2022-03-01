@@ -61,7 +61,7 @@
                         <?php endfor ?>
                     <!-- Button um zur Eingabe zurückzukehren -->
                         <tr class="weiss">
-                            <td class="weiss center" colspan="<?php if($Menge != 1): echo '9'; else: echo '7'; endif ?>"><a href="einkaufskalkulation"><button type="button">Neue Berechnung beginnen</button></a></td>
+                            <td class="weiss center" colspan="<?php if($Menge != 1): echo '9'; else: echo '7'; endif ?>"><a href="ek-erstellen"><button type="button">Neue Berechnung beginnen</button></a></td>
                         </tr>
                     </table>
                 </td>

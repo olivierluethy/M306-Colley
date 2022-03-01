@@ -68,6 +68,20 @@ class ColleyController
         require 'app/Views/ek-berechnen.view.php';
     }
 
+	    /* Interne Kalkulation */
+		public function internekalkulation()
+		{
+			include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
+			require 'app/Views/internekalkulation.view.php';
+		}
+	
+		public function internekalkulation_berechnen()
+		{
+			include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
+			include 'app/Controllers/inc/Intern/ik-berechnung.inc.php'; // Berechnungen
+			require 'app/Views/ik-berechnen.view.php';
+		}
+	
 	/* Bilanz */
 	public function bilanz(){
 		session_start();

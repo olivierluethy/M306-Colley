@@ -48,7 +48,7 @@
                         </tr>
                         <?php endfor ?>
                         <tr class="weiss">
-                            <td class="left weiss"><a href="home"><button type="button" tabindex="9">Zurück</button></a></td>
+                            <td class="left weiss"><a href="kalkulation"><button type="button" tabindex="9">Zurück</button></a></td>
                             <td class="center weiss" colspan="4"><button type="submit" tabindex="8">Berechnung</button></td>
                         </tr>
                     </table>

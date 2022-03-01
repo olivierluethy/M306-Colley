@@ -76,6 +76,7 @@ input {
   height: 15px;
   width: 100px;
   border: 0 !important;
+  text-align: right;
 }
 
 /* Table */
@@ -86,6 +87,10 @@ input {
 table {
   border: none;
   border-collapse: collapse;
+}
+
+tr {
+  border: none;
 }
 
 th, td {
