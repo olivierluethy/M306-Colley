@@ -72,19 +72,47 @@ class ColleyController
     }
 
     /* Einkaufskalkulation */
-    public function einkaufskalkulation()
+    public function ekerstellen()
     {
-        include 'app/Controllers/inc/Einkauf/einkaufskalkulation.inc.php'; /* Array für die for-Schlaufe */
-        require 'app/Views/einkaufskalkulation.view.php';
+        include 'app/Controllers/inc/Einkauf/ek-array.inc.php'; // Array für die for-Schlaufe
+        require 'app/Views/ek-erstellen.view.php';
     }
 
-    public function einkaufskalkulation_berechnen()
+    public function ekberechnen()
     {
-        include 'app/Controllers/inc/Einkauf/einkaufskalkulation.inc.php'; /* Array für die for-Schlaufe */
-        include 'app/Controllers/inc/Einkauf/einkaufskalkulation-berechnung.inc.php'; 
+        include 'app/Controllers/inc/Einkauf/ek-array.inc.php'; // Array für die for-Schlaufe
+        include 'app/Controllers/inc/Einkauf/ek-berechnung.inc.php'; // Berechnungen
         require 'app/Views/ek-berechnen.view.php';
     }
 
+	/* Interne Kalkulation */
+	public function ikerstellen()
+	{
+		include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
+		require 'app/Views/ik-erstellen.view.php';
+	}
+
+	public function ikberechnen()
+	{
+		include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
+		include 'app/Controllers/inc/Intern/ik-berechnung.inc.php'; // Berechnungen
+		require 'app/Views/ik-berechnen.view.php';
+	}
+
+	/* Verkaufskalkulation */
+	public function vkerstellen()
+	{
+		include 'app/Controllers/inc/Verkauf/vk-array.inc.php'; // Array für die for-Schlaufe
+		require 'app/Views/vk-erstellen.view.php';
+	}
+
+	public function vkberechnen()
+	{
+		include 'app/Controllers/inc/Verkauf/vk-array.inc.php'; // Array für die for-Schlaufe
+		include 'app/Controllers/inc/Verkauf/vk-berechnung.inc.php'; // Berechnungen
+		require 'app/Views/vk-berechnen.view.php';
+	}
+	
 	/* Bilanz */
 	public function bilanz(){
 		session_start();

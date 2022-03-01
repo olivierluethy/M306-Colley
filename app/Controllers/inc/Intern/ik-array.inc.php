@@ -1,0 +1,16 @@
+<?php
+
+$eingabe = array(
+    array('Einstandspreis', 'CHF', 'eEinstandspreis', 1, '', '', '',),
+    array('Gemeinkosten', 'CHF', 'eGemeinFr', 2, 'eGemeinPr', 3, '%',),
+    array('Reingewinn', 'CHF', 'eGewinnFr', 4, 'eGewinnPr', 5, '%',),
+    array('Menge', 'Anz', 'eMenge', 6, '', '', '',),
+);
+
+$ausgabe = array(
+    array('Einstandspreis', 'EinstandspreisFr', 'Hundert', '', 'EinstandspreisMf',),
+    array('Gemeinkosten', 'GemeinkostenFr', 'GemeinkostenPr', '', 'GemeinkostenMf',),
+    array('Selbstkosten', 'SelbstkostenFr', 'SelbstkostenPr', 'Hundert', 'SelbstkostenMf',),
+    array('Reingewinn', 'GewinnFr', '', 'GewinnPr', 'GewinnMf',),
+    array('Nettoerlös', 'NettoFr', '', 'NettoPr', 'NettoMf',),
+);
