@@ -55,6 +55,29 @@ body {
 }
 
 
+/* Für die Passwort Zurücksetze Seite */
+
+.passwortZuruecksetzen {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    input[type=submit] {
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition-duration: 0.4s;
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+}
+
+
 /* Tabelle für das Login und Register */
 
 .logintable {
@@ -63,6 +86,26 @@ body {
             .login {
                 margin-right: 15rem;
                 text-align: center;
+                #sendEmail {
+                    input[type=submit] {
+                        margin-top: 2rem;
+                        background-color: #203f59;
+                        border: 1px solid #203f59;
+                        color: white;
+                        padding: 16px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin: 4px 2px;
+                        transition-duration: 0.4s;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: white;
+                            color: #203f59;
+                        }
+                    }
+                }
                 button[type=submit] {
                     background-color: #008CFF;
                     border: 2px solid #008CFF;
@@ -106,6 +149,14 @@ body {
             }
         }
     }
+}
+
+
+/* CSS for if someone wants to reset the password */
+
+.emailSended {
+    margin-top: 2rem;
+    margin-left: 2rem;
 }
 
 

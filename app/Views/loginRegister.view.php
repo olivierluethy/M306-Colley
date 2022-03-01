@@ -12,7 +12,6 @@ $_SESSION['email'] = "";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/loginRegister.css">
     <link rel="stylesheet" href="public/css/olivierstyle.css">
     <title>Login / Register</title>
 </head>
@@ -41,6 +40,9 @@ $_SESSION['email'] = "";
                         <input type="password" id="passwort_login" name="passwort_login">
                         <p id="passwort_login_error"></p>
                         <button type="submit">Login</button>
+                    </form>
+                    <form id="sendEmail" action="passwortZurueckEmailSeite" method="post">
+                        <input type="submit" value="Passwort zurücksetzen" />
                     </form>
                 </div>
             </td>

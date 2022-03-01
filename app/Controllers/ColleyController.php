@@ -17,6 +17,23 @@ class ColleyController
 		require 'app/Views/welcome.view.php';
 	}
 
+	public function passwortZurueckEmailSeite(){
+		require 'app/Views/passwortZurueckEmailSeite.view.php';
+	}
+
+	/* Die Mail wird innert dieser Funktion versenden */
+	public function email_versenden(){
+		if($_SERVER["REQUEST_METHOD"] == "POST"){
+			$emailDirection = $_POST['email'];
+
+			require("app/Views/mailer.php");
+			sendMail($emailDirection);
+		}else {
+			echo "Etwas ist schiefgelaufen";
+			require("app/Views/mailer.php");
+		}
+	}
+
 	/* Damit man sich ein- und ausloggen kann */
 	public function loginRegister()
 	{
