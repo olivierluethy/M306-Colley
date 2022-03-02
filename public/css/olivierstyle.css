@@ -223,30 +223,32 @@ body {
 }
 
 /* Style für Kontouebersicht */
-.konten {
+.kontouebersichtTabelle {
+  margin-left: 2rem;
   display: flex;
   flex-wrap: wrap;
-  margin-right: 5rem;
-  margin-left: 5rem;
-}
-.konten .konto {
-  border: 3px solid black;
-  background-color: #DAE8FC;
-  margin-top: 2rem;
   text-align: center;
-  width: 12%;
-  margin-left: 2rem;
-  transition-duration: 0.4s;
-  cursor: pointer;
 }
-.konten .konto:hover {
+.kontouebersichtTabelle .konto {
+  border: 2px solid black;
+  background-color: #DAE8FC;
+  cursor: pointer;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  transition-duration: 0.4s;
+}
+.kontouebersichtTabelle .konto:hover {
   box-shadow: 0 0 10px 5px lightgray;
 }
-.konten .konto p {
+.kontouebersichtTabelle .konto p {
   margin: 2rem;
 }
-.konten .konto p:nth-child(1) {
+.kontouebersichtTabelle .konto p:nth-child(1) {
   font-weight: bold;
+}
+
+.part {
+  margin: 2rem;
 }
 
 /* Login and Register Page Error */

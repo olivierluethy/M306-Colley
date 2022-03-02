@@ -43,6 +43,7 @@
             <tr>
                 <td><label>Haben:</label></td>
                 <td>
+                    <!-- https://stackoverflow.com/questions/18796221/creating-a-select-box-with-a-search-option -->
                     <select name="haben" id="haben" placeholder="Bitte wählen sie ein Konto aus">
                         <option value="">-- Select --</option>
                         <option style="background-color: blue; color: white;" disabled>1 Aktiven</option>
