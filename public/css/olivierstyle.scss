@@ -170,6 +170,10 @@ body {
     tr {
         height: 5vh;
         td {
+            .selectize-control {
+                width: 200%;
+                margin-top: 1rem;
+            }
             button[type=submit] {
                 background-color: white;
                 border: 1px solid black;

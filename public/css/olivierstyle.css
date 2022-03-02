@@ -150,6 +150,10 @@ body {
 .TabelleKlein tr {
   height: 5vh;
 }
+.TabelleKlein tr td .selectize-control {
+  width: 200%;
+  margin-top: 1rem;
+}
 .TabelleKlein tr td button[type=submit] {
   background-color: white;
   border: 1px solid black;
