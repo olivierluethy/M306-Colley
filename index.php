@@ -31,6 +31,8 @@ $routes = [
 	'ik-berechnen' => 'ColleyController@ikberechnen',
 	'vk-erstellen' => 'ColleyController@vkerstellen',
 	'vk-berechnen' => 'ColleyController@vkberechnen',
+	'gk-erstellen' => 'ColleyController@gkerstellen',
+	'gk-berechnen' => 'ColleyController@gkberechnen',
 ];
 
 $db = [

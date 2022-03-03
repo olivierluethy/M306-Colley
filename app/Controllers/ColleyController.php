@@ -14,6 +14,7 @@ class ColleyController
 		}
 
       	include("app/Views/sideNav.view.php");
+		include('app/Controllers/inc/welcome.inc.php');
 		require 'app/Views/welcome.view.php';
 	}
 
