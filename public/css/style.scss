@@ -1,5 +1,8 @@
 /* Body */
-body{padding: 20px;}
+body{
+    padding: 20px;
+}
+
 /* Überschriften */
 h1{
     text-align: center;
@@ -14,18 +17,9 @@ h2{
 }
 
 h3{
-    text-align: left;
+    text-align: center;
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-block-end: 0px;
-}
-
-h4{
-    text-align: left;
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-block-start: 2em;
-    margin-block-end: 0px;
 }
 
  /* Schrift */
@@ -34,18 +28,22 @@ p{
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .left{
     text-align: left;
     padding-right: 5px;
 }
+
 .center{
     text-align: center;
     padding: 0 5px;
 }
+
 .right{
     text-align: right;
     padding-left: 5px;
 }
+
 .ergebnis{text-align: left;}
 .double{text-decoration: underline double;}
 
@@ -63,37 +61,27 @@ input{
 }
 
 /* Table */
-.side{width: 50%;}
+.side{
+    width: 50%;
+}
+
 table{
     border: none;
     border-collapse: collapse;
 }
-tr{border: none;}
+
 th, td{
-    border: 1px solid black;
+    border: none;
+    //border: 1px solid red;
     font-size: 1em;
     font-family: Arial, Helvetica, sans-serif;
     width:  max-content;
 }
-.weiss{border: none}
-.b-center{
-    border-top: 1px solid black;
-    border-right: none;
-    border-bottom: 1px solid black;
-    border-left: none;
+
+.border{
+    border: 1px solid darkgrey;
 }
-.b-left{
-    border-top: 1px solid black;
-    border-right: none;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-}
-.b-right{
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    border-left: none;
-}
+
 td > a > button{
     margin: 5px 0;
 }
@@ -107,4 +95,8 @@ td > a > button{
         border-radius: 50%;
         width: 25%;
     }
+}
+
+.dark{
+    background-color: lightgrey;
 }

@@ -80,7 +80,7 @@ class ColleyController
         require 'app/Views/config.php';
     }
 
-    /* Einkaufskalkulation */
+    // Einkaufskalkulation
     public function ekerstellen()
     {
         include 'app/Controllers/inc/Einkauf/ek-array.inc.php'; // Array für die for-Schlaufe
@@ -91,36 +91,66 @@ class ColleyController
     {
         include 'app/Controllers/inc/Einkauf/ek-array.inc.php'; // Array für die for-Schlaufe
         include 'app/Controllers/inc/Einkauf/ek-berechnung.inc.php'; // Berechnungen
-        require 'app/Views/ek-berechnen.view.php';
+        if($Katalogpreis == 0 || $Menge == 0):
+            require 'app/Controllers/inc/Einkauf/ek-fehler.inc.php';
+        else:
+            require 'app/Views/ek-berechnen.view.php';
+        endif;
     }
 
-	/* Interne Kalkulation */
-	public function ikerstellen()
-	{
-		include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
-		require 'app/Views/ik-erstellen.view.php';
-	}
+    // Interne Kalkulation
+    public function ikerstellen()
+    {
+        include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
+        require 'app/Views/ik-erstellen.view.php';
+    }
 
-	public function ikberechnen()
-	{
-		include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
-		include 'app/Controllers/inc/Intern/ik-berechnung.inc.php'; // Berechnungen
-		require 'app/Views/ik-berechnen.view.php';
-	}
+    public function ikberechnen()
+    {
+        include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
+        include 'app/Controllers/inc/Intern/ik-berechnung.inc.php'; // Berechnungen
+        if($Menge == 0 || $EinstandspreisFr == 0): 
+            require 'app/Controllers/inc/Intern/ik-fehler.inc.php';
+        else:
+            require 'app/Views/ik-berechnen.view.php';
+        endif;
+    }
 
-	/* Verkaufskalkulation */
-	public function vkerstellen()
-	{
-		include 'app/Controllers/inc/Verkauf/vk-array.inc.php'; // Array für die for-Schlaufe
-		require 'app/Views/vk-erstellen.view.php';
-	}
+    // Verkaufskalkulation
+    public function vkerstellen()
+    {
+        include 'app/Controllers/inc/Verkauf/vk-array.inc.php'; // Array für die for-Schlaufe
+        require 'app/Views/vk-erstellen.view.php';
+    }
 
-	public function vkberechnen()
-	{
-		include 'app/Controllers/inc/Verkauf/vk-array.inc.php'; // Array für die for-Schlaufe
-		include 'app/Controllers/inc/Verkauf/vk-berechnung.inc.php'; // Berechnungen
-		require 'app/Views/vk-berechnen.view.php';
-	}
+    public function vkberechnen()
+    {
+        include 'app/Controllers/inc/Verkauf/vk-array.inc.php'; // Array für die for-Schlaufe
+        include 'app/Controllers/inc/Verkauf/vk-berechnung.inc.php'; // Berechnungen
+        if($Menge == 0 || $EinstandspreisFr == 0):
+            require 'app/Controllers/inc/Verkauf/vk-fehler.inc.php';
+        else:
+            require 'app/Views/vk-berechnen.view.php';
+        endif;
+    }
+
+    // Gesamtkalkulation
+    public function gkerstellen()
+    {
+        include 'app/Controllers/inc/Gesamt/gk-array.inc.php'; // Array für die for-Schlaufe
+        require 'app/Views/gk-erstellen.view.php';
+    }
+
+    public function gkberechnen()
+    {
+    include 'app/Controllers/inc/Gesamt/gk-array.inc.php'; // Array für die for-Schlaufe
+    include 'app/Controllers/inc/Gesamt/gk-berechnung.inc.php'; // Berechnungen
+    if($Menge == 0 || $eKatalogpreisFr == 0):
+        require 'app/Controllers/inc/Gesamt/gk-fehler.inc.php';
+    else:
+        require 'app/Views/gk-berechnen.view.php';
+    endif;
+    }
 	
 	/* Bilanz */
 	public function bilanz(){
