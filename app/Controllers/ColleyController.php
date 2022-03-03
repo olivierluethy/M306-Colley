@@ -23,14 +23,22 @@ class ColleyController
 
 	/* Die Mail wird innert dieser Funktion versenden */
 	public function email_versenden(){
+		session_start();
+
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
-			$emailDirection = $_POST['email'];
+			$_SESSION["emailDirection"] = $_POST['email'];
 
 			require("app/Views/mailer.php");
-			sendMail($emailDirection);
+			sendMail($_SESSION["emailDirection"]);
 		}else {
 			echo "Etwas ist schiefgelaufen";
 			require("app/Views/mailer.php");
+		}
+	}
+
+	public function passwort_zuruecksetzen(){
+		if(isset($_POST['email'])){
+			require 'app/Views/passwort_zuruecksetzen.view.php';
 		}
 	}
 
@@ -38,11 +46,12 @@ class ColleyController
 	public function loginRegister()
 	{
 		session_start();
+
 		// Check if the user is already logged in, if yes then redirect him to index page
 		if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     		header("location: home");
-    	exit;
-}
+    		exit;
+		}
 		require 'app/Views/loginRegister.view.php';
 	}
 

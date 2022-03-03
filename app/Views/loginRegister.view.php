@@ -41,9 +41,6 @@ $_SESSION['email'] = "";
                         <p id="passwort_login_error"></p>
                         <button type="submit">Login</button>
                     </form>
-                    <form id="sendEmail" action="passwortZurueckEmailSeite" method="post">
-                        <input type="submit" value="Passwort zurücksetzen" />
-                    </form>
                 </div>
             </td>
             <td>

@@ -84,8 +84,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             header("location: home");
                         } else {
                             // Display an error message if password is not valid
-                            echo "<h2>The password you entered was not valid.</h2>";
-                            echo "<a href='loginRegister'><button class='back'>Try again</button></a>";
+                            echo "<div class='loginPasswordIsWrong'>
+                                    <h2>Das von Ihnen eingegebene Passwort war nicht gültig.</h2>
+                                    <a href='loginRegister'><button class='back'>Noch einmal versuchen</button></a>
+
+                                    <h2>Falls Sie ihr Passwort vergessen haben, können Sie es hier zurücksetzen.</h2>
+                                    <form id='sendEmail' action='passwortZurueckEmailSeite' method='POST'>
+                                        <input type='submit' value='Passwort zurücksetzen' />
+                                    </form>
+                                </div>";
                         }
                     }
                 } else {

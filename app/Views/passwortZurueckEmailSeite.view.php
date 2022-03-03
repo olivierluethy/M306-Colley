@@ -12,13 +12,15 @@
 <body>
 
 <div class="passwortZuruecksetzen">
-<h1>Bitte geben Sie hier ihre Email Adresse ein</h1>
+<h1>Bitte geben Sie hier ihre Email Adresse ein, damit Sie ihr Passwort zurücksetzen können.</h1>
     <form action="email_versenden" method="POST">
         <label for="fname">Email:</label><br>
-        <input type="text" id="fname" name="email"><br><br>
+        <input type="text" id="email" name="email"><br><br>
         <input type="submit" value="Submit">
     </form>
 </div>
+
+<script src="public/js/clientSideValidationSendEmailInput.js"></script>
 
 </body>
 

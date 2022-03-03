@@ -77,24 +77,6 @@ body {
   margin-right: 15rem;
   text-align: center;
 }
-.logintable tr td .login #sendEmail input[type=submit] {
-  margin-top: 2rem;
-  background-color: #203f59;
-  border: 1px solid #203f59;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-.logintable tr td .login #sendEmail input[type=submit]:hover {
-  background-color: white;
-  color: #203f59;
-}
 .logintable tr td .login button[type=submit] {
   background-color: #008CFF;
   border: 2px solid #008CFF;
@@ -252,6 +234,46 @@ body {
 }
 
 /* Login and Register Page Error */
+.loginPasswordIsWrong {
+  margin: 2rem;
+}
+.loginPasswordIsWrong .back {
+  background-color: #4CAF50;
+  border: 1px solid #4CAF50;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.loginPasswordIsWrong .back:hover {
+  background-color: white;
+  border: 1px solid #4CAF50;
+  color: #4CAF50;
+}
+.loginPasswordIsWrong #sendEmail input[type=submit] {
+  margin-top: 2rem;
+  background-color: #203f59;
+  border: 1px solid #203f59;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.loginPasswordIsWrong #sendEmail input[type=submit]:hover {
+  background-color: white;
+  color: #203f59;
+}
+
 .back {
   background-color: #4CAF50;
   border: 1px solid #4CAF50;

@@ -13,9 +13,10 @@ $routes = [
 	'erfolgsrechnung' => 'ColleyController@erfolgsrechnung',
 	'kalkulation' => 'ColleyController@kalkulation',
 
-	/* Um Emails zu versenden */
+	/* Um Emails zu versenden und Passwort zurücksetzen */
 	'email_versenden' => 'ColleyController@email_versenden',
 	'passwortZurueckEmailSeite' => 'ColleyController@passwortZurueckEmailSeite',
+	'passwort_zuruecksetzen' => 'ColleyController@passwort_zuruecksetzen',
 
 	/* Routes for login and registration */
 	'loginRegister' => 'ColleyController@loginRegister',

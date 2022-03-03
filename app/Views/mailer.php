@@ -28,6 +28,7 @@ use PHPMailer\PHPMailer\PHPMailer;
  */
 function sendMail($emailDirection)
 {
+
     $mail = new PHPMailer(true);
     try {
         $mail->isSMTP();
@@ -48,7 +49,7 @@ function sendMail($emailDirection)
         /* Hier wird der Betreff hinzugefügt */
         $mail->setFrom("colley@gmx.ch", 'Colley Support');
         /* An wem soll das Mail verschickt werden */
-        $rec = $emailDirection;
+        $rec = $_SESSION["emailDirection"];
         $mail->addAddress($rec);
 
         $mail->isHTML(true);
@@ -56,14 +57,11 @@ function sendMail($emailDirection)
         /* Hier kommt der Betreff */
         $mail->Subject = "Passwort zurücksetzen - Bitte keine Antwort versenden";
         /* Hier kommt die Nachricht */
+        /* https://github.com/PHPMailer/PHPMailer/issues/1119 */
         $mail->Body = "
-
-        <!DOCTYPE html>
-        <html lang='en'>
+        <html>
         <head>
-            <meta charset='UTF-8'>
-            <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Email</title>
         </head>
         <body>
         <style>
@@ -74,7 +72,6 @@ function sendMail($emailDirection)
             font-family: Arial;
             background-color: lightgray;
         }
-        
         .container {
             background-color: white;
             border-radius: 3px;
@@ -83,19 +80,17 @@ function sendMail($emailDirection)
             margin-right: auto;
             text-align: center;
         }
-        
         h2 {
             padding-top: 2rem;
         }
-        
         p:nth-child(4) {
             padding-bottom: 2rem;
         }
-        
-        input[type=button] {
+        button {
             background-color: royalblue;
             border: 1px solid royalblue;
-            width: 40%;
+            color: white;
+            width: 50%;
             padding: 16px 32px;
             text-align: center;
             display: inline-block;
@@ -105,30 +100,35 @@ function sendMail($emailDirection)
             text-decoration: none;
             cursor: pointer;
         }
-        
-        input[type=button]:hover {
+        button:hover {
             transition: 0.5s ease;
             color: royalblue;
             background-color: white;
             cursor: pointer;
         }
+        input[type=text]{
+            display: none;
+        }
         </style>
-
         <h1>Colley</h1>
-        <div class='container'>
-            <h2>Passwort zurücksetzen</h2>
-            <p>Falls Sie ihr Passwort vergessen haben, verwenden Sie bitte den Link unten um es zurücksetzen zu können.</p>
-            <input type=\"button\" value=\"Setzen Sie ihr Passwort zurück\" onclick=\"location.href='www.google.com';\">
-            <p>Falls sie ihr Passwort nicht zurücksetzen wollen, können sie diese email ignorieren. Nur eine Person die zugriff auf ihre Email-Adresse hat, kann ihr Passwort zurücksetzen.</p>
-        </div>
+            <div class='container'>
+                <h2>Passwort zurücksetzen</h2>
+                <p>Falls Sie ihr Passwort vergessen haben, verwenden Sie bitte den Link unten um es zurücksetzen zu können.</p>
+                <form action='http://localhost/M306-Colley/passwort_zuruecksetzen' method='POST'>
+                    <input type='text' name='email' id='email' value='$rec'>
+                    <button type='submit'>Setzen Sie ihr Passwort zurück</button>
+                </form>
+                <p>Falls sie ihr Passwort nicht zurücksetzen wollen, können sie diese email ignorieren. Nur eine Person die zugriff auf ihre Email-Adresse hat, kann ihr Passwort zurücksetzen.</p>
+            </div>
         </body>
         </html>";
         $mail->AltBody = 'Sie verwenden einen alten Email-Klient. Daher kann der Inhalt nicht dargestellt werden.';
         $mail->send();
         echo "<div class='emailSended'>
-        <h2>Email wurde gesendet</h2><a href='loginRegister'><button class='back'>Zurück</button></a>
-        <p>Falls Sie keine Email erhalten haben, schauen sie bitte in ihrem Spam Ordner nach!</p>
-        <div>";
+                <h2>Email wurde gesendet</h2>
+                <a href='loginRegister'><button class='back'>Zurück</button></a>
+                <p>Falls Sie keine Email erhalten haben, schauen sie bitte in ihrem Spam Ordner nach!</p>
+            <div>";
     } catch (Exception $e) {
         echo "Fehler: " . $e;
         return "Auftrag wurde aktualisiert, aber die Email konnte nicht gesendet werden.";
