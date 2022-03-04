@@ -9,12 +9,12 @@
 </head>
 <body>
     <h1>Colley</h1>
-    <h2>Interne Kalkulation</h2>
-    <p class="center">Bitte geben Sie den Katalogpreis eines einzelnen Stückes an, da der Kalkulator sonst falsch rechnet.</p>
-    <form action="ik-berechnen" method="POST">
+    <h2>Gesamte Kalkulation</h2>
+    <p class="center">Bitte giben Sie den Katalogpreis eines einzelnen Stückes an, da der Kalkukator sonst falsch rechnet.</p>
+    <form action="gk-berechnen" method="POST">
         <table>
             <tr>
-                <td class="side"></td>
+                <td class="side "></td>
                 <td>
                     <table>
                         <tr class="border">
@@ -25,36 +25,39 @@
                             <tr class="border">
                             <!-- Zeilentitel -->
                                 <th class="left"><?= $eingabe[$i][0] ?></th>
-                            <!-- Bezeichnung CHF / Anz -->
-                                <td><?= $eingabe[$i][1] ?></td>
-                            <!-- Input CHF / Anz -->
+                            <!-- Bezeichnung -->
+                                <td class="center">
+                                    <?= $eingabe[$i][1] ?>
+                                </td>
+                            <!-- Input CHF -->
                                 <td>
                                     <input type="text" 
                                     name="<?= $eingabe[$i][2] ?>" 
                                     id="<?= $eingabe[$i][2] ?>" 
-                                    <?php if($eingabe[$i][0] == 'Einstandspreis'): echo 'required'; endif ?> 
                                     placeholder="1234.56" 
                                     tabindex="<?= $eingabe[$i][3] ?>" 
-                                    value="<?= $eingabe[$i][4] ?>">
+                                    <?php if($eingabe[$i][0] == 'Katalogpreis'){ echo 'required';} ?>
+                                    <?php if($eingabe[$i][0] == 'Menge'){ echo 'required';} ?>
+                                    value="<?= $value[$i][0] ?>">
                                 </td>
-                                <?php if($eingabe[$i][5] == ''): echo '<td colspan="2"></td>'; else: ?>
                             <!-- Input % -->
+                                <?php if($eingabe[$i][4] != ''): ?>
                                     <td>
                                         <input type="text" 
-                                        name="<?= $eingabe[$i][5] ?>" 
-                                        id="<?= $eingabe[$i][5] ?>" 
-                                        placeholder="1234.56" 
-                                        tabindex="<?= $eingabe[$i][6] ?>" 
-                                        value="<?= $eingabe[$i][7] ?>">
+                                        name="<?= $eingabe[$i][4] ?>" 
+                                        id="<?= $eingabe[$i][4] ?>"
+                                        placeholder="1234.56"
+                                        tabindex="<?= $eingabe[$i][5] ?>"
+                                        value="<?= $value[$i][1] ?>">
                                     </td>
-                            <!-- Bezeichnung % -->
-                                    <td><?= $eingabe[$i][8] ?></td>
-                                <?php endif ?>
+                                <!-- Bezeichnung % -->
+                                    <td class="center">%</td>
+                                <?php else: echo '<td colspan="2"></td>'; endif ?>
                             </tr>
                         <?php endfor ?>
                         <tr>
-                            <td><a href="kalkulation"><button type="button" tabindex="8">Zurück</button></a></td>
-                            <td class="center" colspan="4"><button type="submit" tabindex="7">Berechnung</button></td>
+                            <td><a href="kalkulation"><button type="button" tabindex="18">Zurück</button></a></td>
+                            <td class="center" colspan="4"><button type="submit" tabindex="17">Berechnen</button></td>
                         </tr>
                     </table>
                 </td>

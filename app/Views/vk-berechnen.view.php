@@ -13,45 +13,68 @@
     <p class="center">Die berechnete Verkaufskalkulation</p>
     <table>
         <tr>
-            <td class="side weiss"></td>
-            <td class="weiss">
+            <td class="side"></td>
+            <td>
                 <table>
-                    <tr>
-                        <th>Kosten</th>
-                        <th colspan="2">pro Stück</th>
-                        <th colspan="2">Skonto Berechnung</th>
+                    <tr class="border">
+                        <th colspan="2">Kosten</th>
+                        <th colspan="4">Skonto</th>
+                        <th colspan="4">Rabatt</th>
                         <th></th>
-                        <th colspan="2">Rabatt Berechnung</th>
+                        <th colspan="2">Pro Stück</th>
                         <?php if($Menge != 1): ?>
-                            <th></th>
+                            <th colspan="3"></th>
                             <th colspan="2"><?= $Menge ?> Stück</th>
                         <?php endif ?>
                     </tr>
                     <?php for($i=0; $i<count($ausgabe); $i++): ?>
-                        <tr>
-                            <th class="left"><?= $ausgabe[$i][0] ?></th>
-                            <td class="center b-left">CHF</td>
-                            <td class="right b-right"><?= number_format(${$ausgabe[$i][1]}, 2, ",", "'") ?></td>
-                            <?php if(!empty($ausgabe[$i][2])):?>
-                                <td class="right b-left"><?= number_format(${$ausgabe[$i][2]}, 2, ",") ?></td>
-                                <td class="center b-right">%</td>
-                            <?php else: echo '<td colspan="2"></td>'; endif ?>
-                            <?php if($ausgabe[$i][0] == 'Rechnungsbetrag'): ?>
-                                <td class="center">=></td>
-                            <?php else: echo '<td></td>'; endif ?>
-                            <?php if(!empty($ausgabe[$i][3])): ?>
-                                <td class="right b-left"><?= number_format(${$ausgabe[$i][3]}, 2, ",") ?></td>
-                                <td class="center b-right">%</td>
-                            <?php else: echo '<td colspan="2"></td>'; endif ?>
+                        <tr class="border">
+                        <!-- Fix -->
+                            <th class="center"><?= $ausgabe[$i][0] ?></th>
+                            <th class="left"><?= $ausgabe[$i][1] ?></th>
+                        <!-- Zeile 1 + 2 -->
+                            <?php if(empty($ausgabe[$i][2]) && empty($ausgabe[$i][3])): ?>
+                                <td colspan="4"></td>
+                                <td colspan="4"></td>
+                        <!-- Zeile 3 + 4 -->
+                            <?php elseif(!empty($ausgabe[$i][2]) && empty($ausgabe[$i][3])): ?>
+                                <td></td>
+                                <td class="right"><?= number_format(${$ausgabe[$i][2]},2,",") ?></td>
+                                <td class="center">%</td>
+                                <td></td>
+                                <td colspan="4"></td>
+                        <!-- Zeile 5 -->
+                            <?php elseif(!empty($ausgabe[$i][2]) && !empty($ausgabe[$i][3])): ?>
+                                <td></td>
+                                <td class="right"><?= number_format(${$ausgabe[$i][2]},2,",") ?></td>
+                                <td class="center">%</td>
+                                <td class="center" colspan="2">=></td>
+                                <td class="right"><?= number_format(${$ausgabe[$i][3]},2,",") ?></td>
+                                <td class="center">%</td>
+                                <td></td>
+                        <!-- Zeile 6 + 7 -->
+                            <?php elseif(empty($ausgabe[$i][2]) && !empty($ausgabe[$i][3])): ?>
+                                <td colspan="4"></td>
+                                <td></td>
+                                <td class="right"><?= number_format(${$ausgabe[$i][3]},2,",") ?></td>
+                                <td class="center">%</td>
+                                <td></td>
+                            <?php endif ?>
+                        <!-- Fix -->
+                            <td></td>
+                            <td class="center">CHF</td>
+                            <td class="right"><?= number_format(${$ausgabe[$i][4]},2,",","'") ?></td>
                             <?php if($Menge != 1): ?>
+                                <td class="center"></td>
                                 <td class="center">=></td>
-                                <td class="center b-left">CHF</td>
-                                <td class="right b-right"><?= number_format(${$ausgabe[$i][4]}, 2, ",", "'") ?></td>
+                                <td class="center"></td>
+                                <td class="center">CHF</td>
+                                <td class="right"><?= number_format(${$ausgabe[$i][5]},2,",","'") ?></td>
                             <?php endif ?>
                         </tr>
                     <?php endfor ?>
                     <tr>
-                        <td class="center weiss" colspan="<?php if($Menge == 1): echo '8'; else: echo '11'; endif ?>">
+                        <td class="center" colspan="<?php if($Menge == 1): echo '13'; else: echo '18'; endif ?>">
                             <a href="vk-erstellen">
                                 <button type="button">Eine neue Berechnung beginnen</button>
                             </a>
@@ -59,7 +82,7 @@
                     </tr>
                 </table>
             </td>
-            <td class="side weiss"></td>
+            <td class="side"></td>
         </tr>
     </table>
 </body>

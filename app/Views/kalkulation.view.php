@@ -25,14 +25,26 @@
         <tr>
             <th>
                 <div class="option">
-                    <img src="assets/interne_kalkulation.svg" alt="">
-                    <p>Interne Kalkulation</p>
+                    <img src="assets/einkaufs_kalkulation.svg" alt="">
+                    <p>Einkaufskalkulation</p>
                 </div>
             </th>
             <th>
                 <div class="option">
-                    <img src="assets/verkaufskalkulation.svg" alt="">
+                    <img src="assets/interne_kalkulation.svg" alt="">
+                    <p>Internekalkulation</p>
+                </div>
+            </th>
+            <th>
+                <div class="option">
+                    <img src="assets/verkaufs_kalkulation.svg" alt="">
                     <p>Verkaufskalkulation</p>
+                </div>
+            </th>
+            <th>
+                <div class="option">
+                    <img src="assets/gesamte_kalkulation.svg" alt="">
+                    <p>Gesamtekalkulation</p>
                 </div>
             </th>
         </tr>

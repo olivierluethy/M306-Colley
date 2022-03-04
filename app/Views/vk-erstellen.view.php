@@ -14,35 +14,46 @@
     <form action="vk-berechnen" method="POST">
         <table>
             <tr>
-                <td class="side weiss"></td>
-                <td class="weiss">
+                <td class="side"></td>
+                <td>
                     <table>
-                        <tr>
+                        <tr class="border">
                             <th>Kosten</th>
                             <th colspan="4">Angaben</th>
                         </tr>
                         <?php for($i=0; $i<count($eingabe); $i++): ?>
-                            <tr>
+                            <tr class="border">
                                 <th class="left"><?= $eingabe[$i][0] ?></th>
-                                <td class="center b-left"><?= $eingabe[$i][1] ?></td>
-                                <td class="b-right">
-                                    <input type="text" name="<?= $eingabe[$i][2] ?>" id="<?= $eingabe[$i][2] ?>" tabindex="<?= $eingabe[$i][3] ?>" placeholder="<?= $eingabe[$i][8] ?>" <?php if($eingabe[$i][0] == 'Einstandspreis' || $eingabe[$i][0] == 'Menge'): echo 'required'; endif ?>>
+                                <td class="center"><?= $eingabe[$i][1] ?></td>
+                                <td>
+                                    <input type="text" 
+                                    name="<?= $eingabe[$i][2] ?>" 
+                                    id="<?= $eingabe[$i][2] ?>" 
+                                    tabindex="<?= $eingabe[$i][3] ?>" 
+                                    <?php if($eingabe[$i][0] == 'Einstandspreis' || $eingabe[$i][0] == 'Menge'): echo 'required'; endif ?>
+                                    placeholder="<?= $eingabe[$i][8] ?>" 
+                                    value="<?= $eingabe[$i][4] ?>">
                                 </td>
                                 <?php if(!empty($eingabe[$i][5])): ?>
-                                    <td class="b-left">
-                                        <input type="text" name="<?= $eingabe[$i][5] ?>" id="<?= $eingabe[$i][5] ?>" tabindex="<?= $eingabe[$i][6] ?>" placeholder="<?= $eingabe[$i][8] ?>">
+                                    <td>
+                                        <input type="text" 
+                                        name="<?= $eingabe[$i][5] ?>" 
+                                        id="<?= $eingabe[$i][5] ?>" 
+                                        tabindex="<?= $eingabe[$i][6] ?>" 
+                                        placeholder="<?= $eingabe[$i][8] ?>"
+                                        value="<?= $eingabe[$i][7] ?>">
                                     </td>
-                                    <td class="center b-right">%</td>
+                                    <td class="center">%</td>
                                 <?php else: echo '<td colspan="2"></td>'; endif ?>
                             </tr>
                         <?php endfor ?>
                         <tr>
-                            <td class="weiss"><a href="kalkulation"><button type="button" tabindex="9">Zurück</button></a></td>
-                            <td class="center weiss" colspan="4"><button type="submit" tabindex="8">Berechnung</button></td>
+                            <td><a href="kalkulation"><button type="button" tabindex="9">Zurück</button></a></td>
+                            <td class="center" colspan="4"><button type="submit" tabindex="8">Berechnung</button></td>
                         </tr>
                     </table>
                 </td>
-                <td class="side weiss"></td>
+                <td class="side"></td>
             </tr>
         </table>
     </form>
