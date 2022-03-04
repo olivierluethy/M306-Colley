@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Setzen sie hier ihr Passwort zurück</h1>
+    <h1>Der Code ist falsch!</h1>
 </body>
 </html>

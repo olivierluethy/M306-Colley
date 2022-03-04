@@ -45,3 +45,16 @@ a {
     text-decoration: none;
     color: white;
 }
+
+#mailer_code_error {
+    text-align: center;
+    color: red;
+}
+
+input[type=number]:nth-child(2) {
+    display: none;
+}
+
+input[type=email] {
+    display: none;
+}

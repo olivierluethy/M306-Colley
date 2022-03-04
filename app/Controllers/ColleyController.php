@@ -26,10 +26,10 @@ class ColleyController
 		session_start();
 
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
-			$_SESSION["emailDirection"] = $_POST['email'];
+			$emailDirection = $_POST['email'];
 
 			require("app/Views/mailer.php");
-			sendMail($_SESSION["emailDirection"]);
+			sendMail($emailDirection);
 		}else {
 			echo "Etwas ist schiefgelaufen";
 			require("app/Views/mailer.php");
@@ -37,8 +37,12 @@ class ColleyController
 	}
 
 	public function passwort_zuruecksetzen(){
-		if(isset($_POST['email'])){
-			require 'app/Views/passwort_zuruecksetzen.view.php';
+		if($_SERVER["REQUEST_METHOD"] == "POST"){
+			if($_POST["generatedCode"] == $_POST["codeFromUser"]){
+				require 'app/Views/passwort_zuruecksetzen.view.php';
+			}else{
+				require 'app/Views/wrongCodeForPasswordBack.view.php';
+			}
 		}
 	}
 

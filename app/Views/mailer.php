@@ -28,8 +28,9 @@ use PHPMailer\PHPMailer\PHPMailer;
  */
 function sendMail($emailDirection)
 {
-
     $mail = new PHPMailer(true);
+    /* Generate Random Code */
+    $code = random_int(100000, 999999);
     try {
         $mail->isSMTP();
         $mail->Host = 'mail.gmx.ch';
@@ -49,7 +50,7 @@ function sendMail($emailDirection)
         /* Hier wird der Betreff hinzugefügt */
         $mail->setFrom("colley@gmx.ch", 'Colley Support');
         /* An wem soll das Mail verschickt werden */
-        $rec = $_SESSION["emailDirection"];
+        $rec = $emailDirection;
         $mail->addAddress($rec);
 
         $mail->isHTML(true);
@@ -114,10 +115,7 @@ function sendMail($emailDirection)
             <div class='container'>
                 <h2>Passwort zurücksetzen</h2>
                 <p>Falls Sie ihr Passwort vergessen haben, verwenden Sie bitte den Link unten um es zurücksetzen zu können.</p>
-                <form action='http://localhost/M306-Colley/passwort_zuruecksetzen' method='POST'>
-                    <input type='text' name='email' id='email' value='$rec'>
-                    <button type='submit'>Setzen Sie ihr Passwort zurück</button>
-                </form>
+                <button id='pass'>Der Code lautet: $code</button>
                 <p>Falls sie ihr Passwort nicht zurücksetzen wollen, können sie diese email ignorieren. Nur eine Person die zugriff auf ihre Email-Adresse hat, kann ihr Passwort zurücksetzen.</p>
             </div>
         </body>
@@ -126,7 +124,14 @@ function sendMail($emailDirection)
         $mail->send();
         echo "<div class='emailSended'>
                 <h2>Email wurde gesendet</h2>
-                <a href='loginRegister'><button class='back'>Zurück</button></a>
+                <h3>Geben Sie hier bitte den Code ein:</h3>
+                <form action='passwort_zuruecksetzen' method='POST'>
+                    <input type='email' name='userEmail' value='$emailDirection'>
+                    <input type='number' name='generatedCode' value='$code'>
+                    <input type='number' id='code' name='codeFromUser'>
+                    <p id='mailer_code_error'></p>
+                    <input type='submit' value='Senden'>
+                </form>
                 <p>Falls Sie keine Email erhalten haben, schauen sie bitte in ihrem Spam Ordner nach!</p>
             <div>";
     } catch (Exception $e) {
@@ -135,6 +140,7 @@ function sendMail($emailDirection)
     }
 }
 ?>
+<script src="public/js/clientSideValidationPasswortZurueck.js"></script>
 </body>
 
 </html>
