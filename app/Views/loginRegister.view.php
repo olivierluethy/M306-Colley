@@ -29,16 +29,30 @@ $_SESSION['email'] = "";
         <tr>
             <td>
                 <div class="login">
+                    <p id="passwort_login_error"></p>
+                    <p id="email_login_error"></p>
                     <h2>Login</h2>
                     <p>Willkommen zurück bei Colley.</p>
                     <p>Bitte melden Sie sich an.</p>
                     <form id="formLogin" action="login" method="POST">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email_login" name="email_login">
-                        <p id="email_login_error"></p>
-                        <label for="passwort">Passwort:</label>
-                        <input type="password" id="passwort_login" name="passwort_login">
-                        <p id="passwort_login_error"></p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="email">E-mail:</label>
+                                </td>
+                                <td>
+                                    <input type="email" id="email_login" name="email_login" placeholder="E-Mail-Adresse">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="passwort">Passwort:</label>
+                                </td>
+                                <td>
+                                    <input type="password" id="passwort_login" name="passwort_login" placeholder="Passwort">
+                                </td>
+                            </tr>
+                        </table>
                         <button type="submit">Login</button>
                     </form>
                 </div>
@@ -48,20 +62,40 @@ $_SESSION['email'] = "";
             </td>
             <td>
                 <div class="newAccount">
+                    <p id="email_register_error"></p>
+                    <p id="passwort_register_error"></p>
+                    <p id="passwortverify_register_error"></p>
                     <h2>neuer Account</h2>
                     <p>Willkommen bei Colley.</p>
                     <p>Noch kein Konto? Kein Problem.</p>
                     <p>Bitte erstellen Sie ein Konto.</p>
                     <form id="formRegister" action="register" method="POST">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email_register" name="email_register">
-                        <p id="email_register_error"></p>
-                        <label for="passwort">Passwort:</label>
-                        <input type="password" id="passwort_register" name="passwort_register">
-                        <p id="passwort_register_error"></p>
-                        <label for="passwort_verify">Passwort:</label>
-                        <input type="password" id="passwort_verify" name="passwort_verify">
-                        <p id="passwortverify_register_error"></p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="email">E-mail:</label>
+                                </td>
+                                <td>
+                                    <input type="email" id="email_register" name="email_register" placeholder="E-Mail-Adresse">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="passwort">Passwort:</label>
+                                </td>
+                                <td>
+                                    <input type="password" id="passwort_register" name="passwort_register" placeholder="Passwort">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="passwort_verify">Passwort:</label>
+                                </td>
+                                <td>
+                                    <input type="password" id="passwort_verify" name="passwort_verify" placeholder="Passwort erneut eingeben">
+                                </td>
+                            </tr>
+                        </table>
                         <button type="submit">Sign Up</button>
                     </form>
                 </div>

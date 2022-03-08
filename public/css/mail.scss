@@ -4,57 +4,31 @@ body {
     text-align: center;
     font-family: Arial;
     background-color: lightgray;
-}
-
-.container {
-    background-color: white;
-    border-radius: 3px;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-h2 {
-    padding-top: 2rem;
-}
-
-p:nth-child(4) {
-    padding-bottom: 2rem;
-}
-
-button {
-    background-color: royalblue;
-    border: 1px solid royalblue;
-    color: white;
-    width: 40%;
-    padding: 16px 32px;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    &:hover {
-        color: royalblue;
-        background-color: white;
+    .emailSended {
+        margin-top: 2rem;
+        margin-left: 2rem;
+        input[type=email] {
+            visibility: hidden;
+            display: none;
+        }
+        input[type=number]:nth-child(2) {
+            visibility: hidden;
+            display: none;
+        }
+        input[type=submit] {
+            background-color: #008CFF;
+            border: 2px solid #008CFF;
+            color: white;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            border-radius: 15px;
+            padding: 15px 32px;
+            cursor: pointer;
+            &:hover {
+                background-color: white;
+                color: #008CFF;
+                border: 2px solid #008CFF;
+            }
+        }
     }
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-#mailer_code_error {
-    text-align: center;
-    color: red;
-}
-
-input[type=number]:nth-child(2) {
-    display: none;
-}
-
-input[type=email] {
-    display: none;
 }

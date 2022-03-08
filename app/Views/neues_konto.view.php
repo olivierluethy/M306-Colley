@@ -27,27 +27,25 @@
     <form>
         <table class="TabelleKlein margin-auto">
             <tr>
-                <td><label for="fname">Kontonummer:</label></td>
+                <td><label for="kontonummer">Kontonummer:</label></td>
                 <td><input type="number" id="kontonummer" name="kontonummer"></td>
             </tr>
             <tr>
-                <td><label for="lname">Titel:</label></td>
+                <td><label for="titel">Titel:</label></td>
                 <td>
                     <input type="text" id="titel" name="titel">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <p>Verwendungszweck:</p>
+                <label for="verwendungszweck">Verwendungszweck:</label>
                 </td>
                 <td>
                     <textarea name="verwendungszweck" id="verwendungszweck" cols="30" rows="10"></textarea>
                 </td>
             </tr>
             <tr>
-                <td>
-
-                </td>
+                <td></td>
                 <td>
                     <button type="submit">Journaleintrag erstellen</button>
                 </td>
