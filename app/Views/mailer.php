@@ -30,6 +30,7 @@ function sendMail($emailDirection)
 {
     $mail = new PHPMailer(true);
     /* Generate Random Code */
+    /* https://stackoverflow.com/questions/5464906/how-can-i-generate-a-6-digit-unique-number */
     $code = random_int(100000, 999999);
     try {
         $mail->isSMTP();
@@ -76,16 +77,13 @@ function sendMail($emailDirection)
         .container {
             background-color: white;
             border-radius: 3px;
-            width: 50%;
+            width: 60%;
             margin-left: auto;
             margin-right: auto;
             text-align: center;
         }
-        h2 {
-            padding-top: 2rem;
-        }
-        p:nth-child(4) {
-            padding-bottom: 2rem;
+        h1{
+            padding-top: 50px;
         }
         button {
             background-color: royalblue;
@@ -99,25 +97,28 @@ function sendMail($emailDirection)
             margin: 4px 2px;
             transition: 0.5s ease;
             text-decoration: none;
-            cursor: pointer;
-        }
-        button:hover {
-            transition: 0.5s ease;
-            color: royalblue;
-            background-color: white;
-            cursor: pointer;
         }
         input[type=text]{
             display: none;
         }
+        footer {
+            text-align: center;
+            padding-bottom: 50px;
+        }
         </style>
-        <h1>Colley</h1>
             <div class='container'>
+                <h1>Colley</h1>
                 <h2>Passwort zurücksetzen</h2>
-                <p>Falls Sie ihr Passwort vergessen haben, verwenden Sie bitte den Link unten um es zurücksetzen zu können.</p>
-                <button id='pass'>Der Code lautet: $code</button>
-                <p>Falls sie ihr Passwort nicht zurücksetzen wollen, können sie diese email ignorieren. Nur eine Person die zugriff auf ihre Email-Adresse hat, kann ihr Passwort zurücksetzen.</p>
+                <p><b>Guten Tag $emailDirection</b></p>
+                <p>Sie haben Ihr Passwort vergessen? Kein Problem!<br>Verwenden Sie den Code um Ihr Passwort wieder zurückzusetzen.<br>Das Colley Team wünscht Ihnen einen schönen Tag 🙌</p>
+                <p><b>Ihr Code lautet:</b></p>
+                <button id='pass'>$code</button>
+                <p style='padding-bottom: 50px;'>Falls Sie Ihr Passwort nicht zurücksetzen wollen, können Sie diese Email ignorieren. Nur eine Person die Zugriff auf Ihre Email-Adresse hat, kann Ihr Passwort zurücksetzen.</p>
             </div>
+            <footer>
+                <p>Falls Sie irgendwelche Fragen zu unseren Produkten oder Dienstleistungen haben,<br> sind Sie herzlich eingeladen, uns über diese Email-Adresse zu kontaktieren: <b>colley@gmx.ch</b></p>
+                <p>Copyright © 2022 Colley Inc. Alle Rechte vorbehalten.</p>
+            </footer>
         </body>
         </html>";
         $mail->AltBody = 'Sie verwenden einen alten Email-Klient. Daher kann der Inhalt nicht dargestellt werden.';
