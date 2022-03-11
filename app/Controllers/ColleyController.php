@@ -91,6 +91,10 @@ class ColleyController
 	/* Diese Seite enthält Sachen die angezeigt werden, sobald ein Fehler auftritt */
 	public function login()
 	{
+		$title = '';
+		$pdo = connectDatabase();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
 		require 'app/Views/login.php';
 	}
 
