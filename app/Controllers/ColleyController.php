@@ -37,6 +37,8 @@ class ColleyController
             $statement->execute();
 
 			require("app/Views/mailer.php");
+
+			/* Email wird versendet */
 			sendMail();
 		}else {
 			header("location: loginRegister");
@@ -102,6 +104,10 @@ class ColleyController
 	/* Diese Seite enthält Sachen die angezeigt werden, sobald ein Fehler auftritt */
 	public function register()
 	{
+		$title = '';
+		$pdo = connectDatabase();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 		require 'app/Views/register.php';
 	}
 
@@ -179,13 +185,13 @@ class ColleyController
 
     public function gkberechnen()
     {
-    include 'app/Controllers/inc/Gesamt/gk-array.inc.php'; // Array für die for-Schlaufe
-    include 'app/Controllers/inc/Gesamt/gk-berechnung.inc.php'; // Berechnungen
-    if($Menge == 0 || $eKatalogpreisFr == 0):
-        require 'app/Controllers/inc/Gesamt/gk-fehler.inc.php';
-    else:
-        require 'app/Views/gk-berechnen.view.php';
-    endif;
+		include 'app/Controllers/inc/Gesamt/gk-array.inc.php'; // Array für die for-Schlaufe
+		include 'app/Controllers/inc/Gesamt/gk-berechnung.inc.php'; // Berechnungen
+		if($Menge == 0 || $eKatalogpreisFr == 0):
+			require 'app/Controllers/inc/Gesamt/gk-fehler.inc.php';
+		else:
+			require 'app/Views/gk-berechnen.view.php';
+		endif;
     }
 	
 	/* Bilanz */
