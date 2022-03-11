@@ -68,6 +68,9 @@ class ColleyController
 
 	public function password_zuruecksetzen(){
 		session_start();
+		$title = '';
+		$pdo = connectDatabase();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		require 'app/Views/passwordReset.php';
 	}
 

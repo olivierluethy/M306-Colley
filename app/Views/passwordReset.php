@@ -31,18 +31,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before updating the database
     if(empty($new_password_err) && empty($confirm_password_err)){
         // Prepare an update statement
-        $sql = "UPDATE users SET password = ? WHERE id = ?";
+        $sql = "UPDATE users SET password = :password WHERE email = :email";
         
-        if($stmt = mysqli_prepare($link, $sql)){
+        if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "si", $param_password, $param_id);
+            $stmt->bindParam(":password", $param_password, PDO::PARAM_STR);
+            $stmt->bindParam(":email", $param_email, PDO::PARAM_INT);
             
             // Set parameters
             $param_password = password_hash($new_password, PASSWORD_DEFAULT);
-            $param_id = $_SESSION["id"];
+            $param_email = $_SESSION["emailDirection"];
             
             // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
+            if($stmt->execute()){
                 // Password updated successfully. Destroy the session, and redirect to login page
                 session_destroy();
                 header("location: loginRegister");
@@ -52,11 +53,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
 
             // Close statement
-            mysqli_stmt_close($stmt);
+            unset($stmt);
         }
     }
     
     // Close connection
-    mysqli_close($link);
+    unset($pdo);
 }
 ?>
