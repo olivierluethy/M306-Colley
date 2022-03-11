@@ -15,7 +15,8 @@ $routes = [
 
 	/* Um Emails zu versenden und Passwort zurücksetzen */
 	'email_versenden' => 'ColleyController@email_versenden',
-	'passwort_zuruecksetzen' => 'ColleyController@passwort_zuruecksetzen',
+	'checkIfCodeIsCorrect' => 'ColleyController@checkIfCodeIsCorrect',
+	'password_zuruecksetzen' => 'ColleyController@password_zuruecksetzen',
 
 	/* Routes for login and registration */
 	'loginRegister' => 'ColleyController@loginRegister',

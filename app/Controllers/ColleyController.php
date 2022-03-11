@@ -21,26 +21,54 @@ class ColleyController
 	/* Die Mail wird innert dieser Funktion versenden */
 	public function email_versenden(){
 		session_start();
+		
+		$_SESSION["code"] = random_int(100000, 999999);
 
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
-			$emailDirection = $_POST['email'];
+			$_SESSION["emailDirection"] = $_POST['email'];
+
+			$title = '';
+        	$pdo = connectDatabase();
+        	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $statement = $pdo->prepare('UPDATE `users` SET tmp_login_code = :tmp_login_code WHERE email = :email');
+            $statement->bindParam(':tmp_login_code', $_SESSION["code"], PDO::PARAM_STR);
+			$statement->bindParam(':email', $_SESSION["emailDirection"], PDO::PARAM_STR);
+            $statement->execute();
 
 			require("app/Views/mailer.php");
-			sendMail($emailDirection);
+			sendMail();
 		}else {
-			echo "Etwas ist schiefgelaufen";
-			require("app/Views/mailer.php");
+			header("location: loginRegister");
 		}
 	}
 
-	public function passwort_zuruecksetzen(){
+	public function checkIfCodeIsCorrect(){
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
-			if($_POST["generatedCode"] == $_POST["codeFromUser"]){
+			session_start();
+
+			$title = '';
+			$pdo = connectDatabase();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+			$statement = $pdo->prepare('SELECT tmp_login_code FROM users WHERE email = :email');
+			$statement->bindParam(':email', $_SESSION["emailDirection"], PDO::PARAM_STR);
+			$statement->execute();
+			$code = $statement->fetchAll();
+			
+			if($code[0][0] == $_POST["codeFromUser"]){
 				require 'app/Views/passwort_zuruecksetzen.view.php';
 			}else{
 				require 'app/Views/wrongCodeForPasswordBack.view.php';
 			}
+		}else {
+			header("location: loginRegister");
 		}
+	}
+
+	public function password_zuruecksetzen(){
+		session_start();
+		require 'app/Views/passwordReset.php';
 	}
 
 	/* Damit man sich ein- und ausloggen kann */

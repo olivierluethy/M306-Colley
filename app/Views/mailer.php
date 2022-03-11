@@ -26,12 +26,11 @@ use PHPMailer\PHPMailer\PHPMailer;
  * @param result hfjdghd
  * @return hdsuhfds
  */
-function sendMail($emailDirection)
+function sendMail()
 {
     $mail = new PHPMailer(true);
     /* Generate Random Code */
     /* https://stackoverflow.com/questions/5464906/how-can-i-generate-a-6-digit-unique-number */
-    $code = random_int(100000, 999999);
     try {
         $mail->isSMTP();
         $mail->Host = 'mail.gmx.ch';
@@ -51,7 +50,8 @@ function sendMail($emailDirection)
         /* Hier wird der Betreff hinzugefügt */
         $mail->setFrom("colley@gmx.ch", 'Colley Support');
         /* An wem soll das Mail verschickt werden */
-        $rec = $emailDirection;
+        $rec = $_SESSION["emailDirection"];
+        $code = $_SESSION["code"];
         $mail->addAddress($rec);
 
         $mail->isHTML(true);
@@ -109,7 +109,7 @@ function sendMail($emailDirection)
             <div class='container'>
                 <h1>Colley</h1>
                 <h2>Passwort zurücksetzen</h2>
-                <p><b>Guten Tag $emailDirection</b></p>
+                <p><b>Guten Tag $rec</b></p>
                 <p>Sie haben Ihr Passwort vergessen? Kein Problem!<br>Verwenden Sie den Code um Ihr Passwort wieder zurückzusetzen.<br>Das Colley Team wünscht Ihnen einen schönen Tag 🙌</p>
                 <p><b>Ihr Code lautet:</b></p>
                 <button id='pass'>$code</button>
@@ -126,9 +126,7 @@ function sendMail($emailDirection)
         echo "<div class='emailSended'>
                 <h2>Email wurde gesendet</h2>
                 <h3>Geben Sie hier bitte den Code ein:</h3>
-                <form action='passwort_zuruecksetzen' method='POST'>
-                    <input type='email' name='userEmail' value='$emailDirection'>
-                    <input type='number' name='generatedCode' value='$code'>
+                <form action='checkIfCodeIsCorrect' method='POST'>
                     <input type='number' id='code' name='codeFromUser'>
                     <p id='mailer_code_error'></p>
                     <input type='submit' value='Senden'>
