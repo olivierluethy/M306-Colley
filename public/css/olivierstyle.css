@@ -27,21 +27,7 @@ body {
 }
 
 /* Text für Login-, Journal- und Kontovalidierung */
-#email_login_error,
-#passwort_login_error,
-#email_register_error,
-#passwort_register_error,
-#passwortverify_register_error,
-#datum_error,
-#haben_error,
-#soll_error,
-#betrag_error,
-#kontonummer_konto_error,
-#titel_konto_error,
-#verwendungszweck_konto_error,
-#rechnungsnummer_rechnungsnummer_error,
-#journalnummer_rechnungsnummer_error,
-#rechnung_rechnungsnummer_error {
+#error_text_for_validation {
   color: red;
   text-align: center;
 }
@@ -270,7 +256,7 @@ textarea {
   border: 1px solid #4CAF50;
   color: #4CAF50;
 }
-.loginPasswordIsWrong #sendEmail input[type=submit] {
+.loginPasswordIsWrong #sendEmail {
   margin-top: 2rem;
   background-color: #203f59;
   border: 1px solid #203f59;
@@ -284,7 +270,7 @@ textarea {
   transition-duration: 0.4s;
   cursor: pointer;
 }
-.loginPasswordIsWrong #sendEmail input[type=submit]:hover {
+.loginPasswordIsWrong #sendEmail:hover {
   background-color: white;
   color: #203f59;
 }
@@ -327,20 +313,22 @@ textarea {
   padding: 0px 8px 0px 32px;
   color: white;
   display: block;
+  font-size: 50px;
   transition-duration: 0.4s;
 }
 .sidenav h1:hover {
   color: #f1f1f1;
   cursor: context-menu;
 }
-.sidenav h4 {
+.sidenav h2 {
   padding: 0px 8px 0px 32px;
   color: whitesmoke;
   display: block;
   transition-duration: 0.4s;
   font-style: italic;
+  font-size: 20px;
 }
-.sidenav h4:hover {
+.sidenav h2:hover {
   color: #f1f1f1;
   cursor: context-menu;
 }

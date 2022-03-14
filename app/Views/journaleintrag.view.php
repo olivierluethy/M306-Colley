@@ -27,10 +27,10 @@
     include("heading.view.php");
     ?>
 
-    <p id="datum_error"></p>
-    <p id="haben_error"></p>
-    <p id="soll_error"></p>
-    <p id="betrag_error"></p>
+    <p id="datum_error error_text_for_validation"></p>
+    <p id="haben_error error_text_for_validation"></p>
+    <p id="soll_error error_text_for_validation"></p>
+    <p id="betrag_error error_text_for_validation"></p>
 
     <form>
 

@@ -1,6 +1,6 @@
 <div id="mySidenav" class="sidenav">
     <h1>Colley</h1>
-    <h4>Buchhaltungssoftware</h4>
+    <h2>Buchhaltungssoftware</h2>
     <hr>
     <a class="closebtn" onclick="closeNav()">&times;</a>
     <a href="home"><img src="assets/home.png" alt="Startseite">&nbsp Startseite</a>

@@ -9,10 +9,11 @@
 <body>
     <h1>Setzen sie hier ihr Passwort zurück</h1>
 
-    <p id="password_error"></p>
-    <p id="password_again_error"></p>
-    <p id="password_not_equal"></p>
-    <p id="password_again_error"></p>
+    <p id="password_error error_text_for_validation"></p>
+    <p id="password_again_error error_text_for_validation"></p>
+    <p id="password_not_equal error_text_for_validation"></p>
+    <p id="password_again_error error_text_for_validation"></p>
+    
     <form action="password_zuruecksetzen" method="POST">
         <label for="Passwort">Passwort:</label>
         <input type="password" name="password" id="password">

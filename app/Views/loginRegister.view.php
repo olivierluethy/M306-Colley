@@ -29,8 +29,9 @@ $_SESSION['email'] = "";
         <tr>
             <td>
                 <div class="login">
-                    <p id="passwort_login_error"></p>
-                    <p id="email_login_error"></p>
+                    <p id="passwort_login_error error_text_for_validation"></p>
+                    <p id="email_login_error error_text_for_validation"></p>
+
                     <h2>Login</h2>
                     <p>Willkommen zurück bei Colley.</p>
                     <p>Bitte melden Sie sich an.</p>
@@ -41,7 +42,13 @@ $_SESSION['email'] = "";
                                     <label for="email">E-mail:</label>
                                 </td>
                                 <td>
-                                    <input type="email" id="email_login" name="email_login" placeholder="E-Mail-Adresse">
+                                    <?php
+                                        if($_SERVER["REQUEST_METHOD"] == "POST"){
+                                            echo "<input type='email' id='email_login' name='email_login' placeholder='E-Mail-Adresse' value=". $_POST["email"] .">";
+                                        }else{
+                                            echo "<input type='email' id='email_login' name='email_login' placeholder='E-Mail-Adresse'>";
+                                        }
+                                    ?>
                                 </td>
                             </tr>
                             <tr>
@@ -62,13 +69,15 @@ $_SESSION['email'] = "";
             </td>
             <td>
                 <div class="newAccount">
-                    <p id="email_register_error"></p>
-                    <p id="passwort_register_error"></p>
-                    <p id="passwortverify_register_error"></p>
+                    <p id="email_register_error error_text_for_validation"></p>
+                    <p id="passwort_register_error error_text_for_validation"></p>
+                    <p id="passwortverify_register_error error_text_for_validation"></p>
+
                     <h2>neuer Account</h2>
                     <p>Willkommen bei Colley.</p>
                     <p>Noch kein Konto? Kein Problem.</p>
                     <p>Bitte erstellen Sie ein Konto.</p>
+
                     <form id="formRegister" action="register" method="POST">
                         <table>
                             <tr>

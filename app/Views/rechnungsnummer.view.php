@@ -20,9 +20,9 @@
         <h2>Hier können Sie Ihren Rechnungen eine Nummer vergeben und Sie dem jeweiligen Journaleintrag zuweisen.</h2>
     </div>
 
-    <p id="rechnungsnummer_rechnungsnummer_error"></p>
-    <p id="journalnummer_rechnungsnummer_error"></p>
-    <p id="rechnung_rechnungsnummer_error"></p>
+    <p id="rechnungsnummer_rechnungsnummer_error error_text_for_validation"></p>
+    <p id="journalnummer_rechnungsnummer_error error_text_for_validation"></p>
+    <p id="rechnung_rechnungsnummer_error error_text_for_validation"></p>
 
     <form>
         <table class="TabelleKlein margin-auto">

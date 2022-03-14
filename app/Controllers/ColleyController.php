@@ -24,9 +24,7 @@ class ColleyController
 		
 		$_SESSION["code"] = random_int(100000, 999999);
 
-		if($_SERVER["REQUEST_METHOD"] == "POST"){
-			$_SESSION["emailDirection"] = $_POST['email'];
-
+		if($_SESSION["emailDirection"]){
 			$title = '';
         	$pdo = connectDatabase();
         	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

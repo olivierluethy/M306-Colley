@@ -11,14 +11,18 @@
 </head>
 
 <body>
-<?php include("heading.view.php"); ?>
-<h1>Colley</h1>
-<h2>Übersicht</h2>
-<p class="center">Willkommen bei Colley. Was wollen Sie machen?</p>
-<br>
-<table class="normalTable">
-    <tr>
-        <?php for($i=0; $i<count($welcome); $i++): ?>
+    <?php include("heading.view.php"); ?>
+
+    <div class="title">
+        <h1>Colley</h1>
+        <h2>Übersicht</h2>
+    </div>
+
+    <p class="center">Willkommen bei Colley. Was wollen Sie machen?</p>
+    <br>
+    <table class="normalTable">
+        <tr>
+            <?php for($i=0; $i<count($welcome); $i++): ?>
             <th>
                 <a href="<?= $welcome[$i][0] ?>">
                     <div onclick="<?= $welcome[$i][1] ?>" class="option">
@@ -27,11 +31,11 @@
                     </div>
                 </a>
             </th>
-        <?php endfor ?>
-    </tr>
-</table>
+            <?php endfor ?>
+        </tr>
+    </table>
 
-<script src="public/js/navigate.js"></script>
+    <script src="public/js/navigate.js"></script>
 </body>
 
 </html>

@@ -82,18 +82,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             // Redirect user to index page
                             header("location: home");
                         } else {
-                            $emailAddress = $_POST["email_login"];
+                            $_SESSION["emailDirection"] = $_POST['email_login'];
                             // Display an error message if password is not valid
-                            echo "<div class='loginPasswordIsWrong'>
-                                    <h2>Das von Ihnen eingegebene Passwort war nicht gültig.</h2>
-                                    <a href='loginRegister'><button class='back'>Noch einmal versuchen</button></a>
+                            echo 
+                            "<div class='loginPasswordIsWrong'>
+                                <h2>Das von Ihnen eingegebene Passwort war nicht gültig.</h2>
+                                <form action='loginRegister' method='POST'>
+                                    <input type='email' name='email' style='display: none' value='". $_SESSION["emailDirection"]."'>
+                                    <button type='submit' class='back'>Noch einmal versuchen</button>
+                                </form>
 
-                                    <h2>Falls Sie ihr Passwort vergessen haben, können Sie es hier zurücksetzen.</h2>
-                                    <form id='sendEmail' action='email_versenden' method='POST'>
-                                        <input style='display: none;' type='email' id='email' name='email' value='$emailAddress'>
-                                        <input type='submit' value='Passwort zurücksetzen' />
-                                    </form>
-                                </div>";
+                                <h2>Falls Sie ihr Passwort vergessen haben, können Sie es hier zurücksetzen.</h2>
+                                <button id='sendEmail'>Passwort zurücksetzen</button>
+                            </div>";
                         }
                     }
                 } else {
