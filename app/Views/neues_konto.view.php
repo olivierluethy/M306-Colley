@@ -20,9 +20,9 @@
     <h2>Bitte geben Sie die gewünsche Kontonummer, einen Titel und einen Verwendungszweck an.</h2>
     </div>
 
-    <p id="kontonummer_konto_error error_text_for_validation"></p>
-    <p id="titel_konto_error error_text_for_validation"></p>
-    <p id="verwendungszweck_konto_error error_text_for_validation"></p>
+    <p id="kontonummer_konto_error"></p>
+    <p id="titel_konto_error"></p>
+    <p id="verwendungszweck_konto_error"></p>
 
     <form>
         <table class="TabelleKlein margin-auto">

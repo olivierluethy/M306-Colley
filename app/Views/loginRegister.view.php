@@ -29,8 +29,8 @@ $_SESSION['email'] = "";
         <tr>
             <td>
                 <div class="login">
-                    <p id="passwort_login_error error_text_for_validation"></p>
-                    <p id="email_login_error error_text_for_validation"></p>
+                    <p id="passwort_login_error"></p>
+                    <p id="email_login_error"></p>
 
                     <h2>Login</h2>
                     <p>Willkommen zurück bei Colley.</p>
@@ -69,11 +69,11 @@ $_SESSION['email'] = "";
             </td>
             <td>
                 <div class="newAccount">
-                    <p id="email_register_error error_text_for_validation"></p>
-                    <p id="passwort_register_error error_text_for_validation"></p>
-                    <p id="passwortverify_register_error error_text_for_validation"></p>
+                    <p id="email_register_error"></p>
+                    <p id="passwort_register_error"></p>
+                    <p id="passwortverify_register_error"></p>
 
-                    <h2>neuer Account</h2>
+                    <h2>Neuer Account</h2>
                     <p>Willkommen bei Colley.</p>
                     <p>Noch kein Konto? Kein Problem.</p>
                     <p>Bitte erstellen Sie ein Konto.</p>

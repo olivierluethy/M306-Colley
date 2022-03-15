@@ -128,7 +128,7 @@ function sendMail()
                 <h3>Geben Sie hier bitte den Code ein:</h3>
                 <form action='checkIfCodeIsCorrect' method='POST'>
                     <input type='number' id='code' name='codeFromUser'>
-                    <p id='mailer_code_error error_text_for_validation'></p>
+                    <p id='mailer_code_error'></p>
                     <input type='submit' value='Senden'>
                 </form>
                 <p>Falls Sie keine Email erhalten haben, schauen sie bitte in ihrem Spam Ordner nach!</p>

@@ -14,25 +14,31 @@ window.addEventListener("load", function() {
         if (document.querySelector('#kontonummer') != null) {
             if (document.querySelector('#kontonummer').value.trim() === '') {
                 document.getElementById('kontonummer_konto_error').innerHTML = "Bitte gib eine Kontonummer ein.";
+                document.querySelector("#kontonummer").style = "border: 5px solid #ff4d4d";
                 errors = true;
             } else {
                 document.getElementById('kontonummer_konto_error').innerHTML = "";
+                document.querySelector("#kontonummer").style = "border: 1px solid #ccc";
             }
         }
 
         if (document.querySelector('#titel') != null) {
             if (document.querySelector('#titel').value.trim() === '') {
                 document.getElementById('titel_konto_error').innerHTML = "Bitte gib einen Titel ein.";
+                document.querySelector("#titel").style = "border: 5px solid #ff4d4d";
                 errors = true;
             } else {
-
+                document.getElementById('titel_konto_error').innerHTML = "";
+                document.querySelector("#titel").style = "border: 5px solid #ccc";
             }
         }
         if (document.querySelector('#verwendungszweck').value.length < 6) {
             document.getElementById('verwendungszweck_konto_error').innerHTML = "Bitte gib einen Verwendungszweck ein.";
+            document.querySelector("#verwendungszweck").style = "border: 5px solid #ff4d4d";
             errors = true;
         } else {
             document.getElementById('verwendungszweck_konto_error').innerHTML = "";
+            document.querySelector("#verwendungszweck").style = "border: 5px solid #ccc";
         }
 
         if (errors) {

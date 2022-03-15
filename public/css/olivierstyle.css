@@ -27,9 +27,24 @@ body {
 }
 
 /* Text für Login-, Journal- und Kontovalidierung */
-#error_text_for_validation {
+#email_login_error,
+#passwort_login_error,
+#email_register_error,
+#passwort_register_error,
+#passwortverify_register_error,
+#datum_error,
+#haben_error,
+#soll_error,
+#betrag_error,
+#kontonummer_konto_error,
+#titel_konto_error,
+#verwendungszweck_konto_error,
+#rechnungsnummer_rechnungsnummer_error,
+#journalnummer_rechnungsnummer_error,
+#rechnung_rechnungsnummer_error {
   color: red;
   text-align: center;
+  font-weight: bold;
 }
 
 /* Allgemeine Tabelleneinstellung */

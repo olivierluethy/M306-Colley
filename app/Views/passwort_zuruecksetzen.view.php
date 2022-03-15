@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="public/css/olivierstyle.css">
+    <title>Passwort zurücksetzen</title>
 </head>
 <body>
     <h1>Setzen sie hier ihr Passwort zurück</h1>
 
-    <p id="password_error error_text_for_validation"></p>
-    <p id="password_again_error error_text_for_validation"></p>
-    <p id="password_not_equal error_text_for_validation"></p>
-    <p id="password_again_error error_text_for_validation"></p>
+    <p id="password_error"></p>
+    <p id="password_again_error"></p>
+    <p id="password_not_equal"></p>
+    <p id="password_again_error"></p>
     
     <form action="password_zuruecksetzen" method="POST">
         <label for="Passwort">Passwort:</label>

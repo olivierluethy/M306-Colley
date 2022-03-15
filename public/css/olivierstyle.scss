@@ -1,275 +1,312 @@
-body {
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.title {
-    text-align: center;
-    h1 {
-        margin-top: 2rem;
-        font-size: 50px;
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
     }
-    h2 {
-        font-size: 40px;
-    }
-}
-
-.menu {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    span {
-        font-size: 35px;
-        cursor: pointer;
-    }
-}
-
-
-/* Text für Login-, Journal- und Kontovalidierung */
-
-#error_text_for_validation {
-    color: red;
-    text-align: center;
-}
-
-
-/* Allgemeine Tabelleneinstellung */
-
-.margin-auto {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-label {
-    float: right;
-}
-
-input {
-    width: 90%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-textarea {
-    width: 90%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-
-/* Tabelle für das Login und Register */
-
-.logintable {
-    tr {
-        td {
-            .login {
-                margin-right: 15rem;
-                text-align: center;
-                button[type=submit] {
-                    background-color: #008CFF;
-                    border: 2px solid #008CFF;
-                    color: white;
-                    font-size: 16px;
-                    transition-duration: 0.4s;
-                    border-radius: 15px;
-                    padding: 15px 32px;
-                    cursor: pointer;
-                    &:hover {
-                        background-color: white;
-                        color: #008CFF;
-                        border: 2px solid #008CFF;
-                    }
-                }
-            }
-            .newAccount {
-                margin-left: 15rem;
-                text-align: center;
-                input {
-                    width: 90%;
-                    padding: 12px 20px;
-                    margin: 8px 0;
-                    display: inline-block;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    box-sizing: border-box;
-                }
-                button[type=submit] {
-                    background-color: #008CFF;
-                    border: 2px solid #008CFF;
-                    color: white;
-                    font-size: 16px;
-                    transition-duration: 0.4s;
-                    border-radius: 15px;
-                    padding: 15px 32px;
-                    cursor: pointer;
-                    &:hover {
-                        background-color: white;
-                        color: #008CFF;
-                        border: 2px solid #008CFF;
-                    }
-                }
-            }
-            .divider {
-                text-align: center;
-                margin-left: 0.1rem;
-                border-left: 2px solid black;
-                height: 500px;
-            }
+    
+    .title {
+        text-align: center;
+        h1 {
+            margin-top: 2rem;
+            font-size: 50px;
+        }
+        h2 {
+            font-size: 40px;
         }
     }
-}
-
-
-/* Tabelle für Rechnungsnummer und Journal */
-
-.TabelleKlein {
-    label {
-        margin-right: 2rem;
+    
+    .menu {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        span {
+            font-size: 35px;
+            cursor: pointer;
+        }
     }
-    tr {
-        height: 5vh;
-        td {
-            .selectize-control {
-                width: 200%;
-                margin-top: 1rem;
-                .selectize-input {
-                    width: 90%;
-                    padding: 12px 20px;
-                    margin: 8px 0;
-                    display: inline-block;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    box-sizing: border-box;
+    /* Text für Login-, Journal- und Kontovalidierung */
+    
+    #email_login_error,
+    #passwort_login_error,
+    #email_register_error,
+    #passwort_register_error,
+    #passwortverify_register_error,
+    #datum_error,
+    #haben_error,
+    #soll_error,
+    #betrag_error,
+    #kontonummer_konto_error,
+    #titel_konto_error,
+    #verwendungszweck_konto_error,
+    #rechnungsnummer_rechnungsnummer_error,
+    #journalnummer_rechnungsnummer_error,
+    #rechnung_rechnungsnummer_error {
+        color: red;
+        text-align: center;
+        font-weight: bold;
+    }
+    /* Allgemeine Tabelleneinstellung */
+    
+    .margin-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    label {
+        float: right;
+    }
+    
+    input {
+        width: 90%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+    textarea {
+        width: 90%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    /* Tabelle für das Login und Register */
+    
+    .logintable {
+        tr {
+            td {
+                .login {
+                    margin-right: 15rem;
+                    text-align: center;
+                    button[type=submit] {
+                        background-color: #008CFF;
+                        border: 2px solid #008CFF;
+                        color: white;
+                        font-size: 16px;
+                        transition-duration: 0.4s;
+                        border-radius: 15px;
+                        padding: 15px 32px;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: white;
+                            color: #008CFF;
+                            border: 2px solid #008CFF;
+                        }
+                    }
                 }
-            }
-            button[type=submit] {
-                background-color: white;
-                border: 1px solid black;
-                color: black;
-                padding: 15px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                cursor: pointer;
-                transition-duration: 0.4s;
-                &:hover {
-                    background-color: black;
-                    color: white;
+                .newAccount {
+                    margin-left: 15rem;
+                    text-align: center;
+                    input {
+                        width: 90%;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                    }
+                    button[type=submit] {
+                        background-color: #008CFF;
+                        border: 2px solid #008CFF;
+                        color: white;
+                        font-size: 16px;
+                        transition-duration: 0.4s;
+                        border-radius: 15px;
+                        padding: 15px 32px;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: white;
+                            color: #008CFF;
+                            border: 2px solid #008CFF;
+                        }
+                    }
+                }
+                .divider {
+                    text-align: center;
+                    margin-left: 0.1rem;
+                    border-left: 2px solid black;
+                    height: 500px;
                 }
             }
         }
     }
-}
-
-
-/* Table für die Seite um neue Konten erfassen zu können */
-
-.neuesKontoTabelle {
-    label {
-        margin-right: 2rem;
-        margin-top: 2rem;
+    /* Tabelle für Rechnungsnummer und Journal */
+    
+    .TabelleKlein {
+        label {
+            margin-right: 2rem;
+        }
+        tr {
+            height: 5vh;
+            td {
+                .selectize-control {
+                    width: 200%;
+                    margin-top: 1rem;
+                    .selectize-input {
+                        width: 90%;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                    }
+                }
+                button[type=submit] {
+                    background-color: white;
+                    border: 1px solid black;
+                    color: black;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition-duration: 0.4s;
+                    &:hover {
+                        background-color: black;
+                        color: white;
+                    }
+                }
+            }
+        }
     }
-    tr {
-        height: 5vh;
-        td {
+    /* Table für die Seite um neue Konten erfassen zu können */
+    
+    .neuesKontoTabelle {
+        label {
+            margin-right: 2rem;
+            margin-top: 2rem;
+        }
+        tr {
+            height: 5vh;
+            td {
+                p {
+                    margin-top: -5rem;
+                    margin-right: 2rem;
+                }
+                button[type=submit] {
+                    background-color: white;
+                    border: 1px solid black;
+                    color: black;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition-duration: 0.4s;
+                    &:hover {
+                        background-color: black;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    /* Table für Bilanz und Willkommen Seite */
+    
+    .normalTable {
+        width: 100%;
+        text-align: center;
+        tr {
+            th {
+                .option {
+                    border: 2px solid black;
+                    margin-left: 2rem;
+                    margin-right: 2rem;
+                    cursor: pointer;
+                    transition-duration: 0.4s;
+                    &:hover {
+                        box-shadow: 0 0 10px 5px lightgray;
+                    }
+                    img {
+                        border: 1px solid #ddd;
+                        border-radius: 4px;
+                        padding: 5px;
+                        width: 150px;
+                    }
+                }
+            }
+        }
+    }
+    /* Style für Kontouebersicht */
+    
+    .kontouebersichtTabelle {
+        margin-left: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        .konto {
+            border: 2px solid black;
+            background-color: #DAE8FC;
+            cursor: pointer;
+            margin-right: 2rem;
+            margin-bottom: 2rem;
+            transition-duration: 0.4s;
+            &:hover {
+                box-shadow: 0 0 10px 5px lightgray;
+            }
             p {
-                margin-top: -5rem;
-                margin-right: 2rem;
+                margin: 2rem;
+                &:nth-child(1) {
+                    font-weight: bold;
+                }
             }
-            button[type=submit] {
+        }
+    }
+    
+    .part {
+        margin: 2rem;
+    }
+    /* Login and Register Page Error */
+    
+    .loginPasswordIsWrong {
+        margin: 2rem;
+        .back {
+            background-color: #4CAF50;
+            border: 1px solid #4CAF50;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            &:hover {
                 background-color: white;
-                border: 1px solid black;
-                color: black;
-                padding: 15px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                cursor: pointer;
-                transition-duration: 0.4s;
-                &:hover {
-                    background-color: black;
-                    color: white;
-                }
+                border: 1px solid #4CAF50;
+                color: #4CAF50;
+            }
+        }
+        #sendEmail {
+            margin-top: 2rem;
+            background-color: #203f59;
+            border: 1px solid #203f59;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            &:hover {
+                background-color: white;
+                color: #203f59;
             }
         }
     }
-}
-
-
-/* Table für Bilanz und Willkommen Seite */
-
-.normalTable {
-    width: 100%;
-    text-align: center;
-    tr {
-        th {
-            .option {
-                border: 2px solid black;
-                margin-left: 2rem;
-                margin-right: 2rem;
-                cursor: pointer;
-                transition-duration: 0.4s;
-                &:hover {
-                    box-shadow: 0 0 10px 5px lightgray;
-                }
-                img {
-                    border: 1px solid #ddd;
-                    border-radius: 4px;
-                    padding: 5px;
-                    width: 150px;
-                }
-            }
-        }
-    }
-}
-
-
-/* Style für Kontouebersicht */
-
-.kontouebersichtTabelle {
-    margin-left: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    .konto {
-        border: 2px solid black;
-        background-color: #DAE8FC;
-        cursor: pointer;
-        margin-right: 2rem;
-        margin-bottom: 2rem;
-        transition-duration: 0.4s;
-        &:hover {
-            box-shadow: 0 0 10px 5px lightgray;
-        }
-        p {
-            margin: 2rem;
-            &:nth-child(1) {
-                font-weight: bold;
-            }
-        }
-    }
-}
-
-.part {
-    margin: 2rem;
-}
-
-
-/* Login and Register Page Error */
-
-.loginPasswordIsWrong {
-    margin: 2rem;
+    
     .back {
         background-color: #4CAF50;
         border: 1px solid #4CAF50;
@@ -288,144 +325,104 @@ textarea {
             color: #4CAF50;
         }
     }
-    #sendEmail {
-        margin-top: 2rem;
-        background-color: #203f59;
-        border: 1px solid #203f59;
-        color: white;
-        padding: 16px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        &:hover {
-            background-color: white;
-            color: #203f59;
-        }
-    }
-}
-
-.back {
-    background-color: #4CAF50;
-    border: 1px solid #4CAF50;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    &:hover {
-        background-color: white;
-        border: 1px solid #4CAF50;
-        color: #4CAF50;
-    }
-}
-
-
-/* Sidenavigation */
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition-duration: 0.4s;
-    padding-top: 40px;
-    box-shadow: 10px 0 5px -2px #888;
-    overflow-y: hidden;
-    h1 {
-        padding: 0px 8px 0px 32px;
-        color: white;
-        display: block;
-        font-size: 50px;
-        transition-duration: 0.4s;
-        &:hover {
-            color: #f1f1f1;
-            cursor: context-menu;
-        }
-    }
-    h2 {
-        padding: 0px 8px 0px 32px;
-        color: whitesmoke;
-        display: block;
-        transition-duration: 0.4s;
-        font-style: italic;
-        font-size: 20px;
-        &:hover {
-            color: #f1f1f1;
-            cursor: context-menu;
-        }
-    }
-    a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-        transition-duration: 0.4s;
-        &:hover {
-            color: #f1f1f1;
-        }
-    }
-    a:nth-child(4) {
-        cursor: pointer;
-    }
-    p {
-        padding: 8px 8px 8px 32px;
-        font-size: 20px;
-        color: #818181;
-        display: block;
-        transition-duration: 0.4s;
-        &:hover {
-            cursor: context-menu;
-        }
-    }
-    .closebtn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-    }
-    button {
-        background-color: white;
-        border: 2px solid white;
-        color: black;
-        padding: 16px 113px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        &:hover {
-            background-color: black;
-            border: 2px solid white;
-            color: white;
-        }
-    }
-    img {
-        width: 15%;
-    }
-}
-
-@media screen and (max-height: 450px) {
+    /* Sidenavigation */
+    
     .sidenav {
-        padding-top: 15px;
-        a,
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition-duration: 0.4s;
+        padding-top: 40px;
+        box-shadow: 10px 0 5px -2px #888;
+        overflow-y: hidden;
+        h1 {
+            padding: 0px 8px 0px 32px;
+            color: white;
+            display: block;
+            font-size: 50px;
+            transition-duration: 0.4s;
+            &:hover {
+                color: #f1f1f1;
+                cursor: context-menu;
+            }
+        }
+        h2 {
+            padding: 0px 8px 0px 32px;
+            color: whitesmoke;
+            display: block;
+            transition-duration: 0.4s;
+            font-style: italic;
+            font-size: 20px;
+            &:hover {
+                color: #f1f1f1;
+                cursor: context-menu;
+            }
+        }
+        a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition-duration: 0.4s;
+            &:hover {
+                color: #f1f1f1;
+            }
+        }
+        a:nth-child(4) {
+            cursor: pointer;
+        }
         p {
-            font-size: 18px;
+            padding: 8px 8px 8px 32px;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition-duration: 0.4s;
+            &:hover {
+                cursor: context-menu;
+            }
+        }
+        .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        button {
+            background-color: white;
+            border: 2px solid white;
+            color: black;
+            padding: 16px 113px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            &:hover {
+                background-color: black;
+                border: 2px solid white;
+                color: white;
+            }
+        }
+        img {
+            width: 15%;
         }
     }
-}
+    
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding-top: 15px;
+            a,
+            p {
+                font-size: 18px;
+            }
+        }
+    }
