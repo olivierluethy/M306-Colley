@@ -44,8 +44,6 @@ window.addEventListener("load", function() {
 
         if (errors) {
             evt.preventDefault();
-        } else {
-            alert('es hat geklappt!');
         }
     });
 });

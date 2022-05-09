@@ -75,8 +75,50 @@
                 
                 // Attempt to execute the prepared statement
                 if($stmt->execute()){
-                    // Redirect to login page
-                    header("location: loginRegister");
+                    
+                    // Prepare a select statement
+                    $sql = "SELECT id, email, password FROM users WHERE email = :email";
+
+                    if($stmt = $pdo->prepare($sql)){
+                        // Bind variables to the prepared statement as parameters
+                        $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+                        
+                        // Set parameters
+                        $email = $param_email;
+                        
+                        // Attempt to execute the prepared statement
+                        if($stmt->execute()){
+                            // Check if username exists, if yes then verify password
+                            if($stmt->rowCount() == 1){
+                                if($row = $stmt->fetch()){
+                                    $id = $row["id"];
+                                    $email = $row["email"];
+                                    $hashed_password = $row["password"];
+                                    if(password_verify($password, $hashed_password)){
+                                        // Password is correct, so start a new session
+                                        session_start();
+            
+                                        // Store data in session variables
+                                        $_SESSION["loggedin"] = true;
+                                        $_SESSION["id"] = $id;
+                                        $_SESSION["email"] = $email;
+            
+                                        // Redirect user to index page
+                                        header("location: home");
+                                    }
+                                }
+                            } else {
+                                // Display an error message if email doesn't exist
+                                echo "<h2>No account found with that email.</h2>";
+                                echo "<a href='loginRegister'><button class='back'>Try again</button></a>";
+                            }
+                        } else {
+                            echo "Oops! Something went wrong. Please try again later.";
+                        }
+            
+                        // Close statement
+                        unset($stmt);
+                    }
                 } else{
                     echo "Oops! Something went wrong. Please try again later.";
                 }
