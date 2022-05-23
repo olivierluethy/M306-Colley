@@ -1,0 +1,186 @@
+USE Colley;
+INSERT INTO `kontospiegel`
+(`spiegelNr`,`spiegelTitel`)
+VALUES
+-- /----------/
+(1,'Aktiven'),
+-- /----------/
+(10,'Umlaufvermögen')
+-- /----------/
+(100,'Flüssige Mittel'),
+(1000,'Kasse'),
+(1020,'Bankguthaben'),
+-- /----------/
+(106,'Kurzfristig gehaltene Aktiven mit Börsenkurs'),
+(1060,'Wertschriften'),
+(1069,'Wertberichtigungen Wertschriften'),
+-- /----------/
+(110,'Forderungen aus Lieferungen und Leistungen'),
+(1100,'Forderungen aus Lieferungen und Leistungen (Debitoren)'),
+(1109,'Delkredere'),
+-- /----------/
+(114,' Übrige kurzfristige Forderungen'),
+(1140,'Vorschüsse und Darlehen'),
+(1149,'Wertberichtigungen Vorschüsse und Darlehen'),
+(1170,'Vorsteuer MWST Material, Waren, Dienstleistungen, Energie'),
+(1171,'Vorsteuer MWST Investitionen, übriger Betriebsaufwand'),
+(1176,'Verrechnungssteuer'),
+(1180,'Forderungen gegenüber Sozialversicherungen und Vorsorgeeinrichtungen'),
+(1189,'Quellensteuer'),
+(1190,'Sonstige kurzfristige Forderungen'),
+(1199,'Wertberichtigungen sonstige kurzfristige Forderungen'),
+-- /----------/
+(120,'Vorräte und nicht fakturierte Dienstleistungen'),
+(1200,'Handelswaren'),
+(1210,'Rohstoffe'),
+(1220,'Werkstoffe'),
+(1230,'Hilfs- und Verbrauchsmaterial'),
+(1250,'Handelswaren in Konsignation'),
+(1260,'Fertige Erzeugnisse'),
+(1270,'Unfertige Erzeugnisse'),
+(1280,'Nicht fakturierte Dienstleistungen'),
+-- /----------/
+(130,'Aktive Rechnungsabgrenzugen'),
+(1300,'Bezahlter Aufwand des Folgejahres'),
+(1301,'Noch nicht erhaltener Ertrag'),
+-- /----------/
+(14,'Anlagenvermögen'),
+-- /----------/
+(140,'Finanzanlagen'),
+(1400,'Wertschriften'),
+(1409,'Wertberichtigungen Wertschriften'),
+(1440,'Darlehen'),
+(1441,'Hypothek'),
+(1449,'Wertberichtigungen langfristige Forderungen'),
+-- /----------/
+(148,'Beteiligungen'),
+(1480,'Beteiligungen'),
+(1489,'Wertberichtigungen Beteiligungen'),
+-- /----------/
+(150,'Mobile Sachanlagen'),
+(1500,'Maschinen und Apparate'),
+(1509,'Wertberichtigungen Maschinen und Apparate'),
+(1510,'Mobiliar und Einrichtungen'),
+(1519,'Wertberichtigungen Mobiliar und Einrichtungen'),
+(1520,'Büromaschinen, Informatik, Kommunikationstechnologie'),
+(1529,'Wertberichtigungen Büromaschinen, Informatik, Kommunikationstechnologie'),
+(1530,'Fahrzeuge',),
+(1539,'Wertberichtigungen Fahrzeuge'),
+(1540,'Werkzeuge und Geräte'),
+(1549,'Wertberichtigungen Werkzeuge und Geräte'),
+-- /----------/
+(160,'Immobile Sachanlage'),
+(1600,'Geschäftsliegenschaften'),
+(1609,'Wertberichtigungen Geschäftsliegenschaften'),
+-- /----------/
+(170, 'Immaterielle Werte'),
+(1700,'Patente, Know-how, Lizenzen, Rechte, Entwicklungen'),
+(1709,'Wertberichtigungen Patente, Know-how, Lizenzen, Rechte, Entwicklungen'),
+(1770,'Goodwill',),
+(1779,'Wertberichtigung Goodwill'),
+-- /----------/
+(180,'Nicht einbezahltes Grund-. Gesellschafter- oder Stiftungskapital'),
+(1850,'Nicht einbezahltes Aktein-, Stamm-, Anteilschein- oder Stiftungskapital'),
+-- /----------/
+(2,'Passiven'),
+-- /----------/
+(20,'Kurzfristiges Fremdkapital'),
+-- /----------/
+(200,'Verbindlichkeiten aus Lieferungen und Leistungen'),
+(2000,'Verbindlichkeiten aus Lieferungen und Leistungen (Kreditoren)'),
+(2030,'Erhaltene Anzahlungen',),
+-- /----------/
+(210,'Kurzfristiges verzinsliche Verbindlichkeiten'),
+(2100,'Bankverbindlichkeiten'),
+(2120,'Verbindlichkeiten aus Finanzierungsleasing'),
+(2140,'Übrige verzinsliche Verbindlichkeiten'),
+-- /----------/
+(220,'Übrige kurzfristige Verbindlichkeiten'),
+(2200,'Geschuldete MWST (Umsatzsteuer)'),
+(2201,'Anrechnungskonto MWST'),
+(2206,'Verrechnungssteuer'),
+(2208,'Direkte Steuern'),
+(2210,'Sonstige kurzfristige Verbindlichkeiten'),
+(2261,'Beschlossene Ausschüttungen'),
+(2270,'Sozialversicherungen und Vorsorgeeinrichtungen'),
+(2279,'Quellensteuer'),
+-- /----------/
+(230,'Passive Rechnungsabgrenzungen und kurzfristige Rückstellungen'),
+(2300,'Noch nicht bezahlter Aufwand'),
+(2301,'Erhaltener Ertrag des Folgejahres'),
+(2330,'Kurzfristige Rückstellungen'),
+-- /----------/
+(24,'Langfristiges Fremdkapital'),
+-- /----------/
+(240,'Langfristige verzinsliche Verbindlichkeiten'),
+(2400,'Bankverbindlichkeiten'),
+(2420,'Verbindlichkeiten aus Finanzierungsleasing'),
+(2430,'Obligationenanleihen'),
+(2450,'Darlehen'),
+(2451,'Hypotheken'),
+-- /----------/
+(250,'Übrige langfristige Verbindlichkeiten'),
+(2500,'Übrige langfristige Verbindlichkeiten(unverzinslich)'),
+-- /----------/
+(260,'Rückstellungen sowie vom Gesetz vorgesehene ähnliche Positionen'),
+(2600,'Rückstellungen'),
+-- /----------/
+(28,'Eigenkapital (Einzelunternehmen)'),
+(2800,'Eigenkapital zu Beginn des Geschäftsjahres'),
+(2820,'Kapitaleinlagen und Kapitalrückzüge'),
+(2850,'Privat'),
+(2891,'Jahresgewinn oder Jahresverlust'),
+-- /----------/
+(3,'Betrieblicher Ertrag aus Lieferungen und Leistungen'),
+(3000,'Produktionserlöse'),
+(3200,'Handelserlöse'),
+(3400,'Dienstleistungserlöse'),
+(3600,'Übrige Erlöse aus Lieferungen und Leistungen'),
+(3700,'Eigenleistungen'),
+(3710,'Eigenverbrauch'),
+(3800,'Erlösminderungen'),
+(3805,'Verluste Forderungen (Debitoren), Veränderung Delkredere'),
+(3900,'Bestandesänderungen unfertige Erzeugnisse'),
+(3901,'Bestandesänderungen fertige Erzeugnisse'),
+(3940,'Bestandesänderungen nicht fakturierte Dienstleistungen'),
+-- /----------/
+(4,'Aufwand für Material, Handelswaren, Dienstleistungen und Energie'),
+(4200,'Materialaufwand Produktion'),
+(4400,'Aufwand für bezogene Dienstleistungen'),
+(4500,'Energieaufwand zur Leistungserstellung'),
+(4900,'Aufwandminderungen'),
+-- /----------/
+(5,'Personalaufwand'),
+(5000,'Lohnaufwand'),
+(5700,'Sozialversicherungsaufwand'),
+(5800,'Übrige Personalaufwand'),
+(5900,'Leistungen Dritter'),
+-- /----------/
+(6,'Übriger betrieblicher Aufwand, Abschreibungen und Wertberichtigungen sowie Finanzergebnis'),
+(6000,'Raumaufwand'),
+(6100,'Unterhalt, Reparaturen, Ersatz mobile Sachanlagen'),
+(6105,'Leasingaufwand mobile Sachanlagen'),
+(6200,'Fahrzeug- und Transportaufwand'),
+(6260,'Fahrzeugleasing und -mieten'),
+(6300,'Sachversicherungen, Abgaben, Gebühren, Bewilligungen'),
+(6400,'Energie- und Entsorgungsaufwand'),
+(6500,'Verwaltungsaufwand'),
+(6570,'Informatikaufwand inkl. Leasing'),
+(6600,'Werbeaufwand'),
+(6700,'Sonstiger betrieblicher Aufwand'),
+(6800,'Abschreibungen und Wertberichtigungen auf Positionen des Anlagenvermögens'),
+(6900,'Finanzaufwand'),
+(6950,'Finanzertrag'),
+(7,'Betrieblicher Nebenerfolg'),
+(7000,'Ertrag Nebenbetrieb'),
+(7010,'Aufwand Nebenbetrieb'),
+(7500,'Ertrag betrieblicher Liegenschaft'),
+(7510,'Aufwand betrieblicher Liegenschaft'),
+(8,'Betriebsfremder, ausserordentlicher, einmaliger oder periodenfremder Aufwand und Ertrag'),
+(8000,'Betriebsfremder Aufwand'),
+(8100,'Betriebsfremder Ertrag'),
+(8500,'Ausserordentlicher, einmaliger oder periodenfremder Aufwand'),
+(8510,'Ausserordentlicher, einmaliger oder periodenfremder Ertrag'),
+(8900,'Direkte Steuern'),
+(9,'Abschluss'),
+(9200,'Jahresgewinn oder Jahresverlust');

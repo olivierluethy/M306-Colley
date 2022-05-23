@@ -1,0 +1,24 @@
+-- Datenbankerstellung
+DROP DATABASE IF EXISTS Colley;
+CREATE DATABASE Colley;
+USE Colley;
+
+CREATE TABLE users (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    tmp_login_code INT(10)
+);
+CREATE TABLE konto(
+    kontoId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    kontoNr INT NOT NULL,
+    kontoName VARCHAR(255) NOT NULL,
+    kontoZweck VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE kontenplan(
+    planId INT NOT NULL PRIMARY KEY AUTO_INCREMENT
+    planNr INT NOT NULL,
+    planTitel VARCHAR(255) NOT NULL
+);

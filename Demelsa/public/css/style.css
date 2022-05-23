@@ -1,0 +1,191 @@
+@charset "UTF-8";
+@import url(button.css);
+@import url(menu.css);
+@import url(grid.css);
+/** Colley Style-CSS
+    * Hier wird nur beschrieben was zum Style gehört.
+    * Alles was das Grid betrifft, wird im Grid-CSS definiert.
+    * Alles was das Menu betrifft, wird im Menü-CSS definiert.
+    * Alles was die Buttons betrifft, wird im Button-CSS definiert
+    */
+body {
+  margin: 0;
+}
+
+#kontoNrError, #kontoNameError, #kontoZweckError {
+  color: #ff0000;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container .header .line {
+  height: 10px;
+  background-color: #4b6982;
+  border-top: 10px solid #70c6c7;
+  border-bottom: 10px solid #70c6c7;
+}
+.container .header .colley {
+  background-color: #4b6982;
+  border-top: 20px solid #70c6c7;
+  border-bottom: 20px solid #70c6c7;
+}
+.container .header h1 {
+  color: #b4ffd8;
+  font-size: 4em;
+  font-family: sans-serif;
+  text-align: center;
+}
+.container .titel {
+  background-color: #c4a474;
+  border-top: 1px solid #4b6982;
+}
+.container .titel h2 {
+  color: #000000;
+  font-size: 2.5em;
+  font-family: serif;
+  text-align: center;
+}
+.container .text {
+  margin: 40px 20px;
+}
+.container .text p {
+  color: #000000;
+  font-size: 1.5em;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.welcome-main .welcome1, .welcome-main .welcome2, .welcome-main .welcome3, .welcome-main .welcome4, .welcome-main .welcome5 {
+  text-align: center;
+}
+.welcome-main .welcome1 a, .welcome-main .welcome2 a, .welcome-main .welcome3 a, .welcome-main .welcome4 a, .welcome-main .welcome5 a {
+  text-decoration: none;
+}
+.welcome-main .welcome1 a .option, .welcome-main .welcome2 a .option, .welcome-main .welcome3 a .option, .welcome-main .welcome4 a .option, .welcome-main .welcome5 a .option {
+  border: 5px solid #d3d3d3;
+  border-radius: 12px;
+  margin: 0 2rem;
+  background-origin: #f9f9f9;
+}
+.welcome-main .welcome1 a .option img, .welcome-main .welcome2 a .option img, .welcome-main .welcome3 a .option img, .welcome-main .welcome4 a .option img, .welcome-main .welcome5 a .option img {
+  text-align: center;
+  color: #ff0000;
+}
+.welcome-main .welcome1 a .option p, .welcome-main .welcome2 a .option p, .welcome-main .welcome3 a .option p, .welcome-main .welcome4 a .option p, .welcome-main .welcome5 a .option p {
+  text-align: center;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: #000000;
+}
+
+.neuesKonto-main .fehler {
+  font-size: 1.2em;
+  font-family: sans-serif;
+  text-align: center;
+  color: #ff0000;
+  padding-bottom: 50px;
+}
+.neuesKonto-main .konto {
+  margin: 0 auto;
+  width: 400px;
+}
+.neuesKonto-main .konto label {
+  font-size: 1.2em;
+  font-family: sans-serif;
+  padding-right: 10px;
+}
+.neuesKonto-main .konto input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #000000;
+  font-size: 1.2em;
+}
+.neuesKonto-main .konto textarea {
+  font-size: 1.2em;
+  width: 100%;
+}
+
+.bilanz-main {
+  margin: 0 20px;
+}
+.bilanz-main .bilanz1, .bilanz-main .bilanz2, .bilanz-main .bilanz3, .bilanz-main .bilanz4 {
+  text-align: center;
+}
+.bilanz-main .bilanz1 a, .bilanz-main .bilanz2 a, .bilanz-main .bilanz3 a, .bilanz-main .bilanz4 a {
+  text-decoration: none;
+}
+.bilanz-main .bilanz1 a .option, .bilanz-main .bilanz2 a .option, .bilanz-main .bilanz3 a .option, .bilanz-main .bilanz4 a .option {
+  border: 5px solid #d3d3d3;
+  border-radius: 12px;
+  margin: 0 4rem;
+  background-origin: #f9f9f9;
+}
+.bilanz-main .bilanz1 a .option img, .bilanz-main .bilanz2 a .option img, .bilanz-main .bilanz3 a .option img, .bilanz-main .bilanz4 a .option img {
+  text-align: center;
+}
+.bilanz-main .bilanz1 a .option p, .bilanz-main .bilanz2 a .option p, .bilanz-main .bilanz3 a .option p, .bilanz-main .bilanz4 a .option p {
+  text-align: center;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: #000000;
+}
+
+.left {
+  text-align: left;
+  padding-right: 5px;
+}
+
+.center {
+  text-align: center;
+  padding: 0 5px;
+}
+
+.right {
+  text-align: right;
+  padding-left: 5px;
+}
+
+.ergebnis {
+  text-align: left;
+}
+
+.double {
+  -webkit-text-decoration: underline double;
+          text-decoration: underline double;
+}
+
+ul > li {
+  font-size: 20px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table .side {
+  width: 50%;
+}
+table .border {
+  border: 1px solid darkgrey;
+}
+table td button {
+  margin: 5px 0;
+}
+
+/* Sonstiges */
+.bild {
+  text-align: center;
+}
+.bild img {
+  border: 2px solid black;
+  background-color: black;
+  border-radius: 50%;
+  width: 25%;
+}
+
+.dark {
+  background-color: lightgrey;
+}/*# sourceMappingURL=style.css.map */

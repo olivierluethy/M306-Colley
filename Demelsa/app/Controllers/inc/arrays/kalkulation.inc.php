@@ -1,0 +1,23 @@
+<?php
+$kalkulation = array(
+    array('ek-erstellen',
+                'einkauf.svg',
+                'Frosch',
+                'Einkaufskalkulation',
+    ),
+    array('ik-erstellen',
+                'intern.svg',
+                'Känguru',
+                'Internekalkulation',
+    ),
+    array('vk-erstellen',
+                'verkauf.svg',
+                'Hase',
+                'Verkaufskalkulation'
+    ),
+    array('gk-erstellen',
+                'gesamt.svg',
+                'Hirsch',
+                'Gesamtkalkulation',
+    ),
+);

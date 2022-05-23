@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/** Colley Button-CSS
+    * Hier wird nur beschrieben was zu den Buttons gehört.
+    * Alles was das Style betrifft, wird im Style-CSS definiert.
+    * Alles was das Grid betrifft, wird im Grid-CSS definiert.
+    * Alles was das Menu betrifft, wird im Menü-CSS definiert.
+    */
+.btn {
+  font-size: 1.2em;
+  padding: 5px 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.submit {
+  background-color: #56aa72;
+  color: #ffffff;
+}/*# sourceMappingURL=button.css.map */

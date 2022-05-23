@@ -1,0 +1,101 @@
+/** Colley Grid-CSS
+    * Hier wird nur beschrieben was zum Grid gehört.
+    * Alles was das Style betrifft, wird im Style-CSS definiert.
+    * Alles was das Menu betrifft, wird im Menü-CSS definiert.
+    * Alles was die Buttons betrifft, wird im Button-CSS definiert
+    */
+// Container - Bleibt immer Fix
+.container{
+    display: grid;
+    grid-template-areas:
+    'header'
+    'titel'
+    'text'
+    'main';
+
+    .header{
+        grid-area: header;
+        grid-template-areas:
+        'line'
+        'colley'
+        'line';
+
+        .line{grid-area: line;}
+        .colley{grid-area: colley;}
+    }
+    .titel{grid-area: titel;}
+    .text{grid-area: text;}
+}
+
+// Welcome
+.welcome-main{
+    grid-area: main;
+    display: grid;
+    grid-template-areas: 'neuesKonto  bilanz  erfolgsrechnung  jahresabschluss  kalkulationen';
+    grid-template-columns: repeat(5,20%);
+    .welcome1{grid-area: neuesKonto;}
+    .welcome2{grid-area: bilanz;}
+    .welcome3{grid-area: erfolgsrechnung;}
+    .welcome4{grid-area: jahresabschluss;}
+    .welcome5{grid-area: kalkulationen;}
+}
+
+// Neues Konto
+.neuesKonto-main{
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+    'fehler'
+    'konto';
+    margin: 0 auto;
+    .fehler{
+        grid-area: fehler;
+    }
+    .konto{
+        grid-area: konto;
+        display: grid;
+        grid-template-areas:
+        'kontonrLabel  kontonrInput'
+        'titelLabel  titelInput'
+        'zweckLabel  zweckInput'
+        '..  kontoButton';
+    }
+    .konto1{
+        grid-area: kontonrLabel;
+    }
+    .konto2{
+        grid-area: kontonrInput;
+    }
+    .konto3{
+        grid-area: titelLabel; 
+        padding: 10px 0;
+    }
+    .konto4{
+        grid-area: titelInput; 
+        padding: 10px 0;
+    }
+    .konto5{
+        grid-area: zweckLabel;
+    }
+    .konto6{
+        grid-area: zweckInput;
+    }
+    .konto7{
+        grid-area: kontoButton; 
+        text-align: center; 
+        padding: 10px 0;
+    }
+}
+
+// Bilanz
+.bilanz-main{
+    grid-area: main;
+    display: grid;
+    grid-template-areas: 'kontouebersicht  journaleintrag  kontoeintragBearbeiten  rechnungsnummer';
+    grid-template-columns: repeat(4, 25%);
+
+    .bilanz1{grid-area: kontouebersicht;}
+    .bilanz2{grid-area: journaleintrag;}
+    .bilanz3{grid-area: kontoeintragBearbeiten;}
+    .bilanz4{grid-area: rechnungsnummer;}
+}

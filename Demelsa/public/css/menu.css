@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/** Colley Menü-CSS
+    * Hier wird nur beschrieben was zum Menü gehört.
+    * Alles was das Style betrifft, wird im Style-CSS definiert.
+    * Alles was das Menu betrifft, wird im Grid-CSS definiert.
+    * Alles was die Buttons betrifft, wird im Button-CSS definiert
+    */
+.menu {
+  position: absolute;
+  left: 10px;
+  top: 326px;
+  color: #000000;
+}
+.menu span {
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition-duration: 0.4s;
+  padding-top: 40px;
+  box-shadow: 10px 0 5px -2px #888;
+  overflow-y: hidden;
+}
+.sidenav h1 {
+  padding: 0px 8px 0px 32px;
+  color: white;
+  display: block;
+  transition-duration: 0.4s;
+}
+.sidenav h1:hover {
+  color: #f1f1f1;
+  cursor: context-menu;
+}
+.sidenav h2 {
+  padding: 0px 8px 0px 32px;
+  color: whitesmoke;
+  display: block;
+  transition-duration: 0.4s;
+  font-style: italic;
+}
+.sidenav h2:hover {
+  color: #f1f1f1;
+  cursor: context-menu;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition-duration: 0.4s;
+}
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+.sidenav a:nth-child(4) {
+  cursor: pointer;
+}
+.sidenav p {
+  padding: 8px 8px 8px 32px;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition-duration: 0.4s;
+}
+.sidenav p:hover {
+  cursor: context-menu;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.sidenav button {
+  background-color: white;
+  border: 2px solid white;
+  color: black;
+  padding: 16px 113px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.sidenav button:hover {
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+}
+.sidenav img {
+  width: 15%;
+  filter: invert(100%);
+  border-radius: 50%;
+}/*# sourceMappingURL=menu.css.map */

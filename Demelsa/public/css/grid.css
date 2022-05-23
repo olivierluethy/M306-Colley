@@ -1,0 +1,108 @@
+@charset "UTF-8";
+/** Colley Grid-CSS
+    * Hier wird nur beschrieben was zum Grid gehört.
+    * Alles was das Style betrifft, wird im Style-CSS definiert.
+    * Alles was das Menu betrifft, wird im Menü-CSS definiert.
+    * Alles was die Buttons betrifft, wird im Button-CSS definiert
+    */
+.container {
+  display: grid;
+  grid-template-areas: "header" "titel" "text" "main";
+}
+.container .header {
+  grid-area: header;
+  grid-template-areas: "line" "colley" "line";
+}
+.container .header .line {
+  grid-area: line;
+}
+.container .header .colley {
+  grid-area: colley;
+}
+.container .titel {
+  grid-area: titel;
+}
+.container .text {
+  grid-area: text;
+}
+
+.welcome-main {
+  grid-area: main;
+  display: grid;
+  grid-template-areas: "neuesKonto  bilanz  erfolgsrechnung  jahresabschluss  kalkulationen";
+  grid-template-columns: repeat(5, 20%);
+}
+.welcome-main .welcome1 {
+  grid-area: neuesKonto;
+}
+.welcome-main .welcome2 {
+  grid-area: bilanz;
+}
+.welcome-main .welcome3 {
+  grid-area: erfolgsrechnung;
+}
+.welcome-main .welcome4 {
+  grid-area: jahresabschluss;
+}
+.welcome-main .welcome5 {
+  grid-area: kalkulationen;
+}
+
+.neuesKonto-main {
+  grid-area: main;
+  display: grid;
+  grid-template-areas: "fehler" "konto";
+  margin: 0 auto;
+}
+.neuesKonto-main .fehler {
+  grid-area: fehler;
+}
+.neuesKonto-main .konto {
+  grid-area: konto;
+  display: grid;
+  grid-template-areas: "kontonrLabel  kontonrInput" "titelLabel  titelInput" "zweckLabel  zweckInput" "..  kontoButton";
+}
+.neuesKonto-main .konto1 {
+  grid-area: kontonrLabel;
+}
+.neuesKonto-main .konto2 {
+  grid-area: kontonrInput;
+}
+.neuesKonto-main .konto3 {
+  grid-area: titelLabel;
+  padding: 10px 0;
+}
+.neuesKonto-main .konto4 {
+  grid-area: titelInput;
+  padding: 10px 0;
+}
+.neuesKonto-main .konto5 {
+  grid-area: zweckLabel;
+}
+.neuesKonto-main .konto6 {
+  grid-area: zweckInput;
+}
+.neuesKonto-main .konto7 {
+  grid-area: kontoButton;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.bilanz-main {
+  grid-area: main;
+  display: grid;
+  grid-template-areas: "kontouebersicht  journaleintrag  kontoeintragBearbeiten  rechnungsnummer";
+  grid-template-columns: repeat(4, 25%);
+}
+.bilanz-main .bilanz1 {
+  grid-area: kontouebersicht;
+}
+.bilanz-main .bilanz2 {
+  grid-area: journaleintrag;
+}
+.bilanz-main .bilanz3 {
+  grid-area: kontoeintragBearbeiten;
+}
+.bilanz-main .bilanz4 {
+  grid-area: rechnungsnummer;
+}/*# sourceMappingURL=grid.css.map */
