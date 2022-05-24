@@ -24,8 +24,8 @@
         <!-- Fehlermeldungen -->
             <div class="fehler">
                 <?php
-                if(isset($error)):
-                    echo $error;
+                if(!empty($_SESSION['error'])):
+                    echo $_SESSION['error'];
                 endif;
                 ?>
             </div>
@@ -33,25 +33,25 @@
             <form action="kontoErstellen" method="POST">
                 <div class="konto">
                     <div class="konto1">
-                        <label for="kontoNr">Kontonummer:</label>
+                        <label for="kontoNr">Kontonummer: *</label>
                     </div>
                     <div class="konto2">
-                        <input type="number" name="kontoNr" id="kontoNr" placeholder="1000">
+                        <input type="number" name="kontoNr" id="kontoNr" placeholder="1000" required>
                     </div>
                     <div class="konto3">
                         <label for="kontoName">Titel:</label>
                     </div>
                     <div class="konto4">
-                        <input type="text" name="kontoName" id="kontoName" placeholder="Titel">
+                        <input type="text" name="kontoName" id="kontoName" placeholder="Titel" required>
                     </div>
                     <div class="konto5">
                         <label for="kontoZweck">Verwendungszweck:</label>
                     </div>
                     <div class="konto6">
-                        <textarea name="kontoZweck" id="kontoZweck" rows="2" placeholder="Verwendungszweck"></textarea>
+                        <textarea name="kontoZweck" id="kontoZweck" rows="2" placeholder="Verwendungszweck" required></textarea>
                     </div>
                     <div class="konto7">
-                        <button type="submit" class="btn submit">Konto erstellen</button>
+                        <button type="submit" class="btn submit" >Konto erstellen</button>
                     </div>
                 </div>
             </form>
