@@ -13,6 +13,7 @@ class ColleyController
 // Neues Konto
 	public function neuesKonto()
 	{
+		session_start();
 		include('app/Controllers/inc/heading.inc.php');
 		include('app/Controllers/inc/bilanz/neuesKonto.inc.php');
 		include('app/Views/sideNav.view.php');
@@ -20,6 +21,9 @@ class ColleyController
 	}
 	public function kontoErstellen()
 	{
+		session_start();
+		session_destroy();
+		session_start();
 		include('app/Controllers/inc/bilanz/kontoErstellen.inc.php');
 	}
 // Bilanz
