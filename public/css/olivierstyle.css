@@ -1,63 +1,86 @@
 @charset "UTF-8";
-body {
+html {
+  --bg: #FCFCFC;
+  --bg-text: #EBEBEB;
+  --color-headings: #0077FF;
+  --color-text: #333333;
+  --color-text-link: royalblue;
+  --color-of-option-images: invert(0);
+}
+html[data-theme=dark] {
+  --bg: #333333;
+  --bg-panel: #434343;
+  --color-headings: #3694FF;
+  --color-text: rgba(255, 255, 255, .87);
+  --color-text-link: #FCFCFC;
+  --color-of-option-images: invert(100%);
+}
+html body {
   padding: 0;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  /* Text für Login-, Journal- und Kontovalidierung */
+  /* Allgemeine Tabelleneinstellung */
+  /* Tabelle für das Login und Register */
+  /* Tabelle für Rechnungsnummer und Journal */
+  /* Table für die Seite um neue Konten erfassen zu können */
+  /* Table für Bilanz und Willkommen Seite */
+  /* Style für Kontouebersicht */
+  /* Login and Register Page Error */
+  /* Sidenavigation */
 }
-
-.title {
+html body p {
+  color: var(--color-text);
+}
+html body .title {
+  color: var(--color-text);
   text-align: center;
 }
-.title h1 {
+html body .title h1 {
   margin-top: 2rem;
   font-size: 50px;
 }
-.title h2 {
+html body .title h2 {
   font-size: 40px;
 }
-
-.menu {
+html body .menu {
   position: absolute;
   left: 10px;
   top: 10px;
+  color: var(--color-text);
 }
-.menu span {
+html body .menu span {
   font-size: 35px;
   cursor: pointer;
 }
-
-/* Text für Login-, Journal- und Kontovalidierung */
-#email_login_error,
-#passwort_login_error,
-#email_register_error,
-#passwort_register_error,
-#passwortverify_register_error,
-#datum_error,
-#haben_error,
-#soll_error,
-#betrag_error,
-#kontonummer_konto_error,
-#titel_konto_error,
-#verwendungszweck_konto_error,
-#rechnungsnummer_rechnungsnummer_error,
-#journalnummer_rechnungsnummer_error,
-#rechnung_rechnungsnummer_error {
+html body #email_login_error,
+html body #passwort_login_error,
+html body #email_register_error,
+html body #passwort_register_error,
+html body #passwortverify_register_error,
+html body #datum_error,
+html body #haben_error,
+html body #soll_error,
+html body #betrag_error,
+html body #kontonummer_konto_error,
+html body #titel_konto_error,
+html body #verwendungszweck_konto_error,
+html body #rechnungsnummer_rechnungsnummer_error,
+html body #journalnummer_rechnungsnummer_error,
+html body #rechnung_rechnungsnummer_error {
   color: red;
   text-align: center;
   font-weight: bold;
 }
-
-/* Allgemeine Tabelleneinstellung */
-.margin-auto {
+html body .margin-auto {
   margin-left: auto;
   margin-right: auto;
 }
-
-label {
+html body label {
   float: right;
 }
-
-input {
+html body input {
   width: 90%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -66,8 +89,7 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
-textarea {
+html body textarea {
   width: 90%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -76,13 +98,11 @@ textarea {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
-/* Tabelle für das Login und Register */
-.logintable tr td .login {
+html body .logintable tr td .login {
   margin-right: 15rem;
   text-align: center;
 }
-.logintable tr td .login button[type=submit] {
+html body .logintable tr td .login button[type=submit] {
   background-color: #008CFF;
   border: 2px solid #008CFF;
   color: white;
@@ -92,16 +112,16 @@ textarea {
   padding: 15px 32px;
   cursor: pointer;
 }
-.logintable tr td .login button[type=submit]:hover {
+html body .logintable tr td .login button[type=submit]:hover {
   background-color: white;
   color: #008CFF;
   border: 2px solid #008CFF;
 }
-.logintable tr td .newAccount {
+html body .logintable tr td .newAccount {
   margin-left: 15rem;
   text-align: center;
 }
-.logintable tr td .newAccount input {
+html body .logintable tr td .newAccount input {
   width: 90%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -110,7 +130,7 @@ textarea {
   border-radius: 4px;
   box-sizing: border-box;
 }
-.logintable tr td .newAccount button[type=submit] {
+html body .logintable tr td .newAccount button[type=submit] {
   background-color: #008CFF;
   border: 2px solid #008CFF;
   color: white;
@@ -120,30 +140,28 @@ textarea {
   padding: 15px 32px;
   cursor: pointer;
 }
-.logintable tr td .newAccount button[type=submit]:hover {
+html body .logintable tr td .newAccount button[type=submit]:hover {
   background-color: white;
   color: #008CFF;
   border: 2px solid #008CFF;
 }
-.logintable tr td .divider {
+html body .logintable tr td .divider {
   text-align: center;
   margin-left: 0.1rem;
   border-left: 2px solid black;
   height: 500px;
 }
-
-/* Tabelle für Rechnungsnummer und Journal */
-.TabelleKlein label {
+html body .TabelleKlein label {
   margin-right: 2rem;
 }
-.TabelleKlein tr {
+html body .TabelleKlein tr {
   height: 5vh;
 }
-.TabelleKlein tr td .selectize-control {
+html body .TabelleKlein tr td .selectize-control {
   width: 200%;
   margin-top: 1rem;
 }
-.TabelleKlein tr td .selectize-control .selectize-input {
+html body .TabelleKlein tr td .selectize-control .selectize-input {
   width: 90%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -152,7 +170,7 @@ textarea {
   border-radius: 4px;
   box-sizing: border-box;
 }
-.TabelleKlein tr td button[type=submit] {
+html body .TabelleKlein tr td button[type=submit] {
   background-color: white;
   border: 1px solid black;
   color: black;
@@ -164,24 +182,22 @@ textarea {
   cursor: pointer;
   transition-duration: 0.4s;
 }
-.TabelleKlein tr td button[type=submit]:hover {
+html body .TabelleKlein tr td button[type=submit]:hover {
   background-color: black;
   color: white;
 }
-
-/* Table für die Seite um neue Konten erfassen zu können */
-.neuesKontoTabelle label {
+html body .neuesKontoTabelle label {
   margin-right: 2rem;
   margin-top: 2rem;
 }
-.neuesKontoTabelle tr {
+html body .neuesKontoTabelle tr {
   height: 5vh;
 }
-.neuesKontoTabelle tr td p {
+html body .neuesKontoTabelle tr td p {
   margin-top: -5rem;
   margin-right: 2rem;
 }
-.neuesKontoTabelle tr td button[type=submit] {
+html body .neuesKontoTabelle tr td button[type=submit] {
   background-color: white;
   border: 1px solid black;
   color: black;
@@ -193,41 +209,41 @@ textarea {
   cursor: pointer;
   transition-duration: 0.4s;
 }
-.neuesKontoTabelle tr td button[type=submit]:hover {
+html body .neuesKontoTabelle tr td button[type=submit]:hover {
   background-color: black;
   color: white;
 }
-
-/* Table für Bilanz und Willkommen Seite */
-.normalTable {
+html body .normalTable {
   width: 100%;
   text-align: center;
 }
-.normalTable tr th .option {
-  border: 2px solid black;
+html body .normalTable tr th .option {
+  border: 2px solid var(--color-text);
   margin-left: 2rem;
   margin-right: 2rem;
   cursor: pointer;
   transition-duration: 0.4s;
 }
-.normalTable tr th .option:hover {
+html body .normalTable tr th .option:hover {
   box-shadow: 0 0 10px 5px lightgray;
 }
-.normalTable tr th .option img {
+html body .normalTable tr th .option img {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
   width: 150px;
+  filter: var(--color-of-option-images);
 }
-
-/* Style für Kontouebersicht */
-.kontouebersichtTabelle {
+html body .normalTable tr th .option p {
+  color: var(--color-text);
+}
+html body .kontouebersichtTabelle {
   margin-left: 2rem;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
 }
-.kontouebersichtTabelle .konto {
+html body .kontouebersichtTabelle .konto {
   border: 2px solid black;
   background-color: #DAE8FC;
   cursor: pointer;
@@ -235,25 +251,22 @@ textarea {
   margin-bottom: 2rem;
   transition-duration: 0.4s;
 }
-.kontouebersichtTabelle .konto:hover {
+html body .kontouebersichtTabelle .konto:hover {
   box-shadow: 0 0 10px 5px lightgray;
 }
-.kontouebersichtTabelle .konto p {
+html body .kontouebersichtTabelle .konto p {
   margin: 2rem;
 }
-.kontouebersichtTabelle .konto p:nth-child(1) {
+html body .kontouebersichtTabelle .konto p:nth-child(1) {
   font-weight: bold;
 }
-
-.part {
+html body .part {
   margin: 2rem;
 }
-
-/* Login and Register Page Error */
-.loginPasswordIsWrong {
+html body .loginPasswordIsWrong {
   margin: 2rem;
 }
-.loginPasswordIsWrong .back {
+html body .loginPasswordIsWrong .back {
   background-color: #4CAF50;
   border: 1px solid #4CAF50;
   color: white;
@@ -266,12 +279,12 @@ textarea {
   transition-duration: 0.4s;
   cursor: pointer;
 }
-.loginPasswordIsWrong .back:hover {
+html body .loginPasswordIsWrong .back:hover {
   background-color: white;
   border: 1px solid #4CAF50;
   color: #4CAF50;
 }
-.loginPasswordIsWrong #sendEmail {
+html body .loginPasswordIsWrong #sendEmail {
   margin-top: 2rem;
   background-color: #203f59;
   border: 1px solid #203f59;
@@ -285,12 +298,11 @@ textarea {
   transition-duration: 0.4s;
   cursor: pointer;
 }
-.loginPasswordIsWrong #sendEmail:hover {
+html body .loginPasswordIsWrong #sendEmail:hover {
   background-color: white;
   color: #203f59;
 }
-
-.back {
+html body .back {
   background-color: #4CAF50;
   border: 1px solid #4CAF50;
   color: white;
@@ -303,14 +315,12 @@ textarea {
   transition-duration: 0.4s;
   cursor: pointer;
 }
-.back:hover {
+html body .back:hover {
   background-color: white;
   border: 1px solid #4CAF50;
   color: #4CAF50;
 }
-
-/* Sidenavigation */
-.sidenav {
+html body .sidenav {
   height: 100%;
   width: 0;
   position: fixed;
@@ -323,19 +333,69 @@ textarea {
   padding-top: 40px;
   box-shadow: 10px 0 5px -2px #888;
   overflow-y: hidden;
+  /* Dark-Ligh Mode */
+  /* Rounded sliders */
 }
-.sidenav h1 {
+html body .sidenav .toggle-container {
+  margin-left: 2rem;
+  float: left;
+  margin-top: -1.8rem;
+  display: flex;
+}
+html body .sidenav .toggle-container p {
+  margin-top: auto;
+  margin-left: 1rem;
+  color: white;
+  margin-bottom: auto;
+}
+html body .sidenav .toggle-container input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+html body .sidenav .toggle-container input[type=checkbox]:checked + label {
+  background: var(--color-headings);
+}
+html body .sidenav .toggle-container input[type=checkbox]:checked + label::after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+html body .sidenav .toggle-container label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: grey;
+  float: right;
+  border-radius: 100px;
+  position: relative;
+}
+html body .sidenav .toggle-container label:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+html body .sidenav .toggle-container label:active::after {
+  width: 45px;
+}
+html body .sidenav h1 {
   padding: 0px 8px 0px 32px;
   color: white;
   display: block;
   font-size: 50px;
   transition-duration: 0.4s;
 }
-.sidenav h1:hover {
+html body .sidenav h1:hover {
   color: #f1f1f1;
   cursor: context-menu;
 }
-.sidenav h2 {
+html body .sidenav h2 {
   padding: 0px 8px 0px 32px;
   color: whitesmoke;
   display: block;
@@ -343,11 +403,11 @@ textarea {
   font-style: italic;
   font-size: 20px;
 }
-.sidenav h2:hover {
+html body .sidenav h2:hover {
   color: #f1f1f1;
   cursor: context-menu;
 }
-.sidenav a {
+html body .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -355,57 +415,78 @@ textarea {
   display: block;
   transition-duration: 0.4s;
 }
-.sidenav a:hover {
+html body .sidenav a:hover {
   color: #f1f1f1;
 }
-.sidenav a:nth-child(4) {
+html body .sidenav a:nth-child(4) {
   cursor: pointer;
 }
-.sidenav p {
+html body .sidenav .eingeloggt p {
   padding: 8px 8px 8px 32px;
   font-size: 20px;
   color: #818181;
   display: block;
   transition-duration: 0.4s;
 }
-.sidenav p:hover {
+html body .sidenav .eingeloggt p:hover {
   cursor: context-menu;
 }
-.sidenav .closebtn {
+html body .sidenav .closebtn {
   position: absolute;
-  top: 0;
+  top: -3px;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
 }
-.sidenav button {
+html body .sidenav button {
   background-color: white;
   border: 2px solid white;
   color: black;
-  padding: 16px 113px;
+  padding: 18px 97.2px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: -3px;
   transition-duration: 0.4s;
   cursor: pointer;
+  margin-left: 0.1rem;
 }
-.sidenav button:hover {
+html body .sidenav button:hover {
   background-color: black;
   border: 2px solid white;
   color: white;
 }
-.sidenav img {
+html body .sidenav button:hover p {
+  color: white;
+}
+html body .sidenav button:hover img {
+  filter: invert(100%);
+}
+html body .sidenav button img {
+  width: 100%;
+  height: 2vh;
+}
+html body .sidenav button p {
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+html body .sidenav img {
   width: 15%;
 }
-
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a,
-.sidenav p {
-    font-size: 18px;
-  }
+html body footer {
+  position: absolute;
+  text-align: center;
+  padding: 3px;
+  bottom: 0px;
+  width: 99%;
+  background-color: lightblue;
+}
+html body footer p,
+html body footer a {
+  text-align: center;
+  color: white;
 }/*# sourceMappingURL=olivierstyle.css.map */

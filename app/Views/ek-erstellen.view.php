@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css">
+    <link rel="shortcut icon" href="assets/favicon.ico">
     <title>Colley</title>
 </head>
 
@@ -16,56 +17,48 @@
         rechnet.</p>
 
     <form action="ek-berechnen" method="POST">
-    <!-- Tabelle für Masseingabe -->
+        <!-- Tabelle für Masseingabe -->
         <table>
             <tr>
-            <!-- Seite / Keinen Rahmen -->
+                <!-- Seite / Keinen Rahmen -->
                 <td class="side"></td>
                 <td>
-                <!-- Eigentliche Tabelle / Keinen Rahmen -->
+                    <!-- Eigentliche Tabelle / Keinen Rahmen -->
                     <table>
-                    <!-- Titelzeile -->
+                        <!-- Titelzeile -->
                         <tr class="border">
                             <th>Kosten</th>
                             <th colspan="4">Angaben</th>
                         </tr>
                         <?php for($i=0;$i<count($eingabe); $i++): ?>
                         <tr class="border">
-                        <!-- Tabellenzeile -->
+                            <!-- Tabellenzeile -->
                             <th class="left"><?= $eingabe[$i][0] ?></th>
-                        <!-- Bezeichnung CHF / Anz -->
+                            <!-- Bezeichnung CHF / Anz -->
                             <td class="left"><?= $eingabe[$i][1] ?></td>
-                        <!-- Input Betrag -->
+                            <!-- Input Betrag -->
                             <td>
-                                <input type="text"
-                                name="<?= $eingabe[$i][2] ?>" 
-                                id="<?= $eingabe[$i][2] ?>" 
-                                <?php if($eingabe[$i][0] == 'Katalogpreis'){ echo 'required';} ?> 
-                                <?php if($eingabe[$i][0] == 'Menge'){ echo 'required';}?>
-                                placeholder="1234.56" 
-                                class="right" 
-                                tabindex="<?= $eingabe[$i][5] ?>" 
-                                value="<?= $eingabe[$i][7] ?>">
+                                <input type="text" name="<?= $eingabe[$i][2] ?>" id="<?= $eingabe[$i][2] ?>"
+                                    <?php if($eingabe[$i][0] == 'Katalogpreis'){ echo 'required';} ?>
+                                    <?php if($eingabe[$i][0] == 'Menge'){ echo 'required';}?> placeholder="1234.56"
+                                    class="right" tabindex="<?= $eingabe[$i][5] ?>" value="<?= $eingabe[$i][7] ?>">
                             </td>
-                        <!-- Prozente -->
+                            <!-- Prozente -->
                             <?php if($eingabe[$i][3] != ''): ?>
-                        <!-- Input Prozente -->
+                            <!-- Input Prozente -->
                             <td>
-                                <input type="text" 
-                                name="<?= $eingabe[$i][3] ?>" 
-                                id="<?= $eingabe[$i][3] ?>" 
-                                placeholder="1234.56" class="right" 
-                                tabindex="<?= $eingabe[$i][6] ?>" 
-                                value="<?= $eingabe[$i][8] ?>">
+                                <input type="text" name="<?= $eingabe[$i][3] ?>" id="<?= $eingabe[$i][3] ?>"
+                                    placeholder="1234.56" class="right" tabindex="<?= $eingabe[$i][6] ?>"
+                                    value="<?= $eingabe[$i][8] ?>">
                             </td>
-                        <!-- Bezeichnung % -->
+                            <!-- Bezeichnung % -->
                             <td class="center">%</td>
-                        <!-- Wenn kein Prozente-Input -->
+                            <!-- Wenn kein Prozente-Input -->
                             <?php else: ?>
-                                <td colspan="2"></td>
+                            <td colspan="2"></td>
                             <?php endif; ?>
                         </tr>
-                    <!-- Buttons -->
+                        <!-- Buttons -->
                         <?php endfor ?>
                         <tr>
                             <td class="left">

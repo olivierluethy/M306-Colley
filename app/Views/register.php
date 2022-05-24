@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<?php
+    <?php
     // Check if the user is already logged in, if yes then redirect him to index page
     if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
         header("location: home");
@@ -88,7 +88,7 @@
                         
                         // Attempt to execute the prepared statement
                         if($stmt->execute()){
-                            // Check if username exists, if yes then verify password
+                            // After register is successful, auto login
                             if($stmt->rowCount() == 1){
                                 if($row = $stmt->fetch()){
                                     $id = $row["id"];

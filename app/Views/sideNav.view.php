@@ -1,4 +1,9 @@
 <div id="mySidenav" class="sidenav">
+    <div class="toggle-container">
+        <input type="checkbox" id="switch" name="theme" /><label id="label" title="Change To Dark Mode" for="switch"></label>
+        <p id="mode">Light Mode</p>
+    </div>
+    <hr>
     <h1>Colley</h1>
     <h2>Buchhaltungssoftware</h2>
     <hr>
@@ -15,5 +20,7 @@
     echo "<p>Angemeldet mit:<br>" . $_SESSION['email'] ."</p>";
     ?>
     </div>
-    <button onclick="logout()">Logout</button>
+    <button onclick="logout()"><img src="assets/logout.svg" alt="">&nbsp<p>Logout</p></button>
 </div>
+
+<script src="public/js/darkLightMode.js"></script>
