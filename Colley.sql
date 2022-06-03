@@ -1,5 +1,4 @@
--- This is the SQL for the database structure from the Colley website --
-
+-- Datenbankerstellung
 DROP DATABASE IF EXISTS Colley;
 CREATE DATABASE Colley;
 USE Colley;
@@ -10,4 +9,24 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     tmp_login_code INT(10)
+);
+CREATE TABLE konto(
+    kontoId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    kontoNr INT NOT NULL,
+    kontoName VARCHAR(255) NOT NULL,
+    kontoZweck VARCHAR(255) NOT NULL
+);
+CREATE TABLE kontenplan(
+    planId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    planNr INT NOT NULL,
+    planTitel VARCHAR(255) NOT NULL
+);
+CREATE TABLE journaleintrag(
+    journaleintragId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    datum DATE NOT NULL,
+    haben INT NOT NULL,
+    soll INT NOT NULL,
+    betrag FLOAT NOT NULL,
+    fk_usersId INT NOT NULL,
+    FOREIGN KEY (fk_usersId) REFERENCES users(id)
 );

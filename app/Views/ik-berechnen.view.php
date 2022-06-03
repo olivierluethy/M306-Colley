@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="shortcut icon" href="assets/favicon.ico">
     <title>Colley</title>
 </head>
+
 <body>
     <h1>Colley</h1>
     <h2>Interne Kalkulation</h2>
@@ -24,51 +26,51 @@
                         <th class="center"></th>
                         <th class="center" colspan="2">Pro Stück</th>
                         <?php if($Menge != 1): ?>
-                            <th class="center" colspan="3"></th>
-                            <th class="center" colspan="2"><?= $Menge ?> Stück</th>
+                        <th class="center" colspan="3"></th>
+                        <th class="center" colspan="2"><?= $Menge ?> Stück</th>
                         <?php endif ?>
                     </tr>
                     <?php for($i=0; $i<count($ausgabe); $i++): ?>
-                        <tr class="border">
+                    <tr class="border">
                         <!-- Fix -->
-                            <td class="center"><?= $ausgabe[$i][0] ?></td>
-                            <td class="left"><?= $ausgabe[$i][1] ?></td>
+                        <td class="center"><?= $ausgabe[$i][0] ?></td>
+                        <td class="left"><?= $ausgabe[$i][1] ?></td>
                         <!-- Zeile 1 + 2 -->
-                            <?php if(!empty($ausgabe[$i][2]) && empty($ausgabe[$i][3])): ?>
-                                <td></td>
-                                <td class="right"><?= number_format(${$ausgabe[$i][2]},2,",") ?></td>
-                                <td class="center">%</td>
-                                <td></td>
-                                <td colspan="4"></td>
+                        <?php if(!empty($ausgabe[$i][2]) && empty($ausgabe[$i][3])): ?>
+                        <td></td>
+                        <td class="right"><?= number_format(${$ausgabe[$i][2]},2,",") ?></td>
+                        <td class="center">%</td>
+                        <td></td>
+                        <td colspan="4"></td>
                         <!-- Zeile 3 -->
-                            <?php elseif(!empty($ausgabe[$i][2]) && !empty($ausgabe[$i][3])): ?>
-                                <td></td>
-                                <td class="right"><?= number_format(${$ausgabe[$i][2]},2,",") ?></td>
-                                <td class="center">%</td>
-                                <td class="center" colspan="2">=></td>
-                                <td class="right"><?= number_format(${$ausgabe[$i][3]},2,",") ?></td>
-                                <td class="center">%</td>
-                                <td></td>
+                        <?php elseif(!empty($ausgabe[$i][2]) && !empty($ausgabe[$i][3])): ?>
+                        <td></td>
+                        <td class="right"><?= number_format(${$ausgabe[$i][2]},2,",") ?></td>
+                        <td class="center">%</td>
+                        <td class="center" colspan="2">=></td>
+                        <td class="right"><?= number_format(${$ausgabe[$i][3]},2,",") ?></td>
+                        <td class="center">%</td>
+                        <td></td>
                         <!-- Zeile 4 + 5 -->
-                            <?php elseif(empty($ausgabe[$i][2]) && !empty($ausgabe[$i][3])): ?>
-                                <td colspan="4"></td>
-                                <td></td>
-                                <td class="right"><?= number_format(${$ausgabe[$i][3]}, 2, ",") ?></td>
-                                <td class="center">%</td>
-                                <td></td>
-                            <?php endif ?>
+                        <?php elseif(empty($ausgabe[$i][2]) && !empty($ausgabe[$i][3])): ?>
+                        <td colspan="4"></td>
+                        <td></td>
+                        <td class="right"><?= number_format(${$ausgabe[$i][3]}, 2, ",") ?></td>
+                        <td class="center">%</td>
+                        <td></td>
+                        <?php endif ?>
                         <!-- Fix -->
-                            <td></td>
-                            <td class="center">CHF</td>
-                            <td class="right"><?= number_format(${$ausgabe[$i][4]},2,",","'") ?></td>
-                            <?php if($Menge != 1): ?>
-                                <td class="center"></td>
-                                <td class="center">=></td>
-                                <td class="center"></td>
-                                <td class="center">CHF</td>
-                                <td class="right"><?= number_format(${$ausgabe[$i][5]}, 2, ",", "'") ?></td>
-                            <?php endif ?>
-                        </tr>
+                        <td></td>
+                        <td class="center">CHF</td>
+                        <td class="right"><?= number_format(${$ausgabe[$i][4]},2,",","'") ?></td>
+                        <?php if($Menge != 1): ?>
+                        <td class="center"></td>
+                        <td class="center">=></td>
+                        <td class="center"></td>
+                        <td class="center">CHF</td>
+                        <td class="right"><?= number_format(${$ausgabe[$i][5]}, 2, ",", "'") ?></td>
+                        <?php endif ?>
+                    </tr>
                     <?php endfor ?>
                     <tr>
                         <td class="center weiss" colspan="<?php if($Menge == 1): echo'13'; else: echo '18'; endif ?>">
@@ -83,4 +85,5 @@
         </tr>
     </table>
 </body>
+
 </html>

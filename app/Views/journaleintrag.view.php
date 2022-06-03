@@ -33,12 +33,12 @@
     <p id="soll_error"></p>
     <p id="betrag_error"></p>
 
-    <form>
+    <form action="journaleintrag" method="POST">
 
         <table class="TabelleKlein margin-auto">
             <tr>
                 <td><label>Datum:</label></td>
-                <td><input type="date" id="date" name="fname"><br>
+                <td><input type="date" id="date" name="datum"><br>
                 </td>
             </tr>
             <tr>
@@ -461,7 +461,7 @@
                     <label>Betrag:</label>
                 </td>
                 <td>
-                    <input type="number" id="betrag" placeholder="CHF">
+                    <input type="number" name="betrag" id="betrag" placeholder="CHF">
                 </td>
             </tr>
             <tr>

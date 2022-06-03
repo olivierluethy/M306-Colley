@@ -230,6 +230,27 @@ class ColleyController
 			exit;
 		}
 
+		if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+			$datum = $_POST['datum'];
+			$haben = $_POST['haben'];
+			$soll = $_POST['soll'];
+			$betrag = $_POST['betrag'];
+
+			$title = '';
+			$pdo = connectDatabase();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+			$statement = $pdo->prepare('INSERT INTO journaleintrag (datum, haben, soll, betrag, fk_usersId) VALUES (:datum, :haben, :soll, :betrag, :fk_usersId)');
+			$statement->bindParam(':datum', $datum, PDO::PARAM_STR);
+			$statement->bindParam(':haben', $haben, PDO::PARAM_STR);
+			$statement->bindParam(':soll', $soll, PDO::PARAM_STR);
+			$statement->bindParam(':betrag', $betrag, PDO::PARAM_STR);
+			$statement->bindParam(':fk_usersId', $_SESSION["id"], PDO::PARAM_STR);
+			$statement->execute();
+			header("location: journaleintrag");
+		}
+
       	include("app/Views/sideNav.view.php");
 		require 'app/Views/journaleintrag.view.php';
 	}

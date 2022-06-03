@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,12 @@
     <link rel="shortcut icon" href="assets/favicon.ico">
     <title>Colley</title>
 </head>
+
 <body>
     <h1>Colley</h1>
     <h2>Interne Kalkulation</h2>
-    <p class="center">Bitte geben Sie den Katalogpreis eines einzelnen Stückes an, da der Kalkulator sonst falsch rechnet.</p>
+    <p class="center">Bitte geben Sie den Katalogpreis eines einzelnen Stückes an, da der Kalkulator sonst falsch
+        rechnet.</p>
     <form action="ik-berechnen" method="POST">
         <table>
             <tr>
@@ -23,35 +26,29 @@
                             <th colspan="4">Angaben</th>
                         </tr>
                         <?php for($i=0; $i<count($eingabe); $i++): ?>
-                            <tr class="border">
+                        <tr class="border">
                             <!-- Zeilentitel -->
-                                <th class="left"><?= $eingabe[$i][0] ?></th>
+                            <th class="left"><?= $eingabe[$i][0] ?></th>
                             <!-- Bezeichnung CHF / Anz -->
-                                <td><?= $eingabe[$i][1] ?></td>
+                            <td><?= $eingabe[$i][1] ?></td>
                             <!-- Input CHF / Anz -->
-                                <td>
-                                    <input type="text" 
-                                    name="<?= $eingabe[$i][2] ?>" 
-                                    id="<?= $eingabe[$i][2] ?>" 
-                                    <?php if($eingabe[$i][0] == 'Einstandspreis'): echo 'required'; endif ?> 
-                                    placeholder="1234.56" 
-                                    tabindex="<?= $eingabe[$i][3] ?>" 
+                            <td>
+                                <input type="text" name="<?= $eingabe[$i][2] ?>" id="<?= $eingabe[$i][2] ?>"
+                                    <?php if($eingabe[$i][0] == 'Einstandspreis'): echo 'required'; endif ?>
+                                    placeholder="1234.56" tabindex="<?= $eingabe[$i][3] ?>"
                                     value="<?= $eingabe[$i][4] ?>">
-                                </td>
-                                <?php if($eingabe[$i][5] == ''): echo '<td colspan="2"></td>'; else: ?>
+                            </td>
+                            <?php if($eingabe[$i][5] == ''): echo '<td colspan="2"></td>'; else: ?>
                             <!-- Input % -->
-                                    <td>
-                                        <input type="text" 
-                                        name="<?= $eingabe[$i][5] ?>" 
-                                        id="<?= $eingabe[$i][5] ?>" 
-                                        placeholder="1234.56" 
-                                        tabindex="<?= $eingabe[$i][6] ?>" 
-                                        value="<?= $eingabe[$i][7] ?>">
-                                    </td>
+                            <td>
+                                <input type="text" name="<?= $eingabe[$i][5] ?>" id="<?= $eingabe[$i][5] ?>"
+                                    placeholder="1234.56" tabindex="<?= $eingabe[$i][6] ?>"
+                                    value="<?= $eingabe[$i][7] ?>">
+                            </td>
                             <!-- Bezeichnung % -->
-                                    <td><?= $eingabe[$i][8] ?></td>
-                                <?php endif ?>
-                            </tr>
+                            <td><?= $eingabe[$i][8] ?></td>
+                            <?php endif ?>
+                        </tr>
                         <?php endfor ?>
                         <tr>
                             <td><a href="kalkulation"><button type="button" tabindex="8">Zurück</button></a></td>
@@ -64,4 +61,5 @@
         </table>
     </form>
 </body>
+
 </html>

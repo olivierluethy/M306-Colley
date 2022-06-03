@@ -6,6 +6,8 @@ html {
   --color-text: #333333;
   --color-text-link: royalblue;
   --color-of-option-images: invert(0);
+  --color-for-footer: #4b6982;
+  --color-for-footer-text: #b4ffd8;
 }
 html[data-theme=dark] {
   --bg: #333333;
@@ -14,6 +16,8 @@ html[data-theme=dark] {
   --color-text: rgba(255, 255, 255, .87);
   --color-text-link: #FCFCFC;
   --color-of-option-images: invert(100%);
+  --color-for-footer: white;
+  --color-for-footer-text: black;
 }
 html body {
   padding: 0;
@@ -478,15 +482,15 @@ html body .sidenav img {
   width: 15%;
 }
 html body footer {
-  position: absolute;
-  text-align: center;
-  padding: 3px;
-  bottom: 0px;
-  width: 99%;
-  background-color: lightblue;
+  background-color: var(--color-for-footer);
 }
-html body footer p,
-html body footer a {
+html body footer p:nth-child(1) {
+  margin-top: 5rem;
+  color: var(--color-for-footer-text);
   text-align: center;
-  color: white;
+}
+html body footer p:nth-child(2) {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--color-for-footer-text);
 }/*# sourceMappingURL=olivierstyle.css.map */

@@ -16,9 +16,17 @@ CREATE TABLE konto(
     kontoName VARCHAR(255) NOT NULL,
     kontoZweck VARCHAR(255) NOT NULL
 );
-
 CREATE TABLE kontenplan(
-    planId INT NOT NULL PRIMARY KEY AUTO_INCREMENT
+    planId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     planNr INT NOT NULL,
     planTitel VARCHAR(255) NOT NULL
+);
+CREATE TABLE journaleintrag(
+    journaleintragId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    datum DATE NOT NULL,
+    haben INT NOT NULL,
+    soll INT NOT NULL,
+    betrag FLOAT NOT NULL,
+    fk_usersId INT NOT NULL,
+    FOREIGN KEY (fk_usersId) REFERENCES users(id)
 );
