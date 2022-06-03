@@ -25,7 +25,7 @@
     <p id="titel_konto_error"></p>
     <p id="verwendungszweck_konto_error"></p>
 
-    <form>
+    <form action="neues-konto" method="POST">
         <table class="TabelleKlein margin-auto">
             <tr>
                 <td><label for="kontonummer">Kontonummer:</label></td>

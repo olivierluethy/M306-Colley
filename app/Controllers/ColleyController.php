@@ -5,7 +5,11 @@ class ColleyController
 	/* Die Welcome Seite */
 	public function index()
 	{	
+		// Initialize the session
         session_start();
+
+		$pdo = connectDatabase();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		// Check if the user is logged in, if not then redirect him to login page
 		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
@@ -19,20 +23,20 @@ class ColleyController
 	}
 
 	/* Die Mail wird innert dieser Funktion versenden */
-	public function email_versenden(){
+	public function email_versenden()
+	{
+		// Initialize the session
 		session_start();
+
+		$pdo = connectDatabase();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 		$_SESSION["code"] = random_int(100000, 999999);
 
 		if($_SESSION["emailDirection"]){
-			$title = '';
-        	$pdo = connectDatabase();
-        	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$Colley = new Colley();
 
-            $statement = $pdo->prepare('UPDATE `users` SET tmp_login_code = :tmp_login_code WHERE email = :email');
-            $statement->bindParam(':tmp_login_code', $_SESSION["code"], PDO::PARAM_STR);
-			$statement->bindParam(':email', $_SESSION["emailDirection"], PDO::PARAM_STR);
-            $statement->execute();
+			$Colley -> email();
 
 			require("app/Views/mailer.php");
 
@@ -43,18 +47,19 @@ class ColleyController
 		}
 	}
 
-	public function checkIfCodeIsCorrect(){
+	public function checkIfCodeIsCorrect()
+	{
+		// Initialize the session
+		session_start();
+
+		$pdo = connectDatabase();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
-			session_start();
+			$Colley = new Colley();
 
-			$title = '';
-			$pdo = connectDatabase();
-			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-			$statement = $pdo->prepare('SELECT tmp_login_code FROM users WHERE email = :email');
-			$statement->bindParam(':email', $_SESSION["emailDirection"], PDO::PARAM_STR);
-			$statement->execute();
-			$code = $statement->fetchAll();
+			$code = $Colley -> CheckEnteredCode();
+			$code = $code->fetchAll();
 			
 			if($code[0][0] == $_POST["codeFromUser"]){
 				require 'app/Views/passwort_zuruecksetzen.view.php';
@@ -66,9 +71,11 @@ class ColleyController
 		}
 	}
 
-	public function password_zuruecksetzen(){
+	public function password_zuruecksetzen()
+	{
+		// Initialize the session
 		session_start();
-		$title = '';
+
 		$pdo = connectDatabase();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		require 'app/Views/passwordReset.php';
@@ -77,6 +84,7 @@ class ColleyController
 	/* Damit man sich ein- und ausloggen kann */
 	public function loginRegister()
 	{
+		// Initialize the session
 		session_start();
 
 		// Check if the user is already logged in, if yes then redirect him to index page
@@ -91,7 +99,6 @@ class ColleyController
 	/* Diese Seite enthält Sachen die angezeigt werden, sobald ein Fehler auftritt */
 	public function login()
 	{
-		$title = '';
 		$pdo = connectDatabase();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
@@ -102,7 +109,6 @@ class ColleyController
 	/* Diese Seite enthält Sachen die angezeigt werden, sobald ein Fehler auftritt */
 	public function register()
 	{
-		$title = '';
 		$pdo = connectDatabase();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -116,7 +122,8 @@ class ColleyController
 	}
 
 	/* Konfiguration für das Login */
-	public function config(){
+	public function config()
+	{
         require 'app/Views/config.php';
     }
 
@@ -193,7 +200,9 @@ class ColleyController
     }
 	
 	/* Bilanz */
-	public function bilanz(){
+	public function bilanz()
+	{
+		// Initialize the session
 		session_start();
 
 		// Check if the user is logged in, if not then redirect him to login page
@@ -207,7 +216,9 @@ class ColleyController
 	}
 
 	/* Kontoübersicht */
-	public function kontouebersicht(){
+	public function kontouebersicht()
+	{
+		// Initialize the session
 		session_start();
 
 		// Check if the user is logged in, if not then redirect him to login page
@@ -221,7 +232,9 @@ class ColleyController
 	}
 
 	/* Journaleinträge */
-	public function journaleintrag(){
+	public function journaleintrag()
+	{
+		// Initialize the session
 		session_start();
 
 		// Check if the user is logged in, if not then redirect him to login page
@@ -231,23 +244,15 @@ class ColleyController
 		}
 
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
+			$Colley = new Colley();
 
 			$datum = $_POST['datum'];
 			$haben = $_POST['haben'];
 			$soll = $_POST['soll'];
 			$betrag = $_POST['betrag'];
 
-			$title = '';
-			$pdo = connectDatabase();
-			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-			$statement = $pdo->prepare('INSERT INTO journaleintrag (datum, haben, soll, betrag, fk_usersId) VALUES (:datum, :haben, :soll, :betrag, :fk_usersId)');
-			$statement->bindParam(':datum', $datum, PDO::PARAM_STR);
-			$statement->bindParam(':haben', $haben, PDO::PARAM_STR);
-			$statement->bindParam(':soll', $soll, PDO::PARAM_STR);
-			$statement->bindParam(':betrag', $betrag, PDO::PARAM_STR);
-			$statement->bindParam(':fk_usersId', $_SESSION["id"], PDO::PARAM_STR);
-			$statement->execute();
+			$Colley -> journaleintrag($datum, $haben, $soll, $betrag);
+			
 			header("location: journaleintrag");
 		}
 
@@ -256,7 +261,9 @@ class ColleyController
 	}
 
 	/* Um ein neues Konto hinzufügen zu können */
-	public function neues_konto(){
+	public function neues_konto()
+	{
+		// Initialize the session
 		session_start();
 
 		// Check if the user is logged in, if not then redirect him to login page
@@ -265,11 +272,25 @@ class ColleyController
 			exit;
 		}
 
+		if($_SERVER["REQUEST_METHOD"] == "POST"){
+			$Colley = new Colley();
+
+			$kontonummer = $_POST['kontonummer'];
+			$titel = $_POST['titel'];
+			$verwendungszweck = $_POST['verwendungszweck'];
+
+			$Colley -> neues_konto($kontonummer, $titel, $verwendungszweck);
+			
+			header("location: neues-konto");
+		}
+
 		include("app/Views/sideNav.view.php");
 		require 'app/Views/neues_konto.view.php';
 	}
 
-	public function rechnungsnummer(){
+	public function rechnungsnummer()
+	{
+		// Initialize the session
 		session_start();
 
 		// Check if the user is logged in, if not then redirect him to login page
@@ -282,7 +303,9 @@ class ColleyController
 		require 'app/Views/rechnungsnummer.view.php';
 	}
 
-	public function erfolgsrechnung(){
+	public function erfolgsrechnung()
+	{
+		// Initialize the session
 		session_start();
 
 		// Check if the user is logged in, if not then redirect him to login page
@@ -295,7 +318,9 @@ class ColleyController
 		require 'app/Views/erfolgsrechnung.view.php';
 	}
 
-	public function kalkulation(){
+	public function kalkulation()
+	{
+		// Initialize the session
 		session_start();
 
 		// Check if the user is logged in, if not then redirect him to login page
