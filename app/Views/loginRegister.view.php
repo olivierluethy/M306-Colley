@@ -57,7 +57,8 @@ $_SESSION['email'] = "";
                                     <label for="passwort">Passwort:</label>
                                 </td>
                                 <td>
-                                    <input type="password" id="passwort_login" name="passwort_login" placeholder="Passwort">
+                                    <input type="password" id="passwort_login" name="passwort_login"
+                                        placeholder="Passwort">
                                 </td>
                             </tr>
                         </table>
@@ -86,7 +87,8 @@ $_SESSION['email'] = "";
                                     <label for="email">E-mail:</label>
                                 </td>
                                 <td>
-                                    <input type="email" id="email_register" name="email_register" placeholder="E-Mail-Adresse">
+                                    <input type="email" id="email_register" name="email_register"
+                                        placeholder="E-Mail-Adresse">
                                 </td>
                             </tr>
                             <tr>
@@ -94,7 +96,21 @@ $_SESSION['email'] = "";
                                     <label for="passwort">Passwort:</label>
                                 </td>
                                 <td>
-                                    <input type="password" id="passwort_register" name="passwort_register" placeholder="Passwort">
+                                    <input onkeyup="trigger()" type="password" id="passwort_register"
+                                        name="passwort_register" placeholder="Passwort">
+                                    <span class="showBtn">SHOW</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="password_strength_area">
+                                        <div class="indicator">
+                                            <span class="weak"></span>
+                                            <span class="medium"></span>
+                                            <span class="strong"></span>
+                                        </div>
+                                        <div class="text">Enter A Password</div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -102,7 +118,8 @@ $_SESSION['email'] = "";
                                     <label for="passwort_verify">Passwort:</label>
                                 </td>
                                 <td>
-                                    <input type="password" id="passwort_verify" name="passwort_verify" placeholder="Passwort erneut eingeben">
+                                    <input type="password" id="passwort_verify" name="passwort_verify"
+                                        placeholder="Passwort erneut eingeben">
                                 </td>
                             </tr>
                         </table>
@@ -113,6 +130,7 @@ $_SESSION['email'] = "";
         </tr>
     </table>
 
+    <script src="public/js/password_strength_checker.js"></script>
     <script src="public/js/clientSideValidationRegister.js"></script>
     <script src="public/js/clientSideValidationLogin.js"></script>
 </body>

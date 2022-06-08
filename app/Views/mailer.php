@@ -52,6 +52,7 @@ function sendMail()
         $mail->setFrom("colley@gmx.ch", 'Colley Support');
         /* An wem soll das Mail verschickt werden */
         $rec = $_SESSION["emailDirection"];
+        /* Code wird eingebunden */
         $code = $_SESSION["code"];
         $mail->addAddress($rec);
 
@@ -140,7 +141,7 @@ function sendMail()
     }
 }
 ?>
-<script src="public/js/clientSideValidationPasswortZurueck.js"></script>
+    <script src="public/js/clientSideValidationPasswortZurueck.js"></script>
 </body>
 
 </html>

@@ -134,6 +134,34 @@ html body .logintable tr td .newAccount input {
   border-radius: 4px;
   box-sizing: border-box;
 }
+html body .logintable tr td .newAccount .showBtn {
+  position: absolute;
+  right: 385px;
+  top: 45.5%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+html body .logintable tr td .newAccount .password_strength_area {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+}
+html body .logintable tr td .newAccount .password_strength_area .indicator {
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+html body .logintable tr td .newAccount .password_strength_area .indicator span {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid black;
+}
 html body .logintable tr td .newAccount button[type=submit] {
   background-color: #008CFF;
   border: 2px solid #008CFF;
@@ -157,6 +185,7 @@ html body .logintable tr td .divider {
 }
 html body .TabelleKlein label {
   margin-right: 2rem;
+  color: var(--color-text);
 }
 html body .TabelleKlein tr {
   height: 5vh;
