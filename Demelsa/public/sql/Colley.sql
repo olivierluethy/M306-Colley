@@ -16,17 +16,19 @@ CREATE TABLE konto(
     kontoName VARCHAR(255) NOT NULL,
     kontoZweck VARCHAR(255) NOT NULL
 );
+
 CREATE TABLE kontenplan(
     planId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     planNr INT NOT NULL,
     planTitel VARCHAR(255) NOT NULL
 );
-CREATE TABLE journaleintrag(
-    journaleintragId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    datum DATE NOT NULL,
-    haben INT NOT NULL,
+
+CREATE TABLE journal(
+    journalId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    datum VARCHAR(20) NOT NULL,
     soll INT NOT NULL,
-    betrag FLOAT NOT NULL,
-    fk_usersId INT NOT NULL,
-    FOREIGN KEY (fk_usersId) REFERENCES users(id)
+    haben INT NOT NULL,
+    betrag DECIMAL(9,2) NOT NULL,
+    rechnungsnummer INT NOT NULL,
+    rechnung VARCHAR(255) NOT NULL
 );

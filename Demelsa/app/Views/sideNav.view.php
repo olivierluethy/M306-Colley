@@ -4,8 +4,8 @@
     <h2>Buchhaltungssoftware</h2>
     <hr>
     <a class="closebtn" onclick="closeNav()">&times;</a>
-    <?php for($i=0; $i<count($array); $i++): ?>
-        <a href="<?= $array[$i][0] ?>"><img src="public/bilder/sideNav/<?= $array[$i][1] ?>" alt="<?= $array[$i][2] ?>">&nbsp <?= $array[$i][3] ?></a>
+    <?php for($i=0; $i<count($nav); $i++): ?>
+        <a href="<?= $nav[$i][0] ?>"><img src="public/bilder/sideNav/<?= $nav[$i][1] ?>" alt="<?= $nav[$i][2] ?>">&nbsp <?= $nav[$i][3] ?></a>
     <?php endfor ?>
     <hr>
     <div class="eingeloggt">

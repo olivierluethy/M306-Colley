@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css">
     <title>Colley</title>
+    <script src="public/js/navigate.js"></script>
 </head>
 <body>
     <div class="container">
@@ -16,7 +17,7 @@
         </div>
         <div class="titel"><h2>Welcome</h2></div>
         <div class="text"><p>Was wollen Sie erledigen?</p></div>
-        <div class="welcome-main">
+        <div class="main welcome-main">
             <?php for($i=0; $i<count($welcome); $i++): ?>
                 <div class="<?= $welcome[$i][0] ?>">
                     <a href="<?= $welcome[$i][1] ?>">

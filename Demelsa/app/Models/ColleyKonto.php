@@ -1,10 +1,10 @@
 <?php
 class ColleyKonto
 {
-	public int $kontoId;
-	public int $kontoNr;
-	public string $kontoName;
-	public string $kontoZweck;
+	public ?int $kontoId;
+	public ?int $kontoNr;
+	public ?string $kontoName;
+	public ?string $kontoZweck;
 
 	public $db;
 
@@ -33,7 +33,15 @@ class ColleyKonto
 
 	public function getAll()
 	{
-		$statement = $this->db->prepare('SELECT * FROM `konto`');
+		$statement = $this->db->prepare('SELECT * FROM `konto` ORDER BY `kontoNr` ASC');
+		$statement->execute();
+
+		return $statement->fetchAll();
+	}
+
+	public function getAllPlan()
+	{
+		$statement = $this->db->prepare('SELECT * FROM `kontenplan`');
 		$statement->execute();
 
 		return $statement->fetchAll();

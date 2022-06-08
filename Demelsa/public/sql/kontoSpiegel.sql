@@ -1,11 +1,11 @@
 USE Colley;
-INSERT INTO `kontospiegel`
-(`spiegelNr`,`spiegelTitel`)
+INSERT INTO `kontenplan`
+(`planNr`,`planTitel`)
 VALUES
 -- /----------/
 (1,'Aktiven'),
 -- /----------/
-(10,'Umlaufvermögen')
+(10,'Umlaufvermögen'),
 -- /----------/
 (100,'Flüssige Mittel'),
 (1000,'Kasse'),
@@ -64,7 +64,7 @@ VALUES
 (1519,'Wertberichtigungen Mobiliar und Einrichtungen'),
 (1520,'Büromaschinen, Informatik, Kommunikationstechnologie'),
 (1529,'Wertberichtigungen Büromaschinen, Informatik, Kommunikationstechnologie'),
-(1530,'Fahrzeuge',),
+(1530,'Fahrzeuge'),
 (1539,'Wertberichtigungen Fahrzeuge'),
 (1540,'Werkzeuge und Geräte'),
 (1549,'Wertberichtigungen Werkzeuge und Geräte'),
@@ -76,7 +76,7 @@ VALUES
 (170, 'Immaterielle Werte'),
 (1700,'Patente, Know-how, Lizenzen, Rechte, Entwicklungen'),
 (1709,'Wertberichtigungen Patente, Know-how, Lizenzen, Rechte, Entwicklungen'),
-(1770,'Goodwill',),
+(1770,'Goodwill'),
 (1779,'Wertberichtigung Goodwill'),
 -- /----------/
 (180,'Nicht einbezahltes Grund-. Gesellschafter- oder Stiftungskapital'),
@@ -88,7 +88,7 @@ VALUES
 -- /----------/
 (200,'Verbindlichkeiten aus Lieferungen und Leistungen'),
 (2000,'Verbindlichkeiten aus Lieferungen und Leistungen (Kreditoren)'),
-(2030,'Erhaltene Anzahlungen',),
+(2030,'Erhaltene Anzahlungen'),
 -- /----------/
 (210,'Kurzfristiges verzinsliche Verbindlichkeiten'),
 (2100,'Bankverbindlichkeiten'),

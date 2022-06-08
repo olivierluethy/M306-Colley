@@ -1,23 +1,31 @@
 <?php
 $kalkulation = array(
-    array('ek-erstellen',
-                'einkauf.svg',
-                'Frosch',
-                'Einkaufskalkulation',
+    array(
+        'kalkulation1',
+        'ek-erstellen',
+        'einkauf.svg',
+        'Frosch',
+        'Einkaufskalkulation',
     ),
-    array('ik-erstellen',
-                'intern.svg',
-                'Känguru',
-                'Internekalkulation',
+    array(
+        'kalkulation2',
+        'ik-erstellen',
+        'intern.svg',
+        'Känguru',
+        'Internekalkulation',
     ),
-    array('vk-erstellen',
-                'verkauf.svg',
-                'Hase',
-                'Verkaufskalkulation'
+    array(
+        'kalkulation3',
+        'vk-erstellen',
+        'verkauf.svg',
+        'Hase',
+        'Verkaufskalkulation'
     ),
-    array('gk-erstellen',
-                'gesamt.svg',
-                'Hirsch',
-                'Gesamtkalkulation',
+    array(
+        'kalkulation4',
+        'gk-erstellen',
+        'gesamt.svg',
+        'Hirsch',
+        'Gesamtkalkulation',
     ),
 );

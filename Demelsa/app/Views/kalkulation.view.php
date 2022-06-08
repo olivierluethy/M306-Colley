@@ -9,24 +9,33 @@
     <title>Colley</title>
 </head>
 <body>
-    <h1>Colley</h1>
-    <h2>Kalkulationen</h2>
-    <p>Welche Art der Kalkulation möchten Sie durchführen?</p>
-    <br>
-    <table>
-        <tr>
+    <div class="container">
+        <div class="header">
+            <div class="line"></div>
+            <div class="colley">
+                <h1>Colley</h1>
+            </div>
+            <div class="line"></div>
+        </div>
+        <div class="titel">
+            <h2>Kalkulationen</h2>
+        </div>
+        <div class="text">
+            <p>Welche Art der Kalkulation möchten Sie durchführen?</p>
+        </div>
+        <div class="main kalkulation-main">
             <?php for($i=0; $i<count($kalkulation); $i++): ?>
-                <th>
-                    <a href="<?= $kalkulation[$i][0] ?>" target="_blank">
+                <div class="<?= $kalkulation[$i][0] ?>">
+                    <a href="<?= $kalkulation[$i][1] ?>" target="_blank">
                         <div class="option">
-                            <img src="public/bilder/kalkulation/<?= $kalkulation[$i][1] ?>" alt="<?= $kalkulation[$i][2] ?>">
-                            <p><?= $kalkulation[$i][3] ?></p>
+                            <img src="public/bilder/kalkulation/<?= $kalkulation[$i][2] ?>" alt="<?= $kalkulation[$i][3] ?>">
+                            <p><?= $kalkulation[$i][4] ?></p>
                         </div>
                     </a>
-                </th>
+                </div>
             <?php endfor ?>
-        </tr>
-    </table>
+        </div>
+    </div>
 
     <script src="public/js/navigate.js"></script>
 </body>

@@ -8,7 +8,7 @@
     * Alles was die Buttons betrifft, wird im Button-CSS definiert
     */
 body{
-    margin: 0;
+    margin: 0 0 50px 0;
 }
 
 #kontoNrError, #kontoNameError, #kontoZweckError{
@@ -58,6 +58,9 @@ body{
             margin: 0 10px;
         }
     }
+    .main{
+        margin: 0 20px;
+    }
 }
 
 // Welcome
@@ -88,6 +91,7 @@ body{
 
 // neues Konto
 .neuesKonto-main{
+    margin: 0 auto;
     .fehler{
         font-size: 1.2em;
         font-family: sans-serif;
@@ -97,29 +101,40 @@ body{
     }
     .konto{
         margin: 0 auto;
-        width: 400px;
+        width: min-content;
         label{
             font-size: 1.2em;
             font-family: sans-serif;
             padding-right: 10px;
         }
+        input,
+        select,
+        textarea{
+            font-family: sans-serif;
+            font-size: 1em;
+            width: min-content;
+        }
         input{
             border-top: none;
             border-right: none;
             border-left: none;
-            border-bottom: 1px solid #000000;
-            font-size: 1.2em;
+            border-bottom: 1px solid #6d6d6d;
         }
-        textarea{
-            font-size: 1.2em;
-            width: 100%;
+        .konto2{
+            .leer{
+                color: #000000;
+                font-style: italic;
+            }
         }
+        .konto3, .konto4, .konto7{
+            padding: 10px 0;
+        }
+        .konto7{text-align: center;}
     }
 }
 
 // Bilanz
 .bilanz-main{
-    margin: 0 20px;
     .bilanz1, .bilanz2, .bilanz3, .bilanz4{
         text-align: center;
         a{
@@ -144,7 +159,158 @@ body{
 }
 
 // Kontoübersicht
+.uebersicht-main{
+    .konto{
+        div{
+            border: 1px solid #000000;
+            margin: 5px auto;
+            .t1{
+                width: 120px;
+            }
+            .t2{
+                width: 180px;
+            }
+        }
+    }
+}
 
+// Journaleintrag
+.journaleintrag-main{
+    .fehler{
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 1.2em;
+        color: #ff0000;
+    }
+    .journaleintrag{
+        width: min-content;
+        margin: 0 auto;
+        label{
+            font-size: 1.2em;
+            font-family: sans-serif;
+        }
+        input{
+            font-size: 1em;
+            font-family: sans-serif;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom: 1px solid #000000;
+            width: 100%;
+        }
+        select{
+            font-size: 1em;
+            font-family: sans-serif;
+            border-left: none;
+            border-top: none;
+            border-right: none;
+            border-bottom: 1px solid #000000;
+            width: 100%;
+        }
+    }
+}
+
+// Journaleintrag 
+.journaleintragBearbeiten-main{
+    table{
+        width: max-content;
+        margin: 0 auto;
+        .puffer{
+            width: 2rem;
+        }
+        tr{
+            border: 1px solid #cccccc;
+        }
+    }
+}
+
+// Journaleintrag bearbeiten
+.eintrag-main{
+    .eintrag{
+        width: max-content;
+        margin: 0 auto;
+        gap: 10px;
+        label{
+            font-family: sans-serif;
+            font-size: 1.2em;
+        }
+        input, select{
+            font-family: sans-serif;
+            font-size: 1em;
+            width: 100%;
+        }
+        .eintrag2{
+            input{
+                background-color: #dddddd;
+                border: none;
+            }
+        }
+        .eintrag11{
+            text-align: center;
+        }
+    }
+}
+
+// Rechnungsnummer
+.rechnung-main{
+    .fehler{
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 1.2em;
+        color: #ff0000;
+    }
+    .form{
+        width: min-content;
+        margin: 0 auto;
+        gap: 10px;
+        label{
+            font-size: 1.2em;
+            font-family: sans-serif;
+        }
+        input{
+            font-size: 1em;
+            font-family: sans-serif;
+        }
+        .form7{
+            text-align: center;
+        }
+    }
+}
+
+// Kalkulationen
+.kalkulation-main{
+    text-align: center;
+    .option{
+        border: 1px solid #000000;
+        border-radius: 12px;
+        font-family: sans-serif;
+        &:hover{
+            box-shadow: 0 0 4px #555555;
+        }
+            img{
+                filter: invert(0);
+            }
+    }
+}
+// Kalkulation berechnen
+.ek-erstellen-main,
+.ek-berechnen-main,
+.ik-erstellen-main,
+.ik-berechnen-main,
+.vk-erstellen-main,
+.vk-berechnen-main,
+.gk-erstellen-main,
+.gk-berechnen-main{
+    .tabelle{
+        width: max-content;
+        margin: 0 auto;
+        table{
+            font-family: sans-serif;
+        }
+    }
+}
+
+// Allgemein gebrauchtes
 .left{
     text-align: left;
     padding-right: 5px;
@@ -159,6 +325,12 @@ body{
     text-align: right;
     padding-left: 5px;
 }
+
+
+
+
+// Kontoübersicht
+
 
 .ergebnis{text-align: left;}
 .double{text-decoration: underline double;}

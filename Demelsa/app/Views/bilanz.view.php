@@ -18,7 +18,7 @@
         <div class="text">
             <p>Hier können Sie die Konteoübersiche einsehen, einen Eintrag ins Journal eingeben, einen Kontoeintrag bearbeiten und Rechnungsnummern vergeben</p>
         </div>
-        <div class="bilanz-main">
+        <div class="main bilanz-main">
             <?php for($i=0; $i<count($array); $i++): ?>
                 <div class="<?= $array[$i][0] ?>">
                     <a href="<?= $array[$i][1] ?>">

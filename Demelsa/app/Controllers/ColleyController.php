@@ -5,43 +5,89 @@ class ColleyController
 // Welcome
 	public function index()
 	{
-		include("app/Controllers/inc/heading.inc.php");
+		// SeitenNavigation
+		include('app/Controllers/inc/heading.inc.php');
 		include('app/Views/sideNav.view.php');
+		// welcome
 		include('app/Controllers/inc/arrays/welcome.inc.php');
 		require('app/Views/welcome.view.php');
 	}
 // Neues Konto
-	public function neuesKonto()
-	{
-		session_start();
-		include('app/Controllers/inc/heading.inc.php');
-		include('app/Controllers/inc/bilanz/neuesKonto.inc.php');
-		include('app/Views/sideNav.view.php');
-		require('app/Views/neuesKonto.view.php');
-	}
-	public function kontoErstellen()
-	{
-		session_start();
-		session_destroy();
-		session_start();
-		include('app/Controllers/inc/bilanz/kontoErstellen.inc.php');
-	}
+	// Neues Konto erstellen
+		public function neuesKonto()
+		{
+			session_start();
+			// SeitenNavigation
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			// neues Konto
+			include('app/Controllers/inc/arrays/neuesKonto.inc.php');
+			include('app/Controllers/inc/bilanz/kontoErstellen.inc.php');
+			require('app/Views/neuesKonto.view.php');
+		}
+	
 // Bilanz
 	// Übersicht
 		public function bilanz()
 		{
+			// SeitenNavigation
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
+			// Bilanz
 			include('app/Controllers/inc/arrays/bilanz.inc.php');
 			require('app/Views/bilanz.view.php');
 		}
 	// Kontoübersicht
 		public function kontouebersicht()
 		{
+			// SeitenNavigation
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
+			// Kontoübersicht
+			include('app/Controllers/inc/bilanz/kontoubersicht.inc.php');
 			require('app/Views/bilanz/kontouebersicht.view.php');
 		}
+	// Journaleintrag
+		public function journaleintrag()
+		{
+			// SeitenNavigation
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			// Journaleintrag
+			include('app/Controllers/inc/bilanz/journaleintrag.inc.php');
+			include('app/Controllers/inc/bilanz/journaleintragErstellen.inc.php');
+			require('app/Views/bilanz/journaleintrag.view.php');
+		}
+
+		// Journaleintrag bearbeiten
+		public function journaleintragBearbeiten()
+		{
+			// SeitenNavigation
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			// Journaleintrag Bearbeiten
+			include('app/Controllers/inc/bilanz/journaleintragBearbeiten.inc.php');
+			require('app/Views/bilanz/journaleintragBearbeiten.view.php');
+		}
+
+		// Journaleintrag
+		public function eintrag()
+		{
+			include('app/Controllers/inc/bilanz/eintrag.inc.php');
+			require('app/Views/bilanz/eintrag.view.php');
+		}
+
+	// Rechnungsnummer
+		public function rechnungsnummer()
+		{
+			// SeitenNavigation
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			// Rechnungsnummer
+			include('app/Controllers/inc/bilanz/rechnungsnummer.inc.php');
+			require('app/Views/bilanz/rechnungsnummer.view.php');
+		}
+
 //Kalkulationen
 	// Kalkulationsübersicht
 		public function kalkulation()
