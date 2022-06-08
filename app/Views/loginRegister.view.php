@@ -90,6 +90,7 @@ $_SESSION['email'] = "";
                                     <input type="email" id="email_register" name="email_register"
                                         placeholder="E-Mail-Adresse">
                                 </td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>
@@ -98,11 +99,13 @@ $_SESSION['email'] = "";
                                 <td>
                                     <input onkeyup="trigger()" type="password" id="passwort_register"
                                         name="passwort_register" placeholder="Passwort">
-                                    <span class="showBtn">SHOW</span>
+                                </td>
+                                <td>
+                                <div class="showBtn">SHOW</div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td colspan="3">
                                     <div class="password_strength_area">
                                         <div class="indicator">
                                             <span class="weak"></span>
@@ -121,6 +124,7 @@ $_SESSION['email'] = "";
                                     <input type="password" id="passwort_verify" name="passwort_verify"
                                         placeholder="Passwort erneut eingeben">
                                 </td>
+                                <td></td>
                             </tr>
                         </table>
                         <button type="submit">Sign Up</button>

@@ -135,7 +135,7 @@ html body .logintable tr td .newAccount input {
   box-sizing: border-box;
 }
 html body .logintable tr td .newAccount .showBtn {
-  position: absolute;
+  /*position: absolute;*/
   right: 385px;
   top: 45.5%;
   transform: translateY(-50%);
