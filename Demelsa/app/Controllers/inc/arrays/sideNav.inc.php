@@ -1,5 +1,5 @@
 <?php
-$array = array(
+$nav = array(
     array('home',
                 'home.svg',
                 'Startseite',

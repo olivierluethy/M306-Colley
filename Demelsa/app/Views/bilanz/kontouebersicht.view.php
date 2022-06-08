@@ -20,6 +20,28 @@
         <div class="text">
             <p>Eine Übersicht all Ihrer Konten</p>
         </div>
+        <div class="main uebersicht-main">
+            <div class="konto">
+                <?php for($i=0; $i<count($kontoName); $i++): ?>
+                    <div>
+                        <table>
+                            <tr>
+                                <th class="left t1">Kontoname:</th>
+                                <th class="left t2"><?= $kontoName[$i] ?></th>
+                            </tr>
+                            <tr>
+                                <td>Kontonummer:</td>
+                                <td><?= $kontoNr[$i] ?></td>
+                            </tr>
+                            <tr>
+                                <td>Kontozweck:</td>
+                                <td><?= $kontoZweck[$i] ?></td>
+                            </tr>
+                        </table>
+                    </div>
+                <?php endfor ?>
+            </div>
+        </div>
     </div>
 <script src="public/js/navigate.js"></script>
 </body>

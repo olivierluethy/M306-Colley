@@ -9,7 +9,7 @@
     * Alles was die Buttons betrifft, wird im Button-CSS definiert
     */
 body {
-  margin: 0;
+  margin: 0 0 50px 0;
 }
 
 #kontoNrError, #kontoNameError, #kontoZweckError {
@@ -55,6 +55,9 @@ body {
   text-align: center;
   margin: 0 10px;
 }
+.container .main {
+  margin: 0 20px;
+}
 
 .welcome-main .welcome1, .welcome-main .welcome2, .welcome-main .welcome3, .welcome-main .welcome4, .welcome-main .welcome5 {
   text-align: center;
@@ -79,6 +82,9 @@ body {
   color: #000000;
 }
 
+.neuesKonto-main {
+  margin: 0 auto;
+}
 .neuesKonto-main .fehler {
   font-size: 1.2em;
   font-family: sans-serif;
@@ -88,28 +94,41 @@ body {
 }
 .neuesKonto-main .konto {
   margin: 0 auto;
-  width: 400px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
 }
 .neuesKonto-main .konto label {
   font-size: 1.2em;
   font-family: sans-serif;
   padding-right: 10px;
 }
+.neuesKonto-main .konto input,
+.neuesKonto-main .konto select,
+.neuesKonto-main .konto textarea {
+  font-family: sans-serif;
+  font-size: 1em;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
 .neuesKonto-main .konto input {
   border-top: none;
   border-right: none;
   border-left: none;
-  border-bottom: 1px solid #000000;
-  font-size: 1.2em;
+  border-bottom: 1px solid #6d6d6d;
 }
-.neuesKonto-main .konto textarea {
-  font-size: 1.2em;
-  width: 100%;
+.neuesKonto-main .konto .konto2 .leer {
+  color: #000000;
+  font-style: italic;
+}
+.neuesKonto-main .konto .konto3, .neuesKonto-main .konto .konto4, .neuesKonto-main .konto .konto7 {
+  padding: 10px 0;
+}
+.neuesKonto-main .konto .konto7 {
+  text-align: center;
 }
 
-.bilanz-main {
-  margin: 0 20px;
-}
 .bilanz-main .bilanz1, .bilanz-main .bilanz2, .bilanz-main .bilanz3, .bilanz-main .bilanz4 {
   text-align: center;
 }
@@ -130,6 +149,153 @@ body {
   font-size: 20px;
   font-family: sans-serif;
   color: #000000;
+}
+
+.uebersicht-main .konto div {
+  border: 1px solid #000000;
+  margin: 5px auto;
+}
+.uebersicht-main .konto div .t1 {
+  width: 120px;
+}
+.uebersicht-main .konto div .t2 {
+  width: 180px;
+}
+
+.journaleintrag-main .fehler {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.2em;
+  color: #ff0000;
+}
+.journaleintrag-main .journaleintrag {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin: 0 auto;
+}
+.journaleintrag-main .journaleintrag label {
+  font-size: 1.2em;
+  font-family: sans-serif;
+}
+.journaleintrag-main .journaleintrag input {
+  font-size: 1em;
+  font-family: sans-serif;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #000000;
+  width: 100%;
+}
+.journaleintrag-main .journaleintrag select {
+  font-size: 1em;
+  font-family: sans-serif;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #000000;
+  width: 100%;
+}
+
+.journaleintragBearbeiten-main table {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+}
+.journaleintragBearbeiten-main table .puffer {
+  width: 2rem;
+}
+.journaleintragBearbeiten-main table tr {
+  border: 1px solid #cccccc;
+}
+
+.eintrag-main .eintrag {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  gap: 10px;
+}
+.eintrag-main .eintrag label {
+  font-family: sans-serif;
+  font-size: 1.2em;
+}
+.eintrag-main .eintrag input, .eintrag-main .eintrag select {
+  font-family: sans-serif;
+  font-size: 1em;
+  width: 100%;
+}
+.eintrag-main .eintrag .eintrag2 input {
+  background-color: #dddddd;
+  border: none;
+}
+.eintrag-main .eintrag .eintrag11 {
+  text-align: center;
+}
+
+.rechnung-main .fehler {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.2em;
+  color: #ff0000;
+}
+.rechnung-main .form {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin: 0 auto;
+  gap: 10px;
+}
+.rechnung-main .form label {
+  font-size: 1.2em;
+  font-family: sans-serif;
+}
+.rechnung-main .form input {
+  font-size: 1em;
+  font-family: sans-serif;
+}
+.rechnung-main .form .form7 {
+  text-align: center;
+}
+
+.kalkulation-main {
+  text-align: center;
+}
+.kalkulation-main .option {
+  border: 1px solid #000000;
+  border-radius: 12px;
+  font-family: sans-serif;
+}
+.kalkulation-main .option:hover {
+  box-shadow: 0 0 4px #555555;
+}
+.kalkulation-main .option img {
+  filter: invert(0);
+}
+
+.ek-erstellen-main .tabelle,
+.ek-berechnen-main .tabelle,
+.ik-erstellen-main .tabelle,
+.ik-berechnen-main .tabelle,
+.vk-erstellen-main .tabelle,
+.vk-berechnen-main .tabelle,
+.gk-erstellen-main .tabelle,
+.gk-berechnen-main .tabelle {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+}
+.ek-erstellen-main .tabelle table,
+.ek-berechnen-main .tabelle table,
+.ik-erstellen-main .tabelle table,
+.ik-berechnen-main .tabelle table,
+.vk-erstellen-main .tabelle table,
+.vk-berechnen-main .tabelle table,
+.gk-erstellen-main .tabelle table,
+.gk-berechnen-main .tabelle table {
+  font-family: sans-serif;
 }
 
 .left {

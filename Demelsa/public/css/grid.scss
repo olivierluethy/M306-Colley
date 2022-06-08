@@ -47,7 +47,6 @@
     grid-template-areas:
     'fehler'
     'konto';
-    margin: 0 auto;
     .fehler{
         grid-area: fehler;
     }
@@ -60,31 +59,13 @@
         'zweckLabel  zweckInput'
         '..  kontoButton';
     }
-    .konto1{
-        grid-area: kontonrLabel;
-    }
-    .konto2{
-        grid-area: kontonrInput;
-    }
-    .konto3{
-        grid-area: titelLabel; 
-        padding: 10px 0;
-    }
-    .konto4{
-        grid-area: titelInput; 
-        padding: 10px 0;
-    }
-    .konto5{
-        grid-area: zweckLabel;
-    }
-    .konto6{
-        grid-area: zweckInput;
-    }
-    .konto7{
-        grid-area: kontoButton; 
-        text-align: center; 
-        padding: 10px 0;
-    }
+    .konto1{grid-area: kontonrLabel;}
+    .konto2{grid-area: kontonrInput;}
+    .konto3{grid-area: titelLabel;}
+    .konto4{grid-area: titelInput;}
+    .konto5{grid-area: zweckLabel;}
+    .konto6{grid-area: zweckInput;}
+    .konto7{grid-area: kontoButton;}
 }
 
 // Bilanz
@@ -98,4 +79,149 @@
     .bilanz2{grid-area: journaleintrag;}
     .bilanz3{grid-area: kontoeintragBearbeiten;}
     .bilanz4{grid-area: rechnungsnummer;}
+}
+
+// Kontoübersicht
+.uebersicht-main{
+    grid-area: main;
+    .konto{
+        display: flex;
+        flex-flow: row wrap;
+    }
+}
+
+// Journaleintrag
+.journaleintrag-main{
+    grid-area: main;
+    grid-template-areas: 'fehler' 'journal';
+    .fehler{
+        grid-area: fehler;
+    }
+    .journaleintrag{
+        grid-area: journal;
+        display: grid;
+        grid-template-areas:
+        'datum-label  datum-input'
+        'haben-label  haben-input'
+        'soll-label  soll-input'
+        'betrag-label  betrag-input'
+        '.. ..'
+        'button  button';
+        row-gap: 10px;
+        column-gap: 20px;
+        .journal1{grid-area: datum-label;}
+        .journal2{grid-area: datum-input;}
+        .journal3{grid-area: haben-label;}
+        .journal4{grid-area: haben-input;}
+        .journal5{grid-area: soll-label;}
+        .journal6{grid-area: soll-input;}
+        .journal7{grid-area: betrag-label;}
+        .journal8{grid-area: betrag-input;}
+        .journal9{grid-area: button;}
+    }
+}
+
+// Journaleintrag bearbeiten
+.journaleintragBearbeiten-main{
+    grid-area: main;
+    grid-template-areas: 'fehler' 'table';
+    .fehler{
+        grid-area: fehler;
+    }
+    .table{
+        grid-area: table;
+    }
+}
+
+// Journaleintrag bearbeiten
+.eintrag-main{
+    grid-area: main;
+    grid-template-areas: 'eintrag';
+    .eintrag{
+        grid-area: eintrag;
+        display: grid;
+        grid-template-areas:
+        'id-label  id-input'
+        'datum-label  datum-input'
+        'soll-label  soll-input'
+        'haben-label  haben-input'
+        'betrag-label  betrag-input'
+        'button  button';
+        .eintrag1{grid-area: id-label;}
+        .eintrag2{grid-area: id-input;}
+        .eintrag3{grid-area: datum-label;}
+        .eintrag4{grid-area: datum-input;}
+        .eintrag5{grid-area: soll-label;}
+        .eintrag6{grid-area: soll-input;}
+        .eintrag7{grid-area: haben-label;}
+        .eintrag8{grid-area: haben-input;}
+        .eintrag9{grid-area: betrag-label;}
+        .eintrag10{grid-area: betrag-input;}
+        .eintrag11{grid-area: button;}
+    }
+}
+
+// Rechnungsnummer
+.rechnung-main{
+    grid-area: main;
+    display: grid;
+    grid-template-areas: 'fehler'  'form';
+    .fehler{
+        grid-area: fehler;
+    }
+    .form{
+        grid-area: form;
+        display: grid;
+        grid-template-areas:
+        'rechnungNr-label  rechnungNr-input'
+        'journalNr-label  journalNr-input'
+        'rechnung-label  rechnung-input'
+        'button  button';
+        .form1{grid-area: rechnungNr-label;}
+        .form2{grid-area: rechnungNr-input;}
+        .form3{grid-area: journalNr-label;}
+        .form4{grid-area: journalNr-input;}
+        .form5{grid-area: rechnung-label;}
+        .form6{grid-area: rechnung-input;}
+        .form7{grid-area: button;}
+    }
+}
+
+// Kalkulationen
+.kalkulation-main{
+    grid-area: main;
+    display: grid;
+    grid-template-areas: 'einkauf  intern  verkauf  gesamt';
+    grid-template-columns: repeat(4, 25%);
+
+    .kalkulation1{
+        grid-area: einkauf;
+        padding: 0 25%;
+    }
+    .kalkulation2{
+        grid-area: intern;
+        padding: 0 25%;
+    }
+    .kalkulation3{
+        grid-area: verkauf;
+        padding: 0 25%;
+    }
+    .kalkulation4{
+        grid-area: gesamt;
+        padding: 0 25%;
+    }
+}
+// Kalkulation berechnen
+.ek-erstellen-main,
+.ek-berechnen-main
+.ik-erstellen-main,
+.ik-berechnen-main,
+.vk-erstellen-main,
+.vk-berechnen-main, 
+.gk-erstellen-main,
+.gk-berechnen-main{
+    grid-area: main;
+    display: grid;
+    grid-template-areas: 'tabelle';
+    .tabelle{grid-area: tabelle;}
 }

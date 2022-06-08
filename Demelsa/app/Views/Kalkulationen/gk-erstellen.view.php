@@ -8,14 +8,23 @@
     <title>Colley</title>
 </head>
 <body>
-    <h1>Colley</h1>
-    <h2>Gesamte Kalkulation</h2>
-    <p class="center">Bitte giben Sie den Katalogpreis eines einzelnen Stückes an, da der Kalkukator sonst falsch rechnet.</p>
-    <form action="gk-berechnen" method="POST">
-        <table>
-            <tr>
-                <td class="side "></td>
-                <td>
+    <div class="container">
+        <div class="header">
+            <div class="line"></div>
+            <div class="colley">
+                <h1>Colley</h1>
+            </div>
+            <div class="line"></div>
+        </div>
+        <div class="titel">
+            <h2>Gesamte Kalkulation</h2>
+        </div>
+        <div class="text">
+            <p>Bitte geben Sie den Katalogpreis eines einzelnen Stückes an, da der Kalkulator sonst falsch rechnet.</p>
+        </div>
+        <div class="main gk-erstellen-main">
+            <form action="gk-berechnen" method="POST">
+                <div class="tabelle">
                     <table>
                         <tr class="border">
                             <th>Kosten</th>
@@ -23,48 +32,39 @@
                         </tr>
                         <?php for($i=0; $i<count($eingabe); $i++): ?>
                             <tr class="border">
-                            <!-- Zeilentitel -->
                                 <th class="left"><?= $eingabe[$i][0] ?></th>
-                            <!-- Bezeichnung -->
-                                <td class="center">
-                                    <?= $eingabe[$i][1] ?>
-                                </td>
-                            <!-- Input CHF -->
+                                <td class="center"><?= $eingabe[$i][1] ?></td>
                                 <td>
-                                    <input type="text" 
-                                    name="<?= $eingabe[$i][2] ?>" 
-                                    id="<?= $eingabe[$i][2] ?>" 
-                                    placeholder="1234.56" 
-                                    tabindex="<?= $eingabe[$i][3] ?>" 
-                                    <?php if($eingabe[$i][0] == 'Katalogpreis'){ echo 'required';} ?>
-                                    <?php if($eingabe[$i][0] == 'Menge'){ echo 'required';} ?>
-                                    value="<?= $value[$i][0] ?>">
-                                </td>
-                            <!-- Input % -->
-                                <?php if($eingabe[$i][4] != ''): ?>
-                                    <td>
-                                        <input type="text" 
-                                        name="<?= $eingabe[$i][4] ?>" 
-                                        id="<?= $eingabe[$i][4] ?>"
+                                    <input type="text"
+                                    name="<?= $eingabe[$i][2] ?>"
+                                    id="<?= $eingabe[$i][2] ?>"
+                                    <?php if($eingabe[$i][0] == 'Katalogpreis' || $eingabe[$i][0] == 'Menge'): echo 'required'; endif?>
+                                    placeholder="1234.56"
+                                    tabindex="<?= $eingabe[$i][3] ?>"
+                                    value="<?= $eingabe[$i][4] ?>">
+                                    <?php if(!empty($eingabe[$i][5])): ?>
+                                        <input type="text"
+                                        name="<?= $eingabe[$i][5] ?>"
+                                        id="<?= $eingabe[$i][5] ?>"
                                         placeholder="1234.56"
-                                        tabindex="<?= $eingabe[$i][5] ?>"
-                                        value="<?= $value[$i][1] ?>">
-                                    </td>
-                                <!-- Bezeichnung % -->
-                                    <td class="center">%</td>
-                                <?php else: echo '<td colspan="2"></td>'; endif ?>
+                                        tabindex="<?= $eingabe[$i][6] ?>"
+                                        value="<?= $eingabe[$i][7] ?>">
+                                        <td class="center">%</td>
+                                    <?php else: ?>
+                                        <td colspan="2"></td>
+                                    <?php endif ?>
+                                </td>
                             </tr>
                         <?php endfor ?>
-                        <tr>
-                            <td class="center" colspan="5">
-                                <button type="submit" tabindex="17">Berechnen</button>
+                        <tr class="border">
+                            <td colspan="5" class="center">
+                                <button type="submit">Berechnen</button>
                             </td>
                         </tr>
                     </table>
-                </td>
-                <td class="side"></td>
-            </tr>
-        </table>
-    </form>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

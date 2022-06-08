@@ -8,14 +8,23 @@
     <title>Colley</title>
 </head>
 <body>
-    <h1>Colley</h1>
-    <h2>Verkaufskalkulation</h2>
-    <p class="center">Bitte geben Sie den Einstandspreis eines einzelnen Stückes an, da der Kalkulator sonst falsch rechnet</p>
-    <form action="vk-berechnen" method="POST">
-        <table>
-            <tr>
-                <td class="side"></td>
-                <td>
+    <div class="container">
+        <div class="header">
+            <div class="line"></div>
+            <div class="colley">
+                <h1>Colley</h1>
+            </div>
+            <div class="line"></div>
+        </div>
+        <div class="titel">
+            <h2>Verkaufskalkulation</h2>
+        </div>
+        <div class="text">
+            <p>Bitte geben Sie den Einstandspreis eines einzelnen Stückes an, da der Kalkulator sonst falsch rechnet</p>
+        </div>
+        <div class="main vk-erstellen-main">
+            <form action="vk-berechnen" method="POST">
+                <div class="tabelle">
                     <table>
                         <tr class="border">
                             <th>Kosten</th>
@@ -27,36 +36,37 @@
                                 <td class="center"><?= $eingabe[$i][1] ?></td>
                                 <td>
                                     <input type="text" 
-                                    name="<?= $eingabe[$i][2] ?>" 
-                                    id="<?= $eingabe[$i][2] ?>" 
-                                    tabindex="<?= $eingabe[$i][3] ?>" 
-                                    <?php if($eingabe[$i][0] == 'Einstandspreis' || $eingabe[$i][0] == 'Menge'): echo 'required'; endif ?>
-                                    placeholder="<?= $eingabe[$i][8] ?>" 
+                                    name="<?= $eingabe[$i][2] ?>"
+                                    id="<?= $eingabe[$i][2] ?>"
+                                    <?php if($eingabe[$i][0] == 'Einstandspreis'): echo 'required'; endif ?>
+                                    placeholder="1234.56"
+                                    tabindex="<?= $eingabe[$i][3] ?>"
                                     value="<?= $eingabe[$i][4] ?>">
                                 </td>
                                 <?php if(!empty($eingabe[$i][5])): ?>
                                     <td>
-                                        <input type="text" 
-                                        name="<?= $eingabe[$i][5] ?>" 
-                                        id="<?= $eingabe[$i][5] ?>" 
-                                        tabindex="<?= $eingabe[$i][6] ?>" 
-                                        placeholder="<?= $eingabe[$i][8] ?>"
+                                        <input type="text"
+                                        name="<?= $eingabe[$i][5] ?>"
+                                        id="<?= $eingabe[$i][5] ?>"
+                                        placeholder="1234.56"
+                                        tabindex="<?= $eingabe[$i][6] ?>"
                                         value="<?= $eingabe[$i][7] ?>">
                                     </td>
                                     <td class="center">%</td>
-                                <?php else: echo '<td colspan="2"></td>'; endif ?>
+                                <?php else: ?>
+                                    <td colspan="2"></td>
+                                <?php endif ?>
                             </tr>
                         <?php endfor ?>
-                        <tr>
+                        <tr class="border">
                             <td class="center" colspan="5">
-                                <button type="submit" tabindex="8">Berechnung</button>
+                                <button type="submit">Berechnung</button>
                             </td>
                         </tr>
                     </table>
-                </td>
-                <td class="side"></td>
-            </tr>
-        </table>
-    </form>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

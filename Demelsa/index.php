@@ -6,10 +6,25 @@ $routes = [
 	'' => 'ColleyController@index',
 	'home' => 'ColleyController@index',
 	'neues-konto' => 'ColleyController@neuesKonto',
-	'kontoErstellen' => 'ColleyController@kontoErstellen',
 	'bilanz' => 'ColleyController@bilanz',
-	'kontouebersicht' => 'ColleyController@kontouebersicht',
 	'kalkulation' => 'ColleyController@kalkulation',
+
+	/* Routes für Bilanz */
+	'kontouebersicht' => 'ColleyController@kontouebersicht',
+	'journaleintrag' => 'ColleyController@journaleintrag',
+	'journaleintragBearbeiten' => 'ColleyController@journaleintragBearbeiten',
+	'eintrag' => 'ColleyController@eintrag',
+	'Rechnungsnummer' => 'ColleyController@Rechnungsnummer',
+
+	/* Routes für Kalkulationen */
+	'ek-erstellen' => 'ColleyController@ekerstellen',
+	'ek-berechnen' => 'ColleyController@ekberechnen',
+	'ik-erstellen' => 'ColleyController@ikerstellen',
+	'ik-berechnen' => 'ColleyController@ikberechnen',
+	'vk-erstellen' => 'ColleyController@vkerstellen',
+	'vk-berechnen' => 'ColleyController@vkberechnen',
+	'gk-erstellen' => 'ColleyController@gkerstellen',
+	'gk-berechnen' => 'ColleyController@gkberechnen',
 
 	/* Um Emails zu versenden und Passwort zurücksetzen */
 	'email_versenden' => 'ColleyController@email_versenden',
@@ -21,16 +36,6 @@ $routes = [
 	'login' => 'ColleyController@login',
 	'register' => 'ColleyController@register',
 	'logout' => 'ColleyController@logout',
-
-	/* Routes für Kalkulationen */
-	'ek-erstellen' => 'ColleyController@ekerstellen',
-	'ek-berechnen' => 'ColleyController@ekberechnen',
-	'ik-erstellen' => 'ColleyController@ikerstellen',
-	'ik-berechnen' => 'ColleyController@ikberechnen',
-	'vk-erstellen' => 'ColleyController@vkerstellen',
-	'vk-berechnen' => 'ColleyController@vkberechnen',
-	'gk-erstellen' => 'ColleyController@gkerstellen',
-	'gk-berechnen' => 'ColleyController@gkberechnen',
 ];
 
 $db = [

@@ -10,74 +10,69 @@
 </head>
 
 <body>
-    <h1>Colley</h1>
-    <h2>Einkaufskalkulation</h2>
-    <p class="center">Bitte geben Sie den Katalogpreis eines einzelnen Stückes an, da der Kalkulator sonst falsch
-        rechnet.</p>
-
-    <form action="ek-berechnen" method="POST">
-    <!-- Tabelle für Masseingabe -->
-        <table>
-            <tr>
-            <!-- Seite / Keinen Rahmen -->
-                <td class="side"></td>
-                <td>
-                <!-- Eigentliche Tabelle / Keinen Rahmen -->
+    <div class="container">
+        <div class="header">
+            <div class="line"></div>
+            <div class="colley">
+                <h1>Colley</h1>
+            </div>
+            <div class="line"></div>
+        </div>
+        <div class="titel">
+            <h2>Einkaufskalkulation</h2>
+        </div>
+        <div class="text">
+            <p>Bitte geben Sie den Katalogpreis eines einzelnen Stückes an, da der Kalkulator sonst falsch rechnet.</p>
+        </div>
+        <div class="main ek-erstellen-main">
+            <form action="ek-berechnen" method="POST">
+                <div class="tabelle">
                     <table>
-                    <!-- Titelzeile -->
                         <tr class="border">
                             <th>Kosten</th>
                             <th colspan="4">Angaben</th>
                         </tr>
-                        <?php for($i=0;$i<count($eingabe); $i++): ?>
-                        <tr class="border">
-                        <!-- Tabellenzeile -->
-                            <th class="left"><?= $eingabe[$i][0] ?></th>
-                        <!-- Bezeichnung CHF / Anz -->
-                            <td class="left"><?= $eingabe[$i][1] ?></td>
-                        <!-- Input Betrag -->
-                            <td>
-                                <input type="text"
-                                name="<?= $eingabe[$i][2] ?>" 
-                                id="<?= $eingabe[$i][2] ?>" 
-                                <?php if($eingabe[$i][0] == 'Katalogpreis'){ echo 'required';} ?> 
-                                <?php if($eingabe[$i][0] == 'Menge'){ echo 'required';}?>
-                                placeholder="1234.56" 
-                                class="right" 
-                                tabindex="<?= $eingabe[$i][5] ?>" 
-                                value="<?= $eingabe[$i][7] ?>">
-                            </td>
-                        <!-- Prozente -->
-                            <?php if($eingabe[$i][3] != ''): ?>
-                        <!-- Input Prozente -->
-                            <td>
-                                <input type="text" 
-                                name="<?= $eingabe[$i][3] ?>" 
-                                id="<?= $eingabe[$i][3] ?>" 
-                                placeholder="1234.56" class="right" 
-                                tabindex="<?= $eingabe[$i][6] ?>" 
-                                value="<?= $eingabe[$i][8] ?>">
-                            </td>
-                        <!-- Bezeichnung % -->
-                            <td class="center">%</td>
-                        <!-- Wenn kein Prozente-Input -->
-                            <?php else: ?>
-                                <td colspan="2"></td>
-                            <?php endif; ?>
-                        </tr>
-                    <!-- Buttons -->
+                        <?php for($i=0; $i<count($eingabe); $i++): ?>
+                            <tr class="border">
+                                <th class="left"><?= $eingabe[$i][0] ?></th>
+                                <td><?= $eingabe[$i][1] ?></td>
+                                <td>
+                                    <input type="text" 
+                                    name="<?= $eingabe[$i][2] ?>" 
+                                    id="<?= $eingabe[$i][2] ?>"
+                                    placeholder="1234.56"
+                                    class="right"
+                                    tabindex="<?= $eingabe[$i][5] ?>"
+                                    value="<?= $eingabe[$i][7] ?>"
+                                    <?php if($eingabe[$i][1] == 'Katalogpreis' || $eingabe[$i][1] == 'Menge'): echo 'required'; endif ?>
+                                    >
+                                </td>
+                                <?php if($eingabe[$i][3] != ''): ?>
+                                    <td>
+                                        <input type="text" 
+                                        name="<?= $eingabe[$i][3] ?>" 
+                                        id="<?= $eingabe[$i][3] ?>"
+                                        placeholder="123456"
+                                        class="right"
+                                        tabindex="<?= $eingabe[$i][6] ?>"
+                                        value="<?= $eingabe[$i][8] ?>"
+                                        >
+                                    </td>
+                                    <td><?= $eingabe[$i][4] ?></td>
+                                <?php else: ?>
+                                    <td></td>
+                                    <td></td>
+                                <?php endif ?>
+                            </tr>
                         <?php endfor ?>
                         <tr>
-                            <td class="center" colspan="5">
-                                <button type="submit" tabindex="8">Berechnung</button>
-                            </td>
+                            <td class="center" colspan="5"><button type="submit">Berechnen</button></td>
                         </tr>
                     </table>
-                </td>
-                <td class="side"></td>
-            </tr>
-        </table>
-    </form>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

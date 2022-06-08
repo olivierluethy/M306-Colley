@@ -52,7 +52,6 @@
   grid-area: main;
   display: grid;
   grid-template-areas: "fehler" "konto";
-  margin: 0 auto;
 }
 .neuesKonto-main .fehler {
   grid-area: fehler;
@@ -70,11 +69,9 @@
 }
 .neuesKonto-main .konto3 {
   grid-area: titelLabel;
-  padding: 10px 0;
 }
 .neuesKonto-main .konto4 {
   grid-area: titelInput;
-  padding: 10px 0;
 }
 .neuesKonto-main .konto5 {
   grid-area: zweckLabel;
@@ -84,8 +81,6 @@
 }
 .neuesKonto-main .konto7 {
   grid-area: kontoButton;
-  text-align: center;
-  padding: 10px 0;
 }
 
 .bilanz-main {
@@ -105,4 +100,188 @@
 }
 .bilanz-main .bilanz4 {
   grid-area: rechnungsnummer;
+}
+
+.uebersicht-main {
+  grid-area: main;
+}
+.uebersicht-main .konto {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.journaleintrag-main {
+  grid-area: main;
+  grid-template-areas: "fehler" "journal";
+}
+.journaleintrag-main .fehler {
+  grid-area: fehler;
+}
+.journaleintrag-main .journaleintrag {
+  grid-area: journal;
+  display: grid;
+  grid-template-areas: "datum-label  datum-input" "haben-label  haben-input" "soll-label  soll-input" "betrag-label  betrag-input" ".. .." "button  button";
+  row-gap: 10px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.journaleintrag-main .journaleintrag .journal1 {
+  grid-area: datum-label;
+}
+.journaleintrag-main .journaleintrag .journal2 {
+  grid-area: datum-input;
+}
+.journaleintrag-main .journaleintrag .journal3 {
+  grid-area: haben-label;
+}
+.journaleintrag-main .journaleintrag .journal4 {
+  grid-area: haben-input;
+}
+.journaleintrag-main .journaleintrag .journal5 {
+  grid-area: soll-label;
+}
+.journaleintrag-main .journaleintrag .journal6 {
+  grid-area: soll-input;
+}
+.journaleintrag-main .journaleintrag .journal7 {
+  grid-area: betrag-label;
+}
+.journaleintrag-main .journaleintrag .journal8 {
+  grid-area: betrag-input;
+}
+.journaleintrag-main .journaleintrag .journal9 {
+  grid-area: button;
+}
+
+.journaleintragBearbeiten-main {
+  grid-area: main;
+  grid-template-areas: "fehler" "table";
+}
+.journaleintragBearbeiten-main .fehler {
+  grid-area: fehler;
+}
+.journaleintragBearbeiten-main .table {
+  grid-area: table;
+}
+
+.eintrag-main {
+  grid-area: main;
+  grid-template-areas: "eintrag";
+}
+.eintrag-main .eintrag {
+  grid-area: eintrag;
+  display: grid;
+  grid-template-areas: "id-label  id-input" "datum-label  datum-input" "soll-label  soll-input" "haben-label  haben-input" "betrag-label  betrag-input" "button  button";
+}
+.eintrag-main .eintrag .eintrag1 {
+  grid-area: id-label;
+}
+.eintrag-main .eintrag .eintrag2 {
+  grid-area: id-input;
+}
+.eintrag-main .eintrag .eintrag3 {
+  grid-area: datum-label;
+}
+.eintrag-main .eintrag .eintrag4 {
+  grid-area: datum-input;
+}
+.eintrag-main .eintrag .eintrag5 {
+  grid-area: soll-label;
+}
+.eintrag-main .eintrag .eintrag6 {
+  grid-area: soll-input;
+}
+.eintrag-main .eintrag .eintrag7 {
+  grid-area: haben-label;
+}
+.eintrag-main .eintrag .eintrag8 {
+  grid-area: haben-input;
+}
+.eintrag-main .eintrag .eintrag9 {
+  grid-area: betrag-label;
+}
+.eintrag-main .eintrag .eintrag10 {
+  grid-area: betrag-input;
+}
+.eintrag-main .eintrag .eintrag11 {
+  grid-area: button;
+}
+
+.rechnung-main {
+  grid-area: main;
+  display: grid;
+  grid-template-areas: "fehler" "form";
+}
+.rechnung-main .fehler {
+  grid-area: fehler;
+}
+.rechnung-main .form {
+  grid-area: form;
+  display: grid;
+  grid-template-areas: "rechnungNr-label  rechnungNr-input" "journalNr-label  journalNr-input" "rechnung-label  rechnung-input" "button  button";
+}
+.rechnung-main .form .form1 {
+  grid-area: rechnungNr-label;
+}
+.rechnung-main .form .form2 {
+  grid-area: rechnungNr-input;
+}
+.rechnung-main .form .form3 {
+  grid-area: journalNr-label;
+}
+.rechnung-main .form .form4 {
+  grid-area: journalNr-input;
+}
+.rechnung-main .form .form5 {
+  grid-area: rechnung-label;
+}
+.rechnung-main .form .form6 {
+  grid-area: rechnung-input;
+}
+.rechnung-main .form .form7 {
+  grid-area: button;
+}
+
+.kalkulation-main {
+  grid-area: main;
+  display: grid;
+  grid-template-areas: "einkauf  intern  verkauf  gesamt";
+  grid-template-columns: repeat(4, 25%);
+}
+.kalkulation-main .kalkulation1 {
+  grid-area: einkauf;
+  padding: 0 25%;
+}
+.kalkulation-main .kalkulation2 {
+  grid-area: intern;
+  padding: 0 25%;
+}
+.kalkulation-main .kalkulation3 {
+  grid-area: verkauf;
+  padding: 0 25%;
+}
+.kalkulation-main .kalkulation4 {
+  grid-area: gesamt;
+  padding: 0 25%;
+}
+
+.ek-erstellen-main,
+.ek-berechnen-main .ik-erstellen-main,
+.ik-berechnen-main,
+.vk-erstellen-main,
+.vk-berechnen-main,
+.gk-erstellen-main,
+.gk-berechnen-main {
+  grid-area: main;
+  display: grid;
+  grid-template-areas: "tabelle";
+}
+.ek-erstellen-main .tabelle,
+.ek-berechnen-main .ik-erstellen-main .tabelle,
+.ik-berechnen-main .tabelle,
+.vk-erstellen-main .tabelle,
+.vk-berechnen-main .tabelle,
+.gk-erstellen-main .tabelle,
+.gk-berechnen-main .tabelle {
+  grid-area: tabelle;
 }/*# sourceMappingURL=grid.css.map */
