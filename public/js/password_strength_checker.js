@@ -31,3 +31,21 @@ function trigger() {
         document.querySelector(".text").innerHTML = "Your Password Is Weak";
     }
 }
+
+document.querySelector(".showBtn").addEventListener("mousedown", function() {
+    var x = document.getElementById("passwort_register");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+})
+
+document.querySelector(".showBtn").addEventListener("mouseup", function() {
+    var x = document.getElementById("passwort_register");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+})
