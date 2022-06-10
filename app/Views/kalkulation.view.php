@@ -1,55 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/olivierstyle.css">
-    <link rel="stylesheet" href="public/css/heading.css">
-    <link rel="shortcut icon" href="assets/favicon.ico">
-    <title>Kalkulation</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/menu.css">
+    <title>Colley</title>
 </head>
-
 <body>
-
-    <?php
-    include("heading.view.php");
-    ?>
-
-    <div class="title">
-        <h1>Colley</h1>
-        <h2>Wählen Sie die gewünschte Kalkulation.</h2>
+    <div class="container">
+        <div class="header">
+            <div class="line"></div>
+            <div class="colley">
+                <h1>Colley</h1>
+            </div>
+            <div class="line"></div>
+        </div>
+        <div class="titel">
+            <h2>Kalkulationen</h2>
+        </div>
+        <div class="text">
+            <p>Welche Art der Kalkulation möchten Sie durchführen?</p>
+        </div>
+        <div class="main kalkulation-main">
+            <?php for($i=0; $i<count($kalkulation); $i++): ?>
+                <div class="<?= $kalkulation[$i][0] ?>">
+                    <a href="<?= $kalkulation[$i][1] ?>" target="_blank">
+                        <div class="option">
+                            <img src="public/bilder/kalkulation/<?= $kalkulation[$i][2] ?>" alt="<?= $kalkulation[$i][3] ?>">
+                            <p><?= $kalkulation[$i][4] ?></p>
+                        </div>
+                    </a>
+                </div>
+            <?php endfor ?>
+        </div>
     </div>
-
-    <table class="normalTable">
-        <tr>
-            <th>
-                <div class="option">
-                    <img src="assets/einkaufs_kalkulation.svg" alt="">
-                    <p>Einkaufskalkulation</p>
-                </div>
-            </th>
-            <th>
-                <div class="option">
-                    <img src="assets/interne_kalkulation.svg" alt="">
-                    <p>Internekalkulation</p>
-                </div>
-            </th>
-            <th>
-                <div class="option">
-                    <img src="assets/verkaufs_kalkulation.svg" alt="">
-                    <p>Verkaufskalkulation</p>
-                </div>
-            </th>
-            <th>
-                <div class="option">
-                    <img src="assets/gesamte_kalkulation.svg" alt="">
-                    <p>Gesamtekalkulation</p>
-                </div>
-            </th>
-        </tr>
-    </table>
 
     <script src="public/js/navigate.js"></script>
 </body>

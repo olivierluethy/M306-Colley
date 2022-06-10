@@ -1,59 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/olivierstyle.css">
-    <link rel="stylesheet" href="public/css/heading.css">
-    <link rel="shortcut icon" href="assets/favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Bilanz</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Document</title>
 </head>
-
 <body>
-
-    <?php
-    include("heading.view.php");
-    ?>
-
-    <div class="title">
-        <h1>Colley</h1>
-        <h2>Hier können Sie einen Eintrag ins Journal eingeben, einen Kontoeintrag bearbeiten und Rechnungsnummer
-            vergeben.</h2>
+    <div class="container">
+        <div class="header">
+            <div class="line"></div>
+            <div class="colley"><h1>Colley</h1></div>
+            <div class="line"></div>
+        </div>
+        <div class="titel"><h2>Bilanz</h2></div>
+        <div class="text">
+            <p>Hier können Sie die Konteoübersiche einsehen, einen Eintrag ins Journal eingeben, einen Kontoeintrag bearbeiten und Rechnungsnummern vergeben</p>
+        </div>
+        <div class="main bilanz-main">
+            <?php for($i=0; $i<count($array); $i++): ?>
+                <div class="<?= $array[$i][0] ?>">
+                    <a href="<?= $array[$i][1] ?>">
+                        <div class="option">
+                            <img src="public/bilder/bilanz/<?= $array[$i][2] ?>" alt="<?= $array[$i][3] ?>">
+                            <p><?= $array[$i][4] ?></p>
+                        </div>
+                    </a>
+                </div>
+            <?php endfor ?>
+        </div>
     </div>
 
-    <table class="normalTable">
-        <tr>
-            <th>
-                <div class="option">
-                    <img src="assets/Kontouebersicht.svg" alt="">
-                    <p>Kontoübersicht</p>
-                </div>
-            </th>
-            <th>
-                <div class="option">
-                    <img src="assets/Journaleintrag.svg" alt="">
-                    <p>Journaleintrag</p>
-                </div>
-            </th>
-            <th>
-                <div class="option">
-                    <img src="assets/Kontoeintrag.svg" alt="">
-                    <p>Kontoeintrag bearbeiten</p>
-                </div>
-            </th>
-            <th>
-                <div class="option">
-                    <img src="assets/Rechnungsnummer.svg" alt="">
-                    <p>Rechnungsnummer</p>
-                </div>
-            </th>
-        </tr>
-    </table>
-
-    <script src="public/js/navigate.js"></script>
+<script src="public/js/navigate.js"></script>
 </body>
-
 </html>

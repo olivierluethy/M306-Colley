@@ -2,9 +2,36 @@
 
 class ColleyController
 {
-	/* Die Welcome Seite */
+// Login
+	// Login or Register Page
+	public function loginRegister()
+	{
+		// Initialize the session
+		session_start();
+
+		// Check if the user is already logged in, if yes then redirect him to index page
+		if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+			header("location: home");
+			exit;
+		}
+		require 'app/Views/Login/loginRegister.view.php';
+	}
+	// Login-System
+	public function login()
+	{
+		$pdo = connectDatabase();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
+		require 'app/Views/Login/login.php';
+	}
+	// Logout-System
+	public function logout()
+	{
+		require 'app/Views/Login/logout.view.php';
+	}
+// Welcome
 	public function index()
-	{	
+	{
 		// Initialize the session
         session_start();
 
@@ -16,320 +43,191 @@ class ColleyController
 			header("location: loginRegister");
 			exit;
 		}
-
-      	include("app/Views/sideNav.view.php");
-		include('app/Controllers/inc/welcome.inc.php');
-		require 'app/Views/welcome.view.php';
+		// SeitenNavigation
+		include('app/Controllers/inc/heading.inc.php');
+		include('app/Views/sideNav.view.php');
+		// welcome
+		include('app/Controllers/inc/arrays/welcome.inc.php');
+		require('app/Views/welcome.view.php');
 	}
-
-	/* Die Mail wird innert dieser Funktion versenden */
-	public function email_versenden()
-	{
-		// Initialize the session
-		session_start();
-
-		$pdo = connectDatabase();
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		
-		$_SESSION["code"] = random_int(100000, 999999);
-
-		if($_SESSION["emailDirection"]){
-			$Colley = new Colley();
-
-			$Colley -> email();
-
-			require("app/Views/mailer.php");
-
-			/* Email wird versendet */
-			sendMail();
-		}else {
-			header("location: loginRegister");
+// Neues Konto
+	// Neues Konto erstellen
+		public function neuesKonto()
+		{
+			session_start();
+			// SeitenNavigation
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			// neues Konto
+			include('app/Controllers/inc/arrays/neuesKonto.inc.php');
+			include('app/Controllers/inc/bilanz/kontoErstellen.inc.php');
+			require('app/Views/neuesKonto.view.php');
 		}
-	}
-
-	public function checkIfCodeIsCorrect()
-	{
-		// Initialize the session
-		session_start();
-
-		$pdo = connectDatabase();
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-		if($_SERVER["REQUEST_METHOD"] == "POST"){
-			$Colley = new Colley();
-
-			$code = $Colley -> CheckEnteredCode();
-			$code = $code->fetchAll();
-			
-			if($code[0][0] == $_POST["codeFromUser"]){
-				require 'app/Views/passwort_zuruecksetzen.view.php';
-			}else{
-				require 'app/Views/wrongCodeForPasswordBack.view.php';
-			}
-		}else {
-			header("location: loginRegister");
+	
+// Bilanz
+	// Übersicht
+		public function bilanz()
+		{
+			// SeitenNavigation
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			// Bilanz
+			include('app/Controllers/inc/arrays/bilanz.inc.php');
+			require('app/Views/bilanz.view.php');
 		}
-	}
-
-	public function password_zuruecksetzen()
-	{
-		// Initialize the session
-		session_start();
-
-		$pdo = connectDatabase();
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		require 'app/Views/passwordReset.php';
-	}
-
-	/* Damit man sich ein- und ausloggen kann */
-	public function loginRegister()
-	{
-		// Initialize the session
-		session_start();
-
-		// Check if the user is already logged in, if yes then redirect him to index page
-		if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    		header("location: home");
-    		exit;
+	// Kontoübersicht
+		public function kontouebersicht()
+		{
+			// SeitenNavigation
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			// Kontoübersicht
+			include('app/Controllers/inc/arrays/alle_konten.inc.php');
+			require('app/Views/bilanz/kontouebersicht.view.php');
 		}
-		require 'app/Views/loginRegister.view.php';
-	}
+	// Journaleintrag
+		public function journaleintrag()
+		{
+			// SeitenNavigation
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			// Journaleintrag
+			include('app/Controllers/inc/bilanz/journaleintrag.inc.php');
+			include('app/Controllers/inc/bilanz/journaleintragErstellen.inc.php');
+			require('app/Views/bilanz/journaleintrag.view.php');
+		}
 
-	/* Damit man sich ein- und ausloggen kann */
-	/* Diese Seite enthält Sachen die angezeigt werden, sobald ein Fehler auftritt */
-	public function login()
-	{
-		$pdo = connectDatabase();
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		
-		require 'app/Views/login.php';
-	}
+		// Journaleintrag bearbeiten
+		public function journaleintragBearbeiten()
+		{
+			// SeitenNavigation
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			// Journaleintrag Bearbeiten
+			include('app/Controllers/inc/bilanz/journaleintragBearbeiten.inc.php');
+			require('app/Views/bilanz/journaleintragBearbeiten.view.php');
+		}
 
-	/* Damit man sich ein- und ausloggen kann */
-	/* Diese Seite enthält Sachen die angezeigt werden, sobald ein Fehler auftritt */
-	public function register()
-	{
-		$pdo = connectDatabase();
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		// Journaleintrag
+		public function eintrag()
+		{
+			include('app/Controllers/inc/bilanz/eintrag.inc.php');
+			require('app/Views/bilanz/eintrag.view.php');
+		}
 
-		require 'app/Views/register.php';
-	}
+	// Rechnungsnummer
+		public function rechnungsnummer()
+		{
+			// SeitenNavigation
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			// Rechnungsnummer
+			include('app/Controllers/inc/bilanz/rechnungsnummer.inc.php');
+			require('app/Views/bilanz/rechnungsnummer.view.php');
+		}
 
-	/* Damit man sich ausloggen kann */
-	public function logout()
-	{
-		require 'app/Views/logout.view.php';
-	}
+// Erfolgsrechnung
+		public function erfolgsrechnung()
+		{
+			// SeitenNavigation
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			// Erfolgsrechnung
+			include('app/Controllers/inc/arrays/erfolgsrechnung.inc.php');
+			require('app/Views/Erfolgsrechnung/erfolgsrechnung.view.php');
+		}
 
-	/* Konfiguration für das Login */
-	public function config()
-	{
-        require 'app/Views/config.php';
-    }
+// Jahresabschluss
+		public function jahresabschluss()
+		{
+			// SeitenNavigation
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			// Jahresabschluss
+			require('app/Views/Jahresabschluss/jahresabschluss.view.php');
+		}
 
-    // Einkaufskalkulation
-    public function ekerstellen()
-    {
-        include 'app/Controllers/inc/Einkauf/ek-array.inc.php'; // Array für die for-Schlaufe
-        require 'app/Views/ek-erstellen.view.php';
-    }
+//Kalkulationen
+	// Kalkulationsübersicht
+		public function kalkulation()
+		{
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			include('app/Controllers/inc/arrays/kalkulation.inc.php');
+			require('app/Views/kalkulation.view.php');
+		}
+	// Einkaufskalkulation
+		public function ekerstellen()
+		{
+			include 'app/Controllers/inc/Einkauf/ek-array.inc.php'; // Array für die for-Schlaufe
+			require 'app/Views/Kalkulationen/ek-erstellen.view.php';
+		}
 
-    public function ekberechnen()
-    {
-        include 'app/Controllers/inc/Einkauf/ek-array.inc.php'; // Array für die for-Schlaufe
-        include 'app/Controllers/inc/Einkauf/ek-berechnung.inc.php'; // Berechnungen
-        if($Katalogpreis == 0 || $Menge == 0):
-            require 'app/Controllers/inc/Einkauf/ek-fehler.inc.php';
-        else:
-            require 'app/Views/ek-berechnen.view.php';
-        endif;
-    }
+		public function ekberechnen()
+		{
+			include 'app/Controllers/inc/Einkauf/ek-array.inc.php'; // Array für die for-Schlaufe
+			include 'app/Controllers/inc/Einkauf/ek-berechnung.inc.php'; // Berechnungen
+			if($Katalogpreis == 0 || $Menge == 0):
+				require 'app/Controllers/inc/Einkauf/ek-fehler.inc.php';
+			else:
+				require 'app/Views/Kalkulationen/ek-berechnen.view.php';
+			endif;
+		}
 
     // Interne Kalkulation
-    public function ikerstellen()
-    {
-        include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
-        require 'app/Views/ik-erstellen.view.php';
-    }
+		public function ikerstellen()
+		{
+			include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
+			require 'app/Views/Kalkulationen/ik-erstellen.view.php';
+		}
 
-    public function ikberechnen()
-    {
-        include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
-        include 'app/Controllers/inc/Intern/ik-berechnung.inc.php'; // Berechnungen
-        if($Menge == 0 || $EinstandspreisFr == 0): 
-            require 'app/Controllers/inc/Intern/ik-fehler.inc.php';
-        else:
-            require 'app/Views/ik-berechnen.view.php';
-        endif;
-    }
+		public function ikberechnen()
+		{
+			include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
+			include 'app/Controllers/inc/Intern/ik-berechnung.inc.php'; // Berechnungen
+			if($Menge == 0 || $EinstandspreisFr == 0): 
+				require 'app/Controllers/inc/Intern/ik-fehler.inc.php';
+			else:
+				require 'app/Views/Kalkulationen/ik-berechnen.view.php';
+			endif;
+		}
 
     // Verkaufskalkulation
-    public function vkerstellen()
-    {
-        include 'app/Controllers/inc/Verkauf/vk-array.inc.php'; // Array für die for-Schlaufe
-        require 'app/Views/vk-erstellen.view.php';
-    }
+		public function vkerstellen()
+		{
+			include 'app/Controllers/inc/Verkauf/vk-array.inc.php'; // Array für die for-Schlaufe
+			require 'app/Views/Kalkulationen/vk-erstellen.view.php';
+		}
 
-    public function vkberechnen()
-    {
-        include 'app/Controllers/inc/Verkauf/vk-array.inc.php'; // Array für die for-Schlaufe
-        include 'app/Controllers/inc/Verkauf/vk-berechnung.inc.php'; // Berechnungen
-        if($Menge == 0 || $EinstandspreisFr == 0):
-            require 'app/Controllers/inc/Verkauf/vk-fehler.inc.php';
-        else:
-            require 'app/Views/vk-berechnen.view.php';
-        endif;
-    }
+		public function vkberechnen()
+		{
+			include 'app/Controllers/inc/Verkauf/vk-array.inc.php'; // Array für die for-Schlaufe
+			include 'app/Controllers/inc/Verkauf/vk-berechnung.inc.php'; // Berechnungen
+			if($Menge == 0 || $EinstandspreisFr == 0):
+				require 'app/Controllers/inc/Verkauf/vk-fehler.inc.php';
+			else:
+				require 'app/Views/Kalkulationen/vk-berechnen.view.php';
+			endif;
+		}
 
     // Gesamtkalkulation
-    public function gkerstellen()
-    {
-        include 'app/Controllers/inc/Gesamt/gk-array.inc.php'; // Array für die for-Schlaufe
-        require 'app/Views/gk-erstellen.view.php';
-    }
+		public function gkerstellen()
+		{
+			include 'app/Controllers/inc/Gesamt/gk-array.inc.php'; // Array für die for-Schlaufe
+			require 'app/Views/Kalkulationen/gk-erstellen.view.php';
+		}
 
-    public function gkberechnen()
-    {
+		public function gkberechnen()
+		{
 		include 'app/Controllers/inc/Gesamt/gk-array.inc.php'; // Array für die for-Schlaufe
 		include 'app/Controllers/inc/Gesamt/gk-berechnung.inc.php'; // Berechnungen
 		if($Menge == 0 || $eKatalogpreisFr == 0):
 			require 'app/Controllers/inc/Gesamt/gk-fehler.inc.php';
 		else:
-			require 'app/Views/gk-berechnen.view.php';
+			require 'app/Views/Kalkulationen/gk-berechnen.view.php';
 		endif;
-    }
-	
-	/* Bilanz */
-	public function bilanz()
-	{
-		// Initialize the session
-		session_start();
-
-		// Check if the user is logged in, if not then redirect him to login page
-		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-			header("location: loginRegister");
-			exit;
 		}
 
-      	include("app/Views/sideNav.view.php");
-		require 'app/Views/bilanz.view.php';
+	// ende
+// ende
 	}
-
-	/* Kontoübersicht */
-	public function kontouebersicht()
-	{
-		// Initialize the session
-		session_start();
-
-		// Check if the user is logged in, if not then redirect him to login page
-		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-			header("location: loginRegister");
-			exit;
-		}
-
-      	include("app/Views/sideNav.view.php");
-		require 'app/Views/kontouebersicht.view.php';
-	}
-
-	/* Journaleinträge */
-	public function journaleintrag()
-	{
-		// Initialize the session
-		session_start();
-
-		// Check if the user is logged in, if not then redirect him to login page
-		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-			header("location: loginRegister");
-			exit;
-		}
-
-		if($_SERVER["REQUEST_METHOD"] == "POST"){
-			$Colley = new Colley();
-
-			$datum = $_POST['datum'];
-			$haben = $_POST['haben'];
-			$soll = $_POST['soll'];
-			$betrag = $_POST['betrag'];
-
-			$Colley -> journaleintrag($datum, $haben, $soll, $betrag);
-			
-			header("location: journaleintrag");
-		}
-
-      	include("app/Views/sideNav.view.php");
-		require 'app/Views/journaleintrag.view.php';
-	}
-
-	/* Um ein neues Konto hinzufügen zu können */
-	public function neues_konto()
-	{
-		// Initialize the session
-		session_start();
-
-		// Check if the user is logged in, if not then redirect him to login page
-		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-			header("location: loginRegister");
-			exit;
-		}
-
-		if($_SERVER["REQUEST_METHOD"] == "POST"){
-			$Colley = new Colley();
-
-			$kontonummer = $_POST['kontonummer'];
-			$titel = $_POST['titel'];
-			$verwendungszweck = $_POST['verwendungszweck'];
-
-			$Colley -> neues_konto($kontonummer, $titel, $verwendungszweck);
-			
-			header("location: neues-konto");
-		}
-
-		include("app/Views/sideNav.view.php");
-		require 'app/Views/neues_konto.view.php';
-	}
-
-	public function rechnungsnummer()
-	{
-		// Initialize the session
-		session_start();
-
-		// Check if the user is logged in, if not then redirect him to login page
-		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-			header("location: loginRegister");
-			exit;
-		}
-
-      	include("app/Views/sideNav.view.php");
-		require 'app/Views/rechnungsnummer.view.php';
-	}
-
-	public function erfolgsrechnung()
-	{
-		// Initialize the session
-		session_start();
-
-		// Check if the user is logged in, if not then redirect him to login page
-		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-			header("location: loginRegister");
-			exit;
-		}
-
-      	include("app/Views/sideNav.view.php");
-		require 'app/Views/erfolgsrechnung.view.php';
-	}
-
-	public function kalkulation()
-	{
-		// Initialize the session
-		session_start();
-
-		// Check if the user is logged in, if not then redirect him to login page
-		if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-			header("location: loginRegister");
-			exit;
-		}
-
-      	include("app/Views/sideNav.view.php");
-		require 'app/Views/kalkulation.view.php';
-	}
-}
