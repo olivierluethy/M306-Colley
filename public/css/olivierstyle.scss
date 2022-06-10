@@ -52,6 +52,7 @@ html {
         #email_register_error,
         #passwort_register_error,
         #passwortverify_register_error,
+        #password_strength_error,
         #datum_error,
         #haben_error,
         #soll_error,
@@ -97,7 +98,7 @@ html {
             tr {
                 td {
                     .login {
-                        margin-right: 15rem;
+                        margin-right: 18rem;
                         text-align: center;
                         button[type=submit] {
                             background-color: #008CFF;

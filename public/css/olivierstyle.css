@@ -63,6 +63,7 @@ html body #passwort_login_error,
 html body #email_register_error,
 html body #passwort_register_error,
 html body #passwortverify_register_error,
+html body #password_strength_error,
 html body #datum_error,
 html body #haben_error,
 html body #soll_error,
@@ -103,7 +104,7 @@ html body textarea {
   box-sizing: border-box;
 }
 html body .logintable tr td .login {
-  margin-right: 15rem;
+  margin-right: 18rem;
   text-align: center;
 }
 html body .logintable tr td .login button[type=submit] {

@@ -43,11 +43,20 @@ window.addEventListener("load", function() {
                 errors = true;
             } else if (document.querySelector('#passwort_register').value != document.querySelector('#passwort_verify').value) {
                 document.getElementById('passwortverify_register_error').innerHTML = "Nicht das gleiche Passwort.";
+                document.querySelector("#passwort_verify").style = "border: 5px solid #ff4d4d";
                 errors = true;
             } else {
                 document.getElementById('passwortverify_register_error').innerHTML = "";
                 document.querySelector("#passwort_verify").style = "border: 1px solid #ccc";
             }
+        }
+
+        if (isPasswordReady != true) {
+            document.getElementById('password_strength_error').innerHTML = "Bitte stärkeres Passwort eingeben.";
+            document.querySelector(".password_strength_area").style = "border: 5px solid #ff4d4d";
+            errors = true;
+        } else {
+            document.getElementById('password_strength_error').innerHTML = "";
         }
 
         if (errors) {
