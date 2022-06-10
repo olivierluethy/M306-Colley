@@ -44,7 +44,7 @@ class ColleyController
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
 			// Kontoübersicht
-			include('app/Controllers/inc/bilanz/kontoubersicht.inc.php');
+			include('app/Controllers/inc/arrays/alle_konten.inc.php');
 			require('app/Views/bilanz/kontouebersicht.view.php');
 		}
 	// Journaleintrag
@@ -86,6 +86,27 @@ class ColleyController
 			// Rechnungsnummer
 			include('app/Controllers/inc/bilanz/rechnungsnummer.inc.php');
 			require('app/Views/bilanz/rechnungsnummer.view.php');
+		}
+
+// Erfolgsrechnung
+		public function erfolgsrechnung()
+		{
+			// SeitenNavigation
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			// Erfolgsrechnung
+			include('app/Controllers/inc/arrays/erfolgsrechnung.inc.php');
+			require('app/Views/Erfolgsrechnung/erfolgsrechnung.view.php');
+		}
+
+// Jahresabschluss
+		public function jahresabschluss()
+		{
+			// SeitenNavigation
+			include('app/Controllers/inc/heading.inc.php');
+			include('app/Views/sideNav.view.php');
+			// Jahresabschluss
+			require('app/Views/Jahresabschluss/jahresabschluss.view.php');
 		}
 
 //Kalkulationen

@@ -16,14 +16,14 @@ $welcome = array(
     ),
     array(
         'welcome3',
-        '#',
+        'erfolgsrechnung',
         'erfolgsrechnung.svg',
         'Pfau',
         'Erfolgsrechnung',
     ),
     array(
         'welcome4',
-        '#',
+        'jahresabschluss',
         'jahresabschluss.svg',
         'Elefant',
         'Jahresabschluss',

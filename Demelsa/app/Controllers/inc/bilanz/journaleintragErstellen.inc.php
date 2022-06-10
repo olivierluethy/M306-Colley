@@ -1,4 +1,10 @@
 <?php
+include('app/Controllers/inc/arrays/alle_konten.inc.php');
+include('app/Controllers/inc/arrays/alle_journal.inc.php');
+
+for($i=0; $i<count($journalID); $i++):
+endfor;
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'):
     if(isset($_POST['date']) && isset($_POST['soll']) && isset($_POST['haben']) && isset($_POST['betrag'])):
         if(!empty($_POST['date']) && !empty($_POST['soll']) && !empty($_POST['haben']) && !empty($_POST['betrag'])):

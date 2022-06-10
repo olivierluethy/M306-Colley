@@ -8,7 +8,6 @@ if(isset($_POST['id']) && isset($_POST['datum']) && isset($_POST['soll']) && iss
         $haben_journal = $_POST['haben'];
         $betrag_journal = $_POST['betrag'];
         $update = new ColleyJournal(
-            false,
             htmlspecialchars($_POST['datum']),
             htmlspecialchars($_POST['soll']),
             htmlspecialchars($_POST['haben']),
@@ -25,19 +24,5 @@ else:
     $error = 'Es gab keine Daten';
 endif;
 
-$journal = (new ColleyJournal)->getAll();
-foreach($journal as $item):
-    $journalID[] = $item['journalId'];
-    $datum[] = $item['datum'];
-    $soll[] = $item['soll'];
-    $haben[] = $item['haben'];
-    $betrag[] = $item['betrag'];
-endforeach;
-
-$konto = (new ColleyKonto)->getAll();
-foreach($konto as $data):
-    $kontoId[] = $data['kontoId'];
-    $kontoNr[] = $data['kontoNr'];
-    $kontoName[] = $data['kontoName'];
-endforeach;
-
+include('app/Controllers/inc/arrays/alle_konten.inc.php');
+include('app/Controllers/inc/arrays/alle_journal.inc.php');

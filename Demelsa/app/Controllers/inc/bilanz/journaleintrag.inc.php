@@ -1,10 +1,5 @@
 <?php
-$konto = (new ColleyKonto)->getAll();
-foreach($konto as $item):
-    $kontoName[] = $item['kontoName'];
-    $kontoNr[] = $item['kontoNr'];
-    $kontoId[] = $item['kontoId'];
-endforeach;
+include('app/Controllers/inc/arrays/alle_konten.inc.php');
 
 $array = array(
     array(

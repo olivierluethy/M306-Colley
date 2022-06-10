@@ -39,8 +39,8 @@
                     </div>
                     <div class="form4">
                         <select name="journalnummer" id="journalnummer">
-                            <?php for($x=0; $x<count($journalNr); $x++): ?>
-                                <option value="<?= $journalNr[$x] ?>"><?= $journalNr[$x] ?></option>
+                            <?php for($x=0; $x<count($journalID); $x++): ?>
+                                <option value="<?= $journalID[$x] ?>"><?= $journalID[$x] ?></option>
                             <?php endfor ?>
                         </select>
                     </div>

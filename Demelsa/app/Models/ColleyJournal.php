@@ -3,15 +3,14 @@ class ColleyJournal
 {
     public ?string $journalId;
     public ?string $datum;
-    public ?int $soll;
-    public ?int $haben;
+    public ?string $soll;
+    public ?string $haben;
     public ?string $betrag;
 
     public $db;
 
-    public function __construct($journalId = null, $datum = null, $soll = null, $haben = null, $betrag = null, $rechnungNr = null, $rechnung = null)
+    public function __construct($datum = null, $soll = null, $haben = null, $betrag = null, $rechnungNr = null, $rechnung = null)
     {
-        $this->journalId = $journalId;
         $this->datum = $datum;
         $this->soll = $soll;
         $this->haben = $haben;
@@ -64,8 +63,8 @@ class ColleyJournal
         WHERE journalId = :id');
 
         $statement->bindParam(':datum', $this->datum, PDO::PARAM_STR);
-        $statement->bindParam(':soll', $this->soll, PDO::PARAM_INT);
-        $statement->bindParam(':haben', $this->haben, PDO::PARAM_INT);
+        $statement->bindParam(':soll', $this->soll, PDO::PARAM_STR);
+        $statement->bindParam(':haben', $this->haben, PDO::PARAM_STR);
         $statement->bindParam(':betrag', $this->betrag, PDO::PARAM_STR);
 
         $statement->bindParam(':id', $id, PDO::PARAM_INT);

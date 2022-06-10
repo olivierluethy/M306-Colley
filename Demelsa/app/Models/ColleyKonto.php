@@ -8,11 +8,13 @@ class ColleyKonto
 
 	public $db;
 
-	public function __construct($kontoNr = null, $kontoName = null, $kontoZweck = null)
+	public function __construct($kontoNr = null, $kontoName = null, $kontoZweck = null, $untergruppe = null, $saldo = null)
 	{
 		$this->kontoNr = $kontoNr;
 		$this->kontoName = $kontoName;
 		$this->kontoZweck = $kontoZweck;
+		$this->untergruppe = $untergruppe;
+		$this->saldo = $saldo;
 
 		$this->db = connectDatabase();
 	}

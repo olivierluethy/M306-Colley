@@ -1,10 +1,5 @@
 <?php
-$kontoplan = (new ColleyKonto)->getAllPlan();
-
-foreach($kontoplan as $item):
-    $planNr[] = $item['planNr'];
-    $planTitel[] = $item['planTitel'];
-endforeach;
+include('app/Controllers/inc/arrays/alle_kontoplan.inc.php');
 
 for($i=0; $i<count($planNr); $i++):
     if(

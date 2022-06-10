@@ -8,6 +8,8 @@ $routes = [
 	'neues-konto' => 'ColleyController@neuesKonto',
 	'bilanz' => 'ColleyController@bilanz',
 	'kalkulation' => 'ColleyController@kalkulation',
+	'erfolgsrechnung' => 'ColleyController@erfolgsrechnung',
+	'jahresabschluss' => 'ColleyController@jahresabschluss',
 
 	/* Routes für Bilanz */
 	'kontouebersicht' => 'ColleyController@kontouebersicht',

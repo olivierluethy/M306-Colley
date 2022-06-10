@@ -22,13 +22,6 @@
     <div class="text">
         <p>Hier können Sie einen Journaleintrag bearbeiten resp. korrigieren</p>
     </div>
-    <?php
-    echo 'ID: ==> ' . $id_journal . '<br>';
-    echo 'Datum: ==> ' . $datum_journal . '<br>';
-    echo 'Soll: ==> ' . $soll_journal . '<br>';
-    echo 'Haben: ==> ' . $haben_journal . '<br>';
-    echo 'Betrag: ==> ' . $betrag_journal . '<br>';
-    ?>
     <div class="main journaleintragBearbeiten-main">
         <div class="fehler">
             <?php if(isset($error)): echo $error; endif ?>

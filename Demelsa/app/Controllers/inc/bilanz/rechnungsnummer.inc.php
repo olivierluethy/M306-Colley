@@ -1,9 +1,6 @@
 <?php
+include('app/Controllers/inc/arrays/alle_journal.inc.php');
 
-$item = (new ColleyJournal)->getAll();
-foreach($item as $data):
-    $journalNr[] = $data['journalId'];
-endforeach;
 if($_SERVER['REQUEST_METHOD'] == 'POST'):
     if(isset($rechnungsnummer)):
         if(!empty($rechnungsnummer)):
