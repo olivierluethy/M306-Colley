@@ -19,11 +19,17 @@
 
     <div class="title">
         <h1>Colley</h1>
-        <h2>Hier können Sie eine Erfo9lgsrechnung eröffnen, bearbeiten und abschliessen.</h2>
+        <h2>Hier können Sie eine Erfolgsrechnung eröffnen, bearbeiten und abschliessen.</h2>
     </div>
 
     <table class="normalTable">
         <tr>
+            <th>
+                <div class="option">
+                    <img src="assets/er_bearbeiten.svg" alt="">
+                    <p>Erfolgsrechnung eröffnen</p>
+                </div>
+            </th>
             <th>
                 <div class="option">
                     <img src="assets/er_bearbeiten.svg" alt="">
