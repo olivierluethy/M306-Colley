@@ -63,6 +63,7 @@ html body #passwort_login_error,
 html body #email_register_error,
 html body #passwort_register_error,
 html body #passwortverify_register_error,
+html body #password_strength_error,
 html body #datum_error,
 html body #haben_error,
 html body #soll_error,
@@ -103,7 +104,7 @@ html body textarea {
   box-sizing: border-box;
 }
 html body .logintable tr td .login {
-  margin-right: 15rem;
+  margin-right: 18rem;
   text-align: center;
 }
 html body .logintable tr td .login button[type=submit] {
@@ -135,16 +136,13 @@ html body .logintable tr td .newAccount input {
   box-sizing: border-box;
 }
 html body .logintable tr td .newAccount .showBtn {
-  /*position: absolute;*/
-  right: 385px;
-  top: 45.5%;
+  margin-top: 1rem;
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
 }
 html body .logintable tr td .newAccount .password_strength_area {
-  padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
 }
@@ -158,7 +156,7 @@ html body .logintable tr td .newAccount .password_strength_area .indicator {
 html body .logintable tr td .newAccount .password_strength_area .indicator span {
   width: 100%;
   height: 100%;
-  background: white;
+  background-color: white;
   border-radius: 5px;
   border: 1px solid black;
 }

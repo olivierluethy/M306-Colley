@@ -52,6 +52,7 @@ html {
         #email_register_error,
         #passwort_register_error,
         #passwortverify_register_error,
+        #password_strength_error,
         #datum_error,
         #haben_error,
         #soll_error,
@@ -97,7 +98,7 @@ html {
             tr {
                 td {
                     .login {
-                        margin-right: 15rem;
+                        margin-right: 18rem;
                         text-align: center;
                         button[type=submit] {
                             background-color: #008CFF;
@@ -128,16 +129,13 @@ html {
                             box-sizing: border-box;
                         }
                         .showBtn {
-                            /*position: absolute;*/
-                            right: 385px;
-                            top: 45.5%;
+                            margin-top: 1rem;
                             transform: translateY(-50%);
                             cursor: pointer;
                             font-size: 15px;
                             font-weight: 600;
                         }
                         .password_strength_area {
-                            padding: 12px 20px;
                             margin: 8px 0;
                             display: inline-block;
                             .indicator {
@@ -149,7 +147,7 @@ html {
                                 span {
                                     width: 100%;
                                     height: 100%;
-                                    background: white;
+                                    background-color: white;
                                     border-radius: 5px;
                                     border: 1px solid black;
                                 }

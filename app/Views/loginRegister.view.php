@@ -73,6 +73,7 @@ $_SESSION['email'] = "";
                 <div class="newAccount">
                     <p id="email_register_error"></p>
                     <p id="passwort_register_error"></p>
+                    <p id="password_strength_error"></p>
                     <p id="passwortverify_register_error"></p>
 
                     <h2>Neuer Account</h2>
@@ -101,7 +102,7 @@ $_SESSION['email'] = "";
                                         name="passwort_register" placeholder="Passwort">
                                 </td>
                                 <td>
-                                <div class="showBtn">SHOW</div>
+                                <div class="showBtn" title="Show Password By Clicking On It">SHOW</div>
                                 </td>
                             </tr>
                             <tr>
