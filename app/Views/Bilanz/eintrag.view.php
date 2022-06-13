@@ -9,13 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <div class="line"></div>
-            <div class="colley">
-                <h1>Colley</h1>
-            </div>
-            <div class="line"></div>
-        </div>
+    <?php include('app/Controllers/inc/header.inc.php'); ?>
         <div class="titel">
             <h2>Journaleintrag Bearbeiten</h2>
         </div>
@@ -69,6 +63,7 @@
                 </div>
             </form>
         </div>
+        <?php include('app/Controllers/inc/footer.inc.php'); ?>
     </div>
 </body>
 </html>

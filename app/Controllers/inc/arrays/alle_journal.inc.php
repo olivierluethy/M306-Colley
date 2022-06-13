@@ -6,6 +6,6 @@ foreach($journal as $item):
     $soll[] = $item['soll'];
     $haben[] = $item['haben'];
     $betrag[] = $item['betrag'];
-    $rechnungsnr[] = $item('rechnungsnummer');
-    $rechnung[] = $item('rechnung');
+    /*$rechnungsnr[] = $item('rechnungsnummer');
+    $rechnung[] = $item('rechnung');*/
 endforeach;

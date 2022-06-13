@@ -8,7 +8,7 @@
 // Container - Bleibt immer Fix
 .container {
     display: grid;
-    grid-template-areas: 'header' 'titel' 'text' 'main';
+    grid-template-areas: 'header' 'titel' 'text' 'main'  'footer';
     .header {
         grid-area: header;
         grid-template-areas: 'line' 'colley' 'line';
@@ -25,26 +25,35 @@
     .text {
         grid-area: text;
     }
+    .main {
+        grid-area: main;
+    }
+    .footer{
+        grid-area: footer;
+        grid-template-areas: 'line'  'colley' 'line';
+    }
 }
 
 // Welcome
 .welcome-main {
     grid-area: main;
-    display: grid;
+    display: grid;/*
     grid-template-areas: 'neuesKonto  bilanz  erfolgsrechnung  jahresabschluss  kalkulationen';
-    grid-template-columns: repeat(5, 20%);
+    grid-template-columns: repeat(5, 20%);*/
+    grid-template-areas: 'neuesKonto  bilanz  kalkulationen';
+    grid-template-columns: repeat(3, 33.34%);
     .welcome1 {
         grid-area: neuesKonto;
     }
     .welcome2 {
         grid-area: bilanz;
-    }
+    }/*
     .welcome3 {
         grid-area: erfolgsrechnung;
     }
     .welcome4 {
         grid-area: jahresabschluss;
-    }
+    }*/
     .welcome5 {
         grid-area: kalkulationen;
     }

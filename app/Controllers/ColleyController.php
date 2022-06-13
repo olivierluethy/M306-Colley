@@ -133,6 +133,8 @@ class ColleyController
 	// Übersicht
 		public function bilanz()
 		{
+		// Initialize the session
+        session_start();
 			// SeitenNavigation
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
@@ -143,6 +145,8 @@ class ColleyController
 	// Kontoübersicht
 		public function kontouebersicht()
 		{
+		// Initialize the session
+        session_start();
 			// SeitenNavigation
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
@@ -153,6 +157,8 @@ class ColleyController
 	// Journaleintrag
 		public function journaleintrag()
 		{
+		// Initialize the session
+        session_start();
 			// SeitenNavigation
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
@@ -165,6 +171,8 @@ class ColleyController
 		// Journaleintrag bearbeiten
 		public function journaleintragBearbeiten()
 		{
+		// Initialize the session
+        session_start();
 			// SeitenNavigation
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
@@ -176,6 +184,8 @@ class ColleyController
 		// Journaleintrag
 		public function eintrag()
 		{
+		// Initialize the session
+        session_start();
 			include('app/Controllers/inc/bilanz/eintrag.inc.php');
 			require('app/Views/bilanz/eintrag.view.php');
 		}

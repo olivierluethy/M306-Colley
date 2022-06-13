@@ -11,11 +11,7 @@
 <body>
     <div class="container">
     <!-- Header -->
-        <div class="header">
-            <div class="line"></div>
-            <div class="colley"><h1>Colley</h1></div>
-            <div class="line"></div>
-        </div>
+    <?php include('app/Controllers/inc/header.inc.php'); ?>
     <!-- Titel -->
         <div class="titel"><h2>Neues Konto</h2></div>
     <!-- Text -->
@@ -65,6 +61,7 @@
                 </div>
             </form>
         </div>
+        <?php include('app/Controllers/inc/footer.inc.php'); ?>
     </div>
 </body>
 </html>

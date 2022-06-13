@@ -31,7 +31,7 @@ html {
 }
 
 body {
-    margin: 0 0 50px 0;
+    margin: 0px;
     background-color: var(--bg);
 }
 
@@ -87,14 +87,34 @@ body {
     .main {
         margin: 0 20px;
     }
+    .footer {
+        margin-top: 100px;
+        .line {
+            height: 10px;
+            background-color: #4b6982;
+            border-top: 10px solid #70c6c7;
+            border-bottom: 10px solid #70c6c7;
+        }
+        .colley {
+            background-color: #4b6982;
+            border-top: 20px solid #70c6c7;
+            border-bottom: 20px solid #70c6c7;
+        }
+        p {
+            color: #b4ffd8;
+            font-size: 1.1em;
+            font-family: serif;
+            text-align: center;
+        }
+    }
 }
 
 // Welcome
 .welcome-main {
     .welcome1,
-    .welcome2,
+    .welcome2,/*
     .welcome3,
-    .welcome4,
+    .welcome4,*/
     .welcome5 {
         text-align: center;
         a {
@@ -104,7 +124,10 @@ body {
                 border-radius: 12px;
                 margin: 0 2rem;
                 background-origin: #f9f9f9;
-                img {
+                &:hover {
+                    box-shadow: 0 10px 50px #0000001a;
+                }
+                    img {
                     text-align: center;
                     color: #ff0000;
                     filter: var(--color-of-option-images);
@@ -185,7 +208,10 @@ body {
                 border-radius: 12px;
                 margin: 0 4rem;
                 background-origin: #f9f9f9;
-                img {
+                &:hover {
+                    box-shadow: 0 10px 50px #0000001a;
+                }
+                    img {
                     text-align: center;
                     filter: var(--color-of-option-images);
                 }
@@ -323,15 +349,19 @@ body {
 // Kalkulationen
 .kalkulation-main {
     text-align: center;
-    .option {
-        border: 1px solid #000000;
-        border-radius: 12px;
-        font-family: sans-serif;
-        &:hover {
-            box-shadow: 0 0 4px #555555;
-        }
-        img {
-            filter: invert(0);
+    a{
+        text-decoration: none;
+        color: #000000;
+        .option {
+            border: 5px solid #d3d3d3;
+            border-radius: 12px;
+            font-family: sans-serif;
+            &:hover {
+                box-shadow: 0 10px 50px #0000001a;
+            }
+            img {
+                filter: invert(0);
+            }
         }
     }
 }

@@ -7,7 +7,7 @@
     */
 .container {
   display: grid;
-  grid-template-areas: "header" "titel" "text" "main";
+  grid-template-areas: "header" "titel" "text" "main" "footer";
 }
 .container .header {
   grid-area: header;
@@ -25,24 +25,35 @@
 .container .text {
   grid-area: text;
 }
+.container .main {
+  grid-area: main;
+}
+.container .footer {
+  grid-area: footer;
+  grid-template-areas: "line" "colley" "line";
+}
 
 .welcome-main {
   grid-area: main;
   display: grid;
-  grid-template-areas: "neuesKonto  bilanz  erfolgsrechnung  jahresabschluss  kalkulationen";
-  grid-template-columns: repeat(5, 20%);
+  /*
+  grid-template-areas: 'neuesKonto  bilanz  erfolgsrechnung  jahresabschluss  kalkulationen';
+  grid-template-columns: repeat(5, 20%);*/
+  grid-template-areas: "neuesKonto  bilanz  kalkulationen";
+  grid-template-columns: repeat(3, 33.34%);
+  /*
+  .welcome3 {
+      grid-area: erfolgsrechnung;
+  }
+  .welcome4 {
+      grid-area: jahresabschluss;
+  }*/
 }
 .welcome-main .welcome1 {
   grid-area: neuesKonto;
 }
 .welcome-main .welcome2 {
   grid-area: bilanz;
-}
-.welcome-main .welcome3 {
-  grid-area: erfolgsrechnung;
-}
-.welcome-main .welcome4 {
-  grid-area: jahresabschluss;
 }
 .welcome-main .welcome5 {
   grid-area: kalkulationen;
