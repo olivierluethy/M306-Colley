@@ -133,8 +133,8 @@ class ColleyController
 	// Übersicht
 		public function bilanz()
 		{
-		// Initialize the session
-        session_start();
+			// Initialize the session
+			session_start();
 			// SeitenNavigation
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
@@ -145,47 +145,47 @@ class ColleyController
 	// Kontoübersicht
 		public function kontouebersicht()
 		{
-		// Initialize the session
-        session_start();
+			// Initialize the session
+			session_start();
 			// SeitenNavigation
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
 			// Kontoübersicht
 			include('app/Controllers/inc/arrays/alle_konten.inc.php');
-			require('app/Views/bilanz/kontouebersicht.view.php');
+			require('app/Views/Bilanz/kontouebersicht.view.php');
 		}
 	// Journaleintrag
 		public function journaleintrag()
 		{
-		// Initialize the session
-        session_start();
+			// Initialize the session
+			session_start();
 			// SeitenNavigation
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
 			// Journaleintrag
 			include('app/Controllers/inc/bilanz/journaleintrag.inc.php');
 			include('app/Controllers/inc/bilanz/journaleintragErstellen.inc.php');
-			require('app/Views/bilanz/journaleintrag.view.php');
+			require('app/Views/Bilanz/journaleintrag.view.php');
 		}
 
 		// Journaleintrag bearbeiten
 		public function journaleintragBearbeiten()
 		{
-		// Initialize the session
-        session_start();
+			// Initialize the session
+			session_start();
 			// SeitenNavigation
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
 			// Journaleintrag Bearbeiten
 			include('app/Controllers/inc/bilanz/journaleintragBearbeiten.inc.php');
-			require('app/Views/bilanz/journaleintragBearbeiten.view.php');
+			require('app/Views/Bilanz/journaleintragBearbeiten.view.php');
 		}
 
 		// Journaleintrag
 		public function eintrag()
 		{
-		// Initialize the session
-        session_start();
+			// Initialize the session
+			session_start();
 			include('app/Controllers/inc/bilanz/eintrag.inc.php');
 			require('app/Views/bilanz/eintrag.view.php');
 		}
@@ -193,6 +193,8 @@ class ColleyController
 	// Rechnungsnummer
 		public function rechnungsnummer()
 		{
+			// Initialize the session
+			session_start();
 			// SeitenNavigation
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
@@ -204,6 +206,8 @@ class ColleyController
 // Erfolgsrechnung
 		public function erfolgsrechnung()
 		{
+			// Initialize the session
+			session_start();
 			// SeitenNavigation
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
@@ -215,6 +219,8 @@ class ColleyController
 // Jahresabschluss
 		public function jahresabschluss()
 		{
+			// Initialize the session
+			session_start();
 			// SeitenNavigation
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
@@ -226,6 +232,8 @@ class ColleyController
 	// Kalkulationsübersicht
 		public function kalkulation()
 		{
+			// Initialize the session
+			session_start();
 			include('app/Controllers/inc/heading.inc.php');
 			include('app/Views/sideNav.view.php');
 			include('app/Controllers/inc/arrays/kalkulation.inc.php');
@@ -234,12 +242,16 @@ class ColleyController
 	// Einkaufskalkulation
 		public function ekerstellen()
 		{
+			// Initialize the session
+			session_start();
 			include 'app/Controllers/inc/Einkauf/ek-array.inc.php'; // Array für die for-Schlaufe
 			require 'app/Views/Kalkulationen/ek-erstellen.view.php';
 		}
 
 		public function ekberechnen()
 		{
+			// Initialize the session
+			session_start();
 			include 'app/Controllers/inc/Einkauf/ek-array.inc.php'; // Array für die for-Schlaufe
 			include 'app/Controllers/inc/Einkauf/ek-berechnung.inc.php'; // Berechnungen
 			if($Katalogpreis == 0 || $Menge == 0):
@@ -252,12 +264,16 @@ class ColleyController
     // Interne Kalkulation
 		public function ikerstellen()
 		{
+			// Initialize the session
+			session_start();
 			include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
 			require 'app/Views/Kalkulationen/ik-erstellen.view.php';
 		}
 
 		public function ikberechnen()
 		{
+			// Initialize the session
+			session_start();
 			include 'app/Controllers/inc/Intern/ik-array.inc.php'; // Array für die for-Schlaufe
 			include 'app/Controllers/inc/Intern/ik-berechnung.inc.php'; // Berechnungen
 			if($Menge == 0 || $EinstandspreisFr == 0): 
@@ -270,12 +286,16 @@ class ColleyController
     // Verkaufskalkulation
 		public function vkerstellen()
 		{
+			// Initialize the session
+			session_start();
 			include 'app/Controllers/inc/Verkauf/vk-array.inc.php'; // Array für die for-Schlaufe
 			require 'app/Views/Kalkulationen/vk-erstellen.view.php';
 		}
 
 		public function vkberechnen()
 		{
+			// Initialize the session
+			session_start();
 			include 'app/Controllers/inc/Verkauf/vk-array.inc.php'; // Array für die for-Schlaufe
 			include 'app/Controllers/inc/Verkauf/vk-berechnung.inc.php'; // Berechnungen
 			if($Menge == 0 || $EinstandspreisFr == 0):
@@ -288,19 +308,23 @@ class ColleyController
     // Gesamtkalkulation
 		public function gkerstellen()
 		{
+			// Initialize the session
+			session_start();
 			include 'app/Controllers/inc/Gesamt/gk-array.inc.php'; // Array für die for-Schlaufe
 			require 'app/Views/Kalkulationen/gk-erstellen.view.php';
 		}
 
 		public function gkberechnen()
 		{
-		include 'app/Controllers/inc/Gesamt/gk-array.inc.php'; // Array für die for-Schlaufe
-		include 'app/Controllers/inc/Gesamt/gk-berechnung.inc.php'; // Berechnungen
-		if($Menge == 0 || $eKatalogpreisFr == 0):
-			require 'app/Controllers/inc/Gesamt/gk-fehler.inc.php';
-		else:
-			require 'app/Views/Kalkulationen/gk-berechnen.view.php';
-		endif;
+			// Initialize the session
+			session_start();
+			include 'app/Controllers/inc/Gesamt/gk-array.inc.php'; // Array für die for-Schlaufe
+			include 'app/Controllers/inc/Gesamt/gk-berechnung.inc.php'; // Berechnungen
+			if($Menge == 0 || $eKatalogpreisFr == 0):
+				require 'app/Controllers/inc/Gesamt/gk-fehler.inc.php';
+			else:
+				require 'app/Views/Kalkulationen/gk-berechnen.view.php';
+			endif;
 		}
 
 	// ende

@@ -12,21 +12,29 @@
 html {
     --bg: #FCFCFC;
     --bg-text: #EBEBEB;
+    --hamburger: black;
+    --color-for-title: #c4a474;
+    --color-for-title-text: #000000;
     --color-headings: #0077FF;
     --color-text: #333333;
     --color-text-link: royalblue;
     --color-of-option-images: invert(0);
     --color-for-footer: #4b6982;
     --color-for-footer-text: #b4ffd8;
+    --neues-Konto-label: black;
     &[data-theme='dark'] {
         --bg: #333333;
         --bg-panel: #434343;
+        --hamburger: white;
+        --color-for-title: #4d4848;
+        --color-for-title-text: white;
         --color-headings: #3694FF;
         --color-text: rgba(255, 255, 255, .87);
         --color-text-link: #FCFCFC;
         --color-of-option-images: invert(100%);
         --color-for-footer: white;
         --color-for-footer-text: black;
+        --neues-Konto-label: white;
     }
 }
 
@@ -65,10 +73,10 @@ body {
         }
     }
     .titel {
-        background-color: #c4a474;
+        background-color: var(--color-for-title);
         border-top: 1px solid #4b6982;
         h2 {
-            color: #000000;
+            color: var(--color-for-title-text);
             font-size: 2.5em;
             font-family: serif;
             text-align: center;
@@ -112,7 +120,8 @@ body {
 // Welcome
 .welcome-main {
     .welcome1,
-    .welcome2,/*
+    .welcome2,
+    /*
     .welcome3,
     .welcome4,*/
     .welcome5 {
@@ -127,7 +136,7 @@ body {
                 &:hover {
                     box-shadow: 0 10px 50px #0000001a;
                 }
-                    img {
+                img {
                     text-align: center;
                     color: #ff0000;
                     filter: var(--color-of-option-images);
@@ -160,6 +169,7 @@ body {
         margin: 0 auto;
         width: min-content;
         label {
+            color: var(--neues-Konto-label);
             font-size: 1.2em;
             font-family: sans-serif;
             padding-right: 10px;
@@ -211,7 +221,7 @@ body {
                 &:hover {
                     box-shadow: 0 10px 50px #0000001a;
                 }
-                    img {
+                img {
                     text-align: center;
                     filter: var(--color-of-option-images);
                 }
@@ -349,7 +359,7 @@ body {
 // Kalkulationen
 .kalkulation-main {
     text-align: center;
-    a{
+    a {
         text-decoration: none;
         color: #000000;
         .option {
