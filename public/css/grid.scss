@@ -8,7 +8,7 @@
 // Container - Bleibt immer Fix
 .container {
     display: grid;
-    grid-template-areas: 'header' 'titel' 'text' 'main';
+    grid-template-areas: 'header' 'titel' 'text' 'main'  'footer';
     .header {
         grid-area: header;
         grid-template-areas: 'line' 'colley' 'line';
@@ -24,6 +24,13 @@
     }
     .text {
         grid-area: text;
+    }
+    .main {
+        grid-area: main;
+    }
+    .footer{
+        grid-area: footer;
+        grid-template-areas: 'line'  'colley' 'line';
     }
 }
 

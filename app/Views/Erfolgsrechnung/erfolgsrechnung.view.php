@@ -30,6 +30,7 @@
             </div>
 
         </div>
+        <?php include('app/Controllers/inc/footer.inc.php'); ?>
     </div>
     <script src="public/js/navigate.js"></script>
 </body>

@@ -7,7 +7,7 @@
     */
 .container {
   display: grid;
-  grid-template-areas: "header" "titel" "text" "main";
+  grid-template-areas: "header" "titel" "text" "main" "footer";
 }
 .container .header {
   grid-area: header;
@@ -24,6 +24,13 @@
 }
 .container .text {
   grid-area: text;
+}
+.container .main {
+  grid-area: main;
+}
+.container .footer {
+  grid-area: footer;
+  grid-template-areas: "line" "colley" "line";
 }
 
 .welcome-main {
