@@ -13,7 +13,7 @@ $welcome = array(
         'bilanz.svg',
         'Huhn',
         'Bilanz',
-    ),
+    ),/*
     array(
         'welcome3',
         'erfolgsrechnung',
@@ -27,7 +27,7 @@ $welcome = array(
         'jahresabschluss.svg',
         'Elefant',
         'Jahresabschluss',
-    ),
+    ),*/
     array(
         'welcome5',
         'kalkulation',

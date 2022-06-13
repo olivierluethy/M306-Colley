@@ -14,7 +14,7 @@ $nav = array(
                 'bilanz.svg',
                 'Bilanz',
                 'Bilanz',
-    ),
+    ),/*
     array('erfolgsrechnung',
                 'erfolgsrechnung.svg',
                 'Erfolgsrechnung',
@@ -24,7 +24,7 @@ $nav = array(
                 'jahresabschluss.svg',
                 'Jahresabschluss',
                 'Jahresabschluss',
-    ),
+    ),*/
     array('kalkulation',
                 'kalkulation.svg',
                 'Kalkulation',

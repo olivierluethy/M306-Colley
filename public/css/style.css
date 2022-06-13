@@ -85,22 +85,16 @@ body {
 
 .welcome-main .welcome1,
 .welcome-main .welcome2,
-.welcome-main .welcome3,
-.welcome-main .welcome4,
 .welcome-main .welcome5 {
   text-align: center;
 }
 .welcome-main .welcome1 a,
 .welcome-main .welcome2 a,
-.welcome-main .welcome3 a,
-.welcome-main .welcome4 a,
 .welcome-main .welcome5 a {
   text-decoration: none;
 }
 .welcome-main .welcome1 a .option,
 .welcome-main .welcome2 a .option,
-.welcome-main .welcome3 a .option,
-.welcome-main .welcome4 a .option,
 .welcome-main .welcome5 a .option {
   border: 5px solid #d3d3d3;
   border-radius: 12px;
@@ -109,15 +103,11 @@ body {
 }
 .welcome-main .welcome1 a .option:hover,
 .welcome-main .welcome2 a .option:hover,
-.welcome-main .welcome3 a .option:hover,
-.welcome-main .welcome4 a .option:hover,
 .welcome-main .welcome5 a .option:hover {
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1019607843);
 }
 .welcome-main .welcome1 a .option img,
 .welcome-main .welcome2 a .option img,
-.welcome-main .welcome3 a .option img,
-.welcome-main .welcome4 a .option img,
 .welcome-main .welcome5 a .option img {
   text-align: center;
   color: #ff0000;
@@ -125,8 +115,6 @@ body {
 }
 .welcome-main .welcome1 a .option p,
 .welcome-main .welcome2 a .option p,
-.welcome-main .welcome3 a .option p,
-.welcome-main .welcome4 a .option p,
 .welcome-main .welcome5 a .option p {
   text-align: center;
   font-size: 20px;
