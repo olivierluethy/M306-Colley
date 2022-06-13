@@ -6,5 +6,4 @@ foreach($er as $item):
     $kontoNr[] = $item['kontoNr'];
     $kontoName[] = $item['kontoName'];
     $kontoZweck[] = $item['kontoZweck'];
-    $saldo[] = $item['saldo'];
 endforeach;

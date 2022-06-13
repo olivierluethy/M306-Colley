@@ -107,6 +107,13 @@ body {
   margin: 0 2rem;
   background-origin: #f9f9f9;
 }
+.welcome-main .welcome1 a .option:hover,
+.welcome-main .welcome2 a .option:hover,
+.welcome-main .welcome3 a .option:hover,
+.welcome-main .welcome4 a .option:hover,
+.welcome-main .welcome5 a .option:hover {
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1019607843);
+}
 .welcome-main .welcome1 a .option img,
 .welcome-main .welcome2 a .option img,
 .welcome-main .welcome3 a .option img,
@@ -196,6 +203,12 @@ body {
   border-radius: 12px;
   margin: 0 4rem;
   background-origin: #f9f9f9;
+}
+.bilanz-main .bilanz1 a .option:hover,
+.bilanz-main .bilanz2 a .option:hover,
+.bilanz-main .bilanz3 a .option:hover,
+.bilanz-main .bilanz4 a .option:hover {
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1019607843);
 }
 .bilanz-main .bilanz1 a .option img,
 .bilanz-main .bilanz2 a .option img,
@@ -325,15 +338,19 @@ body {
 .kalkulation-main {
   text-align: center;
 }
-.kalkulation-main .option {
-  border: 1px solid #000000;
+.kalkulation-main a {
+  text-decoration: none;
+  color: #000000;
+}
+.kalkulation-main a .option {
+  border: 5px solid #d3d3d3;
   border-radius: 12px;
   font-family: sans-serif;
 }
-.kalkulation-main .option:hover {
-  box-shadow: 0 0 4px #555555;
+.kalkulation-main a .option:hover {
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1019607843);
 }
-.kalkulation-main .option img {
+.kalkulation-main a .option img {
   filter: invert(0);
 }
 
