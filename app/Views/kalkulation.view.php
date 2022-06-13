@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/menu.css">
     <title>Colley</title>
+    <script src="public/js/darkLightMode.js"></script>
 </head>
 <body>
     <div class="container">

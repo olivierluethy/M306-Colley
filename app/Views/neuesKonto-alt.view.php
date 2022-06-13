@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,34 @@
     <link rel="stylesheet" href="public/css/style.css">
     <title>Colley</title>
 </head>
+
 <body>
     <div class="container">
-    <!-- Header -->
+        <!-- Header -->
         <div class="header">
             <div class="line"></div>
-            <div class="colley"><h1>Colley</h1></div>
+            <div class="colley">
+                <h1>Colley</h1>
+            </div>
             <div class="line"></div>
         </div>
-    <!-- Titel -->
-        <div class="titel"><h2>Neues Konto</h2></div>
-    <!-- Text -->
-        <div class="text"><p>Bitte geben Sie die gewünschte Kontonummer, einen Titel und einen Verwendungszweck an.</p></div>
-    <!-- Neues Konto erstellen -->
+        <!-- Titel -->
+        <div class="titel">
+            <h2>Neues Konto</h2>
+        </div>
+        <!-- Text -->
+        <div class="text">
+            <p>Bitte geben Sie die gewünschte Kontonummer, einen Titel und einen Verwendungszweck an.</p>
+        </div>
+        <!-- Neues Konto erstellen -->
         <div class="neuesKonto-main">
-        <!-- Fehlermeldungen -->
+            <!-- Fehlermeldungen -->
             <div class="fehler">
                 <p id="kontoNrError"></p>
                 <p id="titel_konto_error"></p>
                 <p id="verwendungszweck_konto_error"></p>
             </div>
-        <!-- Formular -->
+            <!-- Formular -->
             <form action="kontoErstellen" method="POST">
                 <div class="konto">
                     <div class="konto1">
@@ -58,4 +66,5 @@
     <script src="public/js/NeuesKonto.js"></script>
     <script src="public/js/navigate.js"></script>
 </body>
+
 </html>

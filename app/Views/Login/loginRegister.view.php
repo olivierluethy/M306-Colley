@@ -13,7 +13,7 @@ $_SESSION['email'] = "";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/loginRegister.css">
-    <link rel="shortcut icon" href="assets/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="public/bilder/favicon.ico">
     <title>Login / Register</title>
 </head>
 
