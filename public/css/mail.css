@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: Arial;
+  background-color: lightgray;
+}
+body .emailSended {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+body .emailSended input[type=email] {
+  visibility: hidden;
+  display: none;
+}
+body .emailSended input[type=number]:nth-child(2) {
+  visibility: hidden;
+  display: none;
+}
+body .emailSended input[type=submit] {
+  background-color: #008CFF;
+  border: 2px solid #008CFF;
+  color: white;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  border-radius: 15px;
+  padding: 15px 32px;
+  cursor: pointer;
+}
+body .emailSended input[type=submit]:hover {
+  background-color: white;
+  color: #008CFF;
+  border: 2px solid #008CFF;
+}/*# sourceMappingURL=mail.css.map */

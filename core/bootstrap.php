@@ -4,4 +4,4 @@ require 'core/Router.php';
 require 'core/database.php';
 require 'app/Models/ColleyKonto.php';
 require 'app/Models/ColleyJournal.php';
-// require 'app/Models/Example.php';
+require 'app/Models/ColleyLogin.php';

@@ -93,7 +93,7 @@
                                     </form>
 
                                     <h2>Falls Sie ihr Passwort vergessen haben, können Sie es hier zurücksetzen.</h2>
-                                    <button id='sendEmail'>Passwort zurücksetzen</button>
+                                    <a href='email_versenden'><button id='sendEmail'>Passwort zurücksetzen</button></a>
                                 </div>";
                             }
                         }

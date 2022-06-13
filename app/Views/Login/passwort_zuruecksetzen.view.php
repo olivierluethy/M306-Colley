@@ -16,7 +16,7 @@
     <p id="password_not_equal"></p>
     <p id="password_again_error"></p>
     
-    <form action="password_zuruecksetzen" method="POST">
+    <form action="passwort_zuruecksetzen" method="POST">
         <label for="Passwort">Passwort:</label>
         <input type="password" name="password" id="password">
 

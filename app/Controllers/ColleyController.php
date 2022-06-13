@@ -29,6 +29,71 @@ class ColleyController
 	{
 		require 'app/Views/Login/logout.view.php';
 	}
+	// Register-System
+	public function register()
+	{
+		$pdo = connectDatabase();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		require 'app/Views/Login/register.php';
+	}
+	public function email_versenden()
+	{
+		// Initialize the session
+		session_start();
+
+		$pdo = connectDatabase();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
+		$_SESSION["code"] = random_int(100000, 999999);
+
+		if($_SESSION["emailDirection"]){
+			$Colley = new ColleyLogin();
+
+			$Colley -> email();
+
+			require("app/Views/Login/mailer.php");
+
+			/* Email wird versendet */
+			sendMail();
+		}else {
+			header("location: loginRegister");
+		}
+	}
+
+	public function checkIfCodeIsCorrect()
+	{
+		// Initialize the session
+		session_start();
+
+		$pdo = connectDatabase();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		if($_SERVER["REQUEST_METHOD"] == "POST"){
+			$Colley = new ColleyLogin();
+
+			$code = $Colley -> CheckEnteredCode();
+			$code = $code->fetchAll();
+			
+			if($code[0][0] == $_POST["codeFromUser"]){
+				require 'app/Views/Login/passwort_zuruecksetzen.view.php';
+			}else{
+				require 'app/Views/Login/wrongCodeForPasswordBack.view.php';
+			}
+		}else {
+			header("location: loginRegister");
+		}
+	}
+
+	public function passwort_zuruecksetzen()
+	{
+		// Initialize the session
+		session_start();
+
+		$pdo = connectDatabase();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		require 'app/Views/Login/passwordReset.php';
+	}
 // Welcome
 	public function index()
 	{

@@ -32,6 +32,7 @@ $routes = [
 	'email_versenden' => 'ColleyController@email_versenden',
 	'passwortZurueckEmailSeite' => 'ColleyController@passwortZurueckEmailSeite',
 	'passwort_zuruecksetzen' => 'ColleyController@passwort_zuruecksetzen',
+	'checkIfCodeIsCorrect' => 'ColleyController@checkIfCodeIsCorrect',
 
 	/* Routes for login and registration */
 	'loginRegister' => 'ColleyController@loginRegister',
