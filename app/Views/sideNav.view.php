@@ -1,15 +1,17 @@
 <?php include('app/Controllers/inc/arrays/sideNav.inc.php'); ?>
 <div id="mySidenav" class="sidenav">
-    <div class="toggle-container">
-        <input type="checkbox" id="switch" name="theme" /><label id="label" title="Change To Dark Mode"
-            for="switch"></label>
+    <div class="switch-part">
+        <label class="switch" title="Change to Dark Mode">
+            <input type="checkbox" name="theme" />
+            <span class="slider round"></span>
+        </label>
         <p id="mode">Light Mode</p>
     </div>
+    <a class="closebtn" onclick="closeNav()" title="Close Sidenavigation">&times;</a>
     <hr>
     <h1>Colley</h1>
     <h2>Buchhaltungssoftware</h2>
     <hr>
-    <a class="closebtn" onclick="closeNav()">&times;</a>
     <?php for($i=0; $i<count($nav); $i++): ?>
     <a href="<?= $nav[$i][0] ?>"><img src="public/bilder/sideNav/<?= $nav[$i][1] ?>" alt="<?= $nav[$i][2] ?>">&nbsp
         <?= $nav[$i][3] ?></a>

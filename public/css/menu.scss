@@ -30,55 +30,66 @@
     box-shadow: 10px 0 5px -2px #888;
     overflow-y: hidden;
     /* Dark-Ligh Mode */
-    .toggle-container {
-        margin-left: 2rem;
-        float: left;
-        margin-top: -1.8rem;
+    .switch-part {
         display: flex;
-        p {
-            margin-top: -0.5rem;
-            margin-left: -1.1999999999999993rem;
-            color: white;
-            margin-bottom: auto;
-        }
-        input[type=checkbox] {
-            height: 0;
-            width: 0;
-            visibility: hidden;
-            &:checked+label {
-                background: var(--color-headings);
-                &::after {
-                    left: calc(100% - 5px);
-                    transform: translateX(-100%);
-                }
-            }
-        }
-        label {
-            cursor: pointer;
-            text-indent: -9999px;
-            width: 52px;
-            height: 27px;
-            background: grey;
-            float: right;
-            margin-left: -0.8rem;
-            border-radius: 100px;
+        height: 4.8vh;
+        margin-top: -1rem;
+        .switch {
             position: relative;
-            &:after {
-                content: '';
-                position: absolute;
-                top: 3px;
-                left: 3px;
-                width: 20px;
-                height: 20px;
-                background: #fff;
-                border-radius: 90px;
-                transition: 0.3s;
-            }
-            &:active {
-                &::after {
-                    width: 45px;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            margin-left: 1.9rem;
+            input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+                &:checked+.slider {
+                    background-color: #2196F3;
+                }
+                &:focus+.slider {
+                    box-shadow: 0 0 1px #2196F3;
+                }
+                &:checked+.slider::before {
+                    -webkit-transform: translateX(26px);
+                    -ms-transform: translateX(26px);
+                    transform: translateX(26px);
                 }
             }
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            &::before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+        }
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+        .slider.round:before {
+            border-radius: 50%;
+        }
+        #mode {
+            margin-top: -0.3rem;
+            margin-left: -1.4rem;
+            color: white;
         }
     }
     h1 {
@@ -128,7 +139,7 @@
     }
     .closebtn {
         position: absolute;
-        top: -4;
+        top: 10;
         right: 8px;
         font-size: 36px;
         margin-left: 50px;

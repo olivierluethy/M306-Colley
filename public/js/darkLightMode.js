@@ -7,11 +7,13 @@ checkbox.addEventListener('change', function() {
         trans()
         document.documentElement.setAttribute('data-theme', 'dark')
         mode.innerHTML = "Dark Mode";
+        mode.style.setProperty('color', '#818181');
         label.title = "Change to Light Mode";
     } else {
         trans()
         document.documentElement.setAttribute('data-theme', 'light')
         mode.innerHTML = "Light Mode";
+        mode.style.setProperty('color', 'white');
         label.title = "Change to Dark Mode";
     }
 })
