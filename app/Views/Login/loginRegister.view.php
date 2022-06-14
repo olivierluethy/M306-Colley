@@ -119,6 +119,9 @@ $_SESSION['email'] = "";
                                             <div class="text">Enter A Password</div>
                                         </div>
                                     </td>
+                                    <td>
+                                        <div class="question-mark">? <span id="password_feedback"></span></div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>

@@ -1,602 +1,624 @@
-// @import url(responsiveDesign.css);
-p {
-    color: var(--color-text);
-}
-
-.title {
-    color: var(--color-text);
-    text-align: center;
-    animation-duration: 2s;
-    animation-name: slideinTitle;
-    animation-iteration-count: 1;
-    h1 {
-        margin-top: 2rem;
-        font-size: 50px;
-    }
-    h2 {
-        font-size: 40px;
-    }
-}
-
-
-/* Animation for title */
-
-@keyframes slideinTitle {
-    0% {
-        margin-right: 500px;
-    }
-    100% {
-        margin-right: 0%;
-    }
-}
-
-
-/* Animation for login */
-
-@keyframes slideinLoginRegister {
-    0% {
-        margin-top: 500px;
-    }
-    100% {
-        margin-top: 0%;
-    }
-}
-
-
-/* Animation for divider */
-
-@keyframes slideinDivider {
-    0% {
-        margin-top: -500rem;
-    }
-    100% {
-        margin-top: 0rem;
-    }
-}
-
-.menu {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    color: var(--color-text);
-    span {
-        font-size: 35px;
-        cursor: pointer;
-    }
-}
-
-
-/* Text für Login-, Journal- und Kontovalidierung */
-
-#email_login_error,
-#passwort_login_error,
-#email_register_error,
-#passwort_register_error,
-#passwortverify_register_error,
-#password_strength_error,
-#datum_error,
-#haben_error,
-#soll_error,
-#betrag_error,
-#kontonummer_konto_error,
-#titel_konto_error,
-#verwendungszweck_konto_error,
-#rechnungsnummer_rechnungsnummer_error,
-#journalnummer_rechnungsnummer_error,
-#rechnung_rechnungsnummer_error {
-    color: red;
-    text-align: center;
-    font-weight: bold;
-}
-
-
-/* Allgemeine Tabelleneinstellung */
-
-.margin-auto {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-label {
-    float: right;
-}
-
-input {
-    width: 90%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-textarea {
-    width: 90%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-
-/* Tabelle für das Login und Register */
-
-.logintable {
-    tr {
-        td {
-            .login {
-                animation-duration: 2s;
-                animation-name: slideinLoginRegister;
-                animation-iteration-count: 1;
-                margin-right: 18rem;
-                text-align: center;
-                button[type=submit] {
-                    background-color: #008CFF;
-                    border: 2px solid #008CFF;
-                    color: white;
-                    font-size: 16px;
-                    transition-duration: 0.4s;
-                    border-radius: 15px;
-                    padding: 15px 32px;
-                    cursor: pointer;
-                    &:hover {
-                        background-color: white;
-                        color: #008CFF;
-                        border: 2px solid #008CFF;
+                    // @import url(responsiveDesign.css);
+                    p {
+                        color: var(--color-text);
                     }
-                }
-            }
-            .newAccount {
-                margin-left: 15rem;
-                text-align: center;
-                animation-duration: 2s;
-                animation-name: slideinLoginRegister;
-                animation-iteration-count: 1;
-                input {
-                    width: 90%;
-                    padding: 12px 20px;
-                    margin: 8px 0;
-                    display: inline-block;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    box-sizing: border-box;
-                }
-                .showBtn {
-                    margin-top: 1rem;
-                    transform: translateY(-50%);
-                    cursor: pointer;
-                    font-size: 15px;
-                    font-weight: 600;
-                }
-                .password_strength_area {
-                    margin: 8px 0;
-                    display: inline-block;
-                    .indicator {
-                        height: 10px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        margin: 10px 0;
-                        span {
-                            width: 100%;
-                            height: 100%;
-                            background-color: white;
-                            border-radius: 5px;
-                            border: 1px solid black;
+                    
+                    .title {
+                        color: var(--color-text);
+                        text-align: center;
+                        animation-duration: 2s;
+                        animation-name: slideinTitle;
+                        animation-iteration-count: 1;
+                        h1 {
+                            margin-top: 2rem;
+                            font-size: 50px;
+                        }
+                        h2 {
+                            font-size: 40px;
                         }
                     }
-                }
-                button[type=submit] {
-                    background-color: #008CFF;
-                    border: 2px solid #008CFF;
-                    color: white;
-                    font-size: 16px;
-                    transition-duration: 0.4s;
-                    border-radius: 15px;
-                    padding: 15px 32px;
-                    cursor: pointer;
-                    &:hover {
-                        background-color: white;
-                        color: #008CFF;
-                        border: 2px solid #008CFF;
+                    /* Animation for title */
+                    
+                    @keyframes slideinTitle {
+                        0% {
+                            margin-right: 500px;
+                        }
+                        100% {
+                            margin-right: 0%;
+                        }
                     }
-                }
-            }
-            .divider {
-                animation-duration: 2s;
-                animation-name: slideinDivider;
-                animation-iteration-count: 1;
-                text-align: center;
-                margin-left: 0.1rem;
-                border-left: 2px solid black;
-                height: 500px;
-            }
-        }
-    }
-}
-
-
-/* Tabelle für Rechnungsnummer und Journal */
-
-.TabelleKlein {
-    label {
-        margin-right: 2rem;
-        color: var(--color-text);
-    }
-    tr {
-        height: 5vh;
-        td {
-            .selectize-control {
-                width: 200%;
-                margin-top: 1rem;
-                .selectize-input {
-                    width: 90%;
-                    padding: 12px 20px;
-                    margin: 8px 0;
-                    display: inline-block;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    box-sizing: border-box;
-                }
-            }
-            button[type=submit] {
-                background-color: white;
-                border: 1px solid black;
-                color: black;
-                padding: 15px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                cursor: pointer;
-                transition-duration: 0.4s;
-                &:hover {
-                    background-color: black;
-                    color: white;
-                }
-            }
-        }
-    }
-}
-
-
-/* Table für die Seite um neue Konten erfassen zu können */
-
-.neuesKontoTabelle {
-    label {
-        margin-right: 2rem;
-        margin-top: 2rem;
-    }
-    tr {
-        height: 5vh;
-        td {
-            p {
-                margin-top: -5rem;
-                margin-right: 2rem;
-            }
-            button[type=submit] {
-                background-color: white;
-                border: 1px solid black;
-                color: black;
-                padding: 15px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                cursor: pointer;
-                transition-duration: 0.4s;
-                &:hover {
-                    background-color: black;
-                    color: white;
-                }
-            }
-        }
-    }
-}
-
-
-/* Table für Bilanz und Willkommen Seite */
-
-.normalTable {
-    width: 100%;
-    text-align: center;
-    tr {
-        th {
-            .option {
-                border: 2px solid var(--color-text);
-                margin-left: 2rem;
-                margin-right: 2rem;
-                cursor: pointer;
-                transition-duration: 0.4s;
-                &:hover {
-                    box-shadow: 0 0 10px 5px lightgray;
-                }
-                img {
-                    border: 1px solid #ddd;
-                    border-radius: 4px;
-                    padding: 5px;
-                    width: 150px;
-                    filter: var(--color-of-option-images);
-                }
-                p {
-                    color: var(--color-text);
-                }
-            }
-        }
-    }
-}
-
-
-/* Style für Kontouebersicht */
-
-.kontouebersichtTabelle {
-    margin-left: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    .konto {
-        border: 2px solid black;
-        background-color: #DAE8FC;
-        cursor: pointer;
-        margin-right: 2rem;
-        margin-bottom: 2rem;
-        transition-duration: 0.4s;
-        &:hover {
-            box-shadow: 0 0 10px 5px lightgray;
-        }
-        p {
-            margin: 2rem;
-            &:nth-child(1) {
-                font-weight: bold;
-            }
-        }
-    }
-}
-
-.part {
-    margin: 2rem;
-}
-
-
-/* Login and Register Page Error */
-
-.loginPasswordIsWrong {
-    margin: 2rem;
-    .back {
-        background-color: #4CAF50;
-        border: 1px solid #4CAF50;
-        color: white;
-        padding: 16px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        &:hover {
-            background-color: white;
-            border: 1px solid #4CAF50;
-            color: #4CAF50;
-        }
-    }
-    #sendEmail {
-        margin-top: 2rem;
-        background-color: #203f59;
-        border: 1px solid #203f59;
-        color: white;
-        padding: 16px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        &:hover {
-            background-color: white;
-            color: #203f59;
-        }
-    }
-}
-
-.back {
-    background-color: #4CAF50;
-    border: 1px solid #4CAF50;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    &:hover {
-        background-color: white;
-        border: 1px solid #4CAF50;
-        color: #4CAF50;
-    }
-}
-
-
-/* Sidenavigation */
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition-duration: 0.4s;
-    padding-top: 40px;
-    box-shadow: 10px 0 5px -2px #888;
-    overflow-y: hidden;
-    /* Dark-Ligh Mode */
-    .toggle-container {
-        margin-left: 2rem;
-        float: left;
-        margin-top: -1.8rem;
-        display: flex;
-        p {
-            margin-top: auto;
-            margin-left: 1rem;
-            color: white;
-            margin-bottom: auto;
-        }
-        input[type=checkbox] {
-            height: 0;
-            width: 0;
-            visibility: hidden;
-            &:checked+label {
-                background: var(--color-headings);
-                &::after {
-                    left: calc(100% - 5px);
-                    transform: translateX(-100%);
-                }
-            }
-        }
-        label {
-            cursor: pointer;
-            text-indent: -9999px;
-            width: 52px;
-            height: 27px;
-            background: grey;
-            float: right;
-            border-radius: 100px;
-            position: relative;
-            &:after {
-                content: '';
-                position: absolute;
-                top: 3px;
-                left: 3px;
-                width: 20px;
-                height: 20px;
-                background: #fff;
-                border-radius: 90px;
-                transition: 0.3s;
-            }
-            &:active {
-                &::after {
-                    width: 45px;
-                }
-            }
-        }
-    }
-    /* Rounded sliders */
-    h1 {
-        padding: 0px 8px 0px 32px;
-        color: white;
-        display: block;
-        font-size: 50px;
-        transition-duration: 0.4s;
-        &:hover {
-            color: #f1f1f1;
-            cursor: context-menu;
-        }
-    }
-    h2 {
-        padding: 0px 8px 0px 32px;
-        color: whitesmoke;
-        display: block;
-        transition-duration: 0.4s;
-        font-style: italic;
-        font-size: 20px;
-        &:hover {
-            color: #f1f1f1;
-            cursor: context-menu;
-        }
-    }
-    a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-        transition-duration: 0.4s;
-        &:hover {
-            color: #f1f1f1;
-        }
-    }
-    a:nth-child(4) {
-        cursor: pointer;
-    }
-    .eingeloggt {
-        p {
-            padding: 8px 8px 8px 32px;
-            font-size: 20px;
-            color: #818181;
-            display: block;
-            transition-duration: 0.4s;
-            &:hover {
-                cursor: context-menu;
-            }
-        }
-    }
-    .closebtn {
-        position: absolute;
-        top: -3px;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-    }
-    button {
-        background-color: white;
-        border: 2px solid white;
-        color: black;
-        padding: 18px 97.2px;
-        text-align: center;
-        text-decoration: none;
-        display: flex;
-        font-size: 16px;
-        margin: -3px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        margin-left: 0.1rem;
-        &:hover {
-            background-color: black;
-            border: 2px solid white;
-            color: white;
-            p {
-                color: white;
-            }
-            img {
-                filter: invert(100%);
-            }
-        }
-        img {
-            width: 100%;
-            height: 2vh;
-        }
-        p {
-            font-size: 17px;
-            font-family: Arial, Helvetica, sans-serif;
-            color: black;
-            margin-top: auto;
-            margin-bottom: auto;
-        }
-    }
-    img {
-        width: 15%;
-    }
-}
-
-footer {
-    background-color: var(--color-for-footer);
-    p:nth-child(1) {
-        margin-top: 5rem;
-        color: var(--color-for-footer-text);
-        text-align: center;
-    }
-    p:nth-child(2) {
-        margin-top: 2rem;
-        text-align: center;
-        color: var(--color-for-footer-text);
-    }
-}
+                    /* Animation for login */
+                    
+                    @keyframes slideinLoginRegister {
+                        0% {
+                            margin-top: 500px;
+                        }
+                        100% {
+                            margin-top: 0%;
+                        }
+                    }
+                    /* Animation for divider */
+                    
+                    @keyframes slideinDivider {
+                        0% {
+                            margin-top: -500rem;
+                        }
+                        100% {
+                            margin-top: 0rem;
+                        }
+                    }
+                    
+                    .menu {
+                        position: absolute;
+                        left: 10px;
+                        top: 10px;
+                        color: var(--color-text);
+                        span {
+                            font-size: 35px;
+                            cursor: pointer;
+                        }
+                    }
+                    /* Text für Login-, Journal- und Kontovalidierung */
+                    
+                    #email_login_error,
+                    #passwort_login_error,
+                    #email_register_error,
+                    #passwort_register_error,
+                    #passwortverify_register_error,
+                    #password_strength_error,
+                    #datum_error,
+                    #haben_error,
+                    #soll_error,
+                    #betrag_error,
+                    #kontonummer_konto_error,
+                    #titel_konto_error,
+                    #verwendungszweck_konto_error,
+                    #rechnungsnummer_rechnungsnummer_error,
+                    #journalnummer_rechnungsnummer_error,
+                    #rechnung_rechnungsnummer_error {
+                        color: red;
+                        text-align: center;
+                        font-weight: bold;
+                    }
+                    /* Allgemeine Tabelleneinstellung */
+                    
+                    .margin-auto {
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    
+                    label {
+                        float: right;
+                    }
+                    
+                    input {
+                        width: 90%;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                    }
+                    
+                    textarea {
+                        width: 90%;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                    }
+                    /* Tabelle für das Login und Register */
+                    
+                    .logintable {
+                        tr {
+                            td {
+                                .login {
+                                    animation-duration: 2s;
+                                    animation-name: slideinLoginRegister;
+                                    animation-iteration-count: 1;
+                                    margin-right: 18rem;
+                                    text-align: center;
+                                    button[type=submit] {
+                                        background-color: #008CFF;
+                                        border: 2px solid #008CFF;
+                                        color: white;
+                                        font-size: 16px;
+                                        transition-duration: 0.4s;
+                                        border-radius: 15px;
+                                        padding: 15px 32px;
+                                        cursor: pointer;
+                                        &:hover {
+                                            background-color: white;
+                                            color: #008CFF;
+                                            border: 2px solid #008CFF;
+                                        }
+                                    }
+                                }
+                                .newAccount {
+                                    margin-left: 15rem;
+                                    text-align: center;
+                                    animation-duration: 2s;
+                                    animation-name: slideinLoginRegister;
+                                    animation-iteration-count: 1;
+                                    input {
+                                        width: 90%;
+                                        padding: 12px 20px;
+                                        margin: 8px 0;
+                                        display: inline-block;
+                                        border: 1px solid #ccc;
+                                        border-radius: 4px;
+                                        box-sizing: border-box;
+                                    }
+                                    .showBtn {
+                                        margin-top: 1rem;
+                                        transform: translateY(-50%);
+                                        cursor: pointer;
+                                        font-size: 15px;
+                                        font-weight: 600;
+                                    }
+                                    .password_strength_area {
+                                        margin: 8px 0;
+                                        display: inline-block;
+                                        width: 60%;
+                                        .indicator {
+                                            height: 10px;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: space-between;
+                                            margin: 10px 0;
+                                            span {
+                                                width: 100%;
+                                                height: 100%;
+                                                background-color: white;
+                                                border-radius: 5px;
+                                                border: 1px solid black;
+                                            }
+                                        }
+                                    }
+                                    .question-mark {
+                                        margin-top: 0.7000000000000002rem;
+                                        transform: translateY(-50%);
+                                        cursor: pointer;
+                                        margin-left: -3.5rem;
+                                        font-weight: 600;
+                                        font-size: 25px;
+                                        &:hover {
+                                            span {
+                                                display: block;
+                                            }
+                                        }
+                                        span {
+                                            background: #F8F8F8;
+                                            border: 5px solid #DFDFDF;
+                                            color: #717171;
+                                            font-size: 13px;
+                                            height: 189px;
+                                            width: 283px;
+                                            letter-spacing: 1px;
+                                            line-height: 30px;
+                                            position: absolute;
+                                            text-align: center;
+                                            text-transform: uppercase;
+                                            top: -210px;
+                                            left: -136px;
+                                            display: none;
+                                            padding: 0 20px;
+                                            &:after {
+                                                content: '';
+                                                position: absolute;
+                                                bottom: -10px;
+                                                width: 10px;
+                                                height: 10px;
+                                                border-bottom: 5px solid #dfdfdf;
+                                                border-right: 5px solid #dfdfdf;
+                                                background: #f8f8f8;
+                                                left: 50%;
+                                                margin-left: -10px;
+                                                -moz-transform: rotate(45deg);
+                                                -webkit-transform: rotate(45deg);
+                                                transform: rotate(45deg);
+                                            }
+                                        }
+                                    }
+                                    button[type=submit] {
+                                        background-color: #008CFF;
+                                        border: 2px solid #008CFF;
+                                        color: white;
+                                        font-size: 16px;
+                                        transition-duration: 0.4s;
+                                        border-radius: 15px;
+                                        padding: 15px 32px;
+                                        cursor: pointer;
+                                        &:hover {
+                                            background-color: white;
+                                            color: #008CFF;
+                                            border: 2px solid #008CFF;
+                                        }
+                                    }
+                                }
+                                .divider {
+                                    animation-duration: 2s;
+                                    animation-name: slideinDivider;
+                                    animation-iteration-count: 1;
+                                    text-align: center;
+                                    margin-left: 0.1rem;
+                                    border-left: 2px solid black;
+                                    height: 500px;
+                                }
+                            }
+                        }
+                    }
+                    /* Tabelle für Rechnungsnummer und Journal */
+                    
+                    .TabelleKlein {
+                        label {
+                            margin-right: 2rem;
+                            color: var(--color-text);
+                        }
+                        tr {
+                            height: 5vh;
+                            td {
+                                .selectize-control {
+                                    width: 200%;
+                                    margin-top: 1rem;
+                                    .selectize-input {
+                                        width: 90%;
+                                        padding: 12px 20px;
+                                        margin: 8px 0;
+                                        display: inline-block;
+                                        border: 1px solid #ccc;
+                                        border-radius: 4px;
+                                        box-sizing: border-box;
+                                    }
+                                }
+                                button[type=submit] {
+                                    background-color: white;
+                                    border: 1px solid black;
+                                    color: black;
+                                    padding: 15px 32px;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    display: inline-block;
+                                    font-size: 16px;
+                                    cursor: pointer;
+                                    transition-duration: 0.4s;
+                                    &:hover {
+                                        background-color: black;
+                                        color: white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    /* Table für die Seite um neue Konten erfassen zu können */
+                    
+                    .neuesKontoTabelle {
+                        label {
+                            margin-right: 2rem;
+                            margin-top: 2rem;
+                        }
+                        tr {
+                            height: 5vh;
+                            td {
+                                p {
+                                    margin-top: -5rem;
+                                    margin-right: 2rem;
+                                }
+                                button[type=submit] {
+                                    background-color: white;
+                                    border: 1px solid black;
+                                    color: black;
+                                    padding: 15px 32px;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    display: inline-block;
+                                    font-size: 16px;
+                                    cursor: pointer;
+                                    transition-duration: 0.4s;
+                                    &:hover {
+                                        background-color: black;
+                                        color: white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    /* Table für Bilanz und Willkommen Seite */
+                    
+                    .normalTable {
+                        width: 100%;
+                        text-align: center;
+                        tr {
+                            th {
+                                .option {
+                                    border: 2px solid var(--color-text);
+                                    margin-left: 2rem;
+                                    margin-right: 2rem;
+                                    cursor: pointer;
+                                    transition-duration: 0.4s;
+                                    &:hover {
+                                        box-shadow: 0 0 10px 5px lightgray;
+                                    }
+                                    img {
+                                        border: 1px solid #ddd;
+                                        border-radius: 4px;
+                                        padding: 5px;
+                                        width: 150px;
+                                        filter: var(--color-of-option-images);
+                                    }
+                                    p {
+                                        color: var(--color-text);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    /* Style für Kontouebersicht */
+                    
+                    .kontouebersichtTabelle {
+                        margin-left: 2rem;
+                        display: flex;
+                        flex-wrap: wrap;
+                        text-align: center;
+                        .konto {
+                            border: 2px solid black;
+                            background-color: #DAE8FC;
+                            cursor: pointer;
+                            margin-right: 2rem;
+                            margin-bottom: 2rem;
+                            transition-duration: 0.4s;
+                            &:hover {
+                                box-shadow: 0 0 10px 5px lightgray;
+                            }
+                            p {
+                                margin: 2rem;
+                                &:nth-child(1) {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                    
+                    .part {
+                        margin: 2rem;
+                    }
+                    /* Login and Register Page Error */
+                    
+                    .loginPasswordIsWrong {
+                        margin: 2rem;
+                        .back {
+                            background-color: #4CAF50;
+                            border: 1px solid #4CAF50;
+                            color: white;
+                            padding: 16px 32px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 16px;
+                            margin: 4px 2px;
+                            transition-duration: 0.4s;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: white;
+                                border: 1px solid #4CAF50;
+                                color: #4CAF50;
+                            }
+                        }
+                        #sendEmail {
+                            margin-top: 2rem;
+                            background-color: #203f59;
+                            border: 1px solid #203f59;
+                            color: white;
+                            padding: 16px 32px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 16px;
+                            margin: 4px 2px;
+                            transition-duration: 0.4s;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: white;
+                                color: #203f59;
+                            }
+                        }
+                    }
+                    
+                    .back {
+                        background-color: #4CAF50;
+                        border: 1px solid #4CAF50;
+                        color: white;
+                        padding: 16px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin: 4px 2px;
+                        transition-duration: 0.4s;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: white;
+                            border: 1px solid #4CAF50;
+                            color: #4CAF50;
+                        }
+                    }
+                    /* Sidenavigation */
+                    
+                    .sidenav {
+                        height: 100%;
+                        width: 0;
+                        position: fixed;
+                        z-index: 1;
+                        top: 0;
+                        left: 0;
+                        background-color: #111;
+                        overflow-x: hidden;
+                        transition-duration: 0.4s;
+                        padding-top: 40px;
+                        box-shadow: 10px 0 5px -2px #888;
+                        overflow-y: hidden;
+                        /* Dark-Ligh Mode */
+                        .toggle-container {
+                            margin-left: 2rem;
+                            float: left;
+                            margin-top: -1.8rem;
+                            display: flex;
+                            p {
+                                margin-top: auto;
+                                margin-left: 1rem;
+                                color: white;
+                                margin-bottom: auto;
+                            }
+                            input[type=checkbox] {
+                                height: 0;
+                                width: 0;
+                                visibility: hidden;
+                                &:checked+label {
+                                    background: var(--color-headings);
+                                    &::after {
+                                        left: calc(100% - 5px);
+                                        transform: translateX(-100%);
+                                    }
+                                }
+                            }
+                            label {
+                                cursor: pointer;
+                                text-indent: -9999px;
+                                width: 52px;
+                                height: 27px;
+                                background: grey;
+                                float: right;
+                                border-radius: 100px;
+                                position: relative;
+                                &:after {
+                                    content: '';
+                                    position: absolute;
+                                    top: 3px;
+                                    left: 3px;
+                                    width: 20px;
+                                    height: 20px;
+                                    background: #fff;
+                                    border-radius: 90px;
+                                    transition: 0.3s;
+                                }
+                                &:active {
+                                    &::after {
+                                        width: 45px;
+                                    }
+                                }
+                            }
+                        }
+                        /* Rounded sliders */
+                        h1 {
+                            padding: 0px 8px 0px 32px;
+                            color: white;
+                            display: block;
+                            font-size: 50px;
+                            transition-duration: 0.4s;
+                            &:hover {
+                                color: #f1f1f1;
+                                cursor: context-menu;
+                            }
+                        }
+                        h2 {
+                            padding: 0px 8px 0px 32px;
+                            color: whitesmoke;
+                            display: block;
+                            transition-duration: 0.4s;
+                            font-style: italic;
+                            font-size: 20px;
+                            &:hover {
+                                color: #f1f1f1;
+                                cursor: context-menu;
+                            }
+                        }
+                        a {
+                            padding: 8px 8px 8px 32px;
+                            text-decoration: none;
+                            font-size: 25px;
+                            color: #818181;
+                            display: block;
+                            transition-duration: 0.4s;
+                            &:hover {
+                                color: #f1f1f1;
+                            }
+                        }
+                        a:nth-child(4) {
+                            cursor: pointer;
+                        }
+                        .eingeloggt {
+                            p {
+                                padding: 8px 8px 8px 32px;
+                                font-size: 20px;
+                                color: #818181;
+                                display: block;
+                                transition-duration: 0.4s;
+                                &:hover {
+                                    cursor: context-menu;
+                                }
+                            }
+                        }
+                        .closebtn {
+                            position: absolute;
+                            top: -3px;
+                            right: 25px;
+                            font-size: 36px;
+                            margin-left: 50px;
+                        }
+                        button {
+                            background-color: white;
+                            border: 2px solid white;
+                            color: black;
+                            padding: 18px 97.2px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: flex;
+                            font-size: 16px;
+                            margin: -3px;
+                            transition-duration: 0.4s;
+                            cursor: pointer;
+                            margin-left: 0.1rem;
+                            &:hover {
+                                background-color: black;
+                                border: 2px solid white;
+                                color: white;
+                                p {
+                                    color: white;
+                                }
+                                img {
+                                    filter: invert(100%);
+                                }
+                            }
+                            img {
+                                width: 100%;
+                                height: 2vh;
+                            }
+                            p {
+                                font-size: 17px;
+                                font-family: Arial, Helvetica, sans-serif;
+                                color: black;
+                                margin-top: auto;
+                                margin-bottom: auto;
+                            }
+                        }
+                        img {
+                            width: 15%;
+                        }
+                    }
+                    
+                    footer {
+                        background-color: var(--color-for-footer);
+                        p:nth-child(1) {
+                            margin-top: 5rem;
+                            color: var(--color-for-footer-text);
+                            text-align: center;
+                        }
+                        p:nth-child(2) {
+                            margin-top: 2rem;
+                            text-align: center;
+                            color: var(--color-for-footer-text);
+                        }
+                    }
