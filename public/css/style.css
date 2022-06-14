@@ -2,6 +2,8 @@
 @import url(button.css);
 @import url(menu.css);
 @import url(grid.css);
+@import url(responsiveDesign.css);
+@import url(animation.css);
 /** Colley Style-CSS
     * Hier wird nur beschrieben was zum Style gehört.
     * Alles was das Grid betrifft, wird im Grid-CSS definiert.
@@ -111,6 +113,14 @@ body {
   text-align: center;
 }
 
+.welcome-main {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slideinOverall;
+          animation-name: slideinOverall;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
 .welcome-main .welcome1,
 .welcome-main .welcome2,
 .welcome-main .welcome5 {
@@ -205,6 +215,14 @@ body {
   text-align: center;
 }
 
+.bilanz-main {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slideinOverall;
+          animation-name: slideinOverall;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
 .bilanz-main .bilanz1,
 .bilanz-main .bilanz2,
 .bilanz-main .bilanz3,
@@ -359,6 +377,12 @@ body {
 }
 
 .kalkulation-main {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slideinOverall;
+          animation-name: slideinOverall;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
   text-align: center;
 }
 .kalkulation-main a {

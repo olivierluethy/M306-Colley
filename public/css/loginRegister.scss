@@ -1,3 +1,4 @@
+// @import url(responsiveDesign.css);
 p {
     color: var(--color-text);
 }
@@ -5,12 +6,51 @@ p {
 .title {
     color: var(--color-text);
     text-align: center;
+    animation-duration: 2s;
+    animation-name: slideinTitle;
+    animation-iteration-count: 1;
     h1 {
         margin-top: 2rem;
         font-size: 50px;
     }
     h2 {
         font-size: 40px;
+    }
+}
+
+
+/* Animation for title */
+
+@keyframes slideinTitle {
+    0% {
+        margin-right: 500px;
+    }
+    100% {
+        margin-right: 0%;
+    }
+}
+
+
+/* Animation for login */
+
+@keyframes slideinLoginRegister {
+    0% {
+        margin-top: 500px;
+    }
+    100% {
+        margin-top: 0%;
+    }
+}
+
+
+/* Animation for divider */
+
+@keyframes slideinDivider {
+    0% {
+        margin-top: -500rem;
+    }
+    100% {
+        margin-top: 0rem;
     }
 }
 
@@ -88,6 +128,9 @@ textarea {
     tr {
         td {
             .login {
+                animation-duration: 2s;
+                animation-name: slideinLoginRegister;
+                animation-iteration-count: 1;
                 margin-right: 18rem;
                 text-align: center;
                 button[type=submit] {
@@ -109,6 +152,9 @@ textarea {
             .newAccount {
                 margin-left: 15rem;
                 text-align: center;
+                animation-duration: 2s;
+                animation-name: slideinLoginRegister;
+                animation-iteration-count: 1;
                 input {
                     width: 90%;
                     padding: 12px 20px;
@@ -160,6 +206,9 @@ textarea {
                 }
             }
             .divider {
+                animation-duration: 2s;
+                animation-name: slideinDivider;
+                animation-iteration-count: 1;
                 text-align: center;
                 margin-left: 0.1rem;
                 border-left: 2px solid black;

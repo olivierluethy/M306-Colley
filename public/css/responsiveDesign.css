@@ -1,0 +1,40 @@
+/* Side Navigation */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a,
+.sidenav p {
+    font-size: 18px;
+  }
+}
+/* Login Page */
+@media screen and (max-width: 952px) {
+  .logintable tr td .login {
+    margin-right: 2rem;
+  }
+  .logintable tr td .newAccount {
+    margin-left: 2rem;
+  }
+}
+/* Welcome Page */
+@media screen and (max-width: 613px) {
+  .welcome-main {
+    display: block;
+  }
+  .welcome-main .welcome1,
+.welcome-main .welcome2 {
+    margin-bottom: 2rem;
+  }
+}
+/* Bilanz Page */
+@media screen and (max-width: 1122px) {
+  .bilanz-main {
+    display: block;
+  }
+  .bilanz-main .bilanz1,
+.bilanz-main .bilanz2,
+.bilanz-main .bilanz3 {
+    margin-bottom: 2rem;
+  }
+}/*# sourceMappingURL=responsiveDesign.css.map */

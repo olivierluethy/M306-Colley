@@ -1,6 +1,8 @@
 @import url(button.css);
 @import url(menu.css);
 @import url(grid.css);
+@import url(responsiveDesign.css);
+@import url(animation.css);
 
 /** Colley Style-CSS
     * Hier wird nur beschrieben was zum Style gehört.
@@ -119,6 +121,9 @@ body {
 
 // Welcome
 .welcome-main {
+    animation-duration: 1s;
+    animation-name: slideinOverall;
+    animation-iteration-count: 1;
     .welcome1,
     .welcome2,
     /*
@@ -206,6 +211,9 @@ body {
 
 // Bilanz
 .bilanz-main {
+    animation-duration: 1s;
+    animation-name: slideinOverall;
+    animation-iteration-count: 1;
     .bilanz1,
     .bilanz2,
     .bilanz3,
@@ -358,6 +366,9 @@ body {
 
 // Kalkulationen
 .kalkulation-main {
+    animation-duration: 1s;
+    animation-name: slideinOverall;
+    animation-iteration-count: 1;
     text-align: center;
     a {
         text-decoration: none;

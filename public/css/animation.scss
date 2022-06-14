@@ -1,0 +1,46 @@
+/* Animation for title */
+
+@keyframes slideinTitle {
+    0% {
+        margin-right: 600px;
+    }
+    100% {
+        margin-right: 0%;
+    }
+}
+
+
+/* Animation for login */
+
+@keyframes slideinLoginRegister {
+    0% {
+        margin-top: 500px;
+    }
+    100% {
+        margin-top: 0%;
+    }
+}
+
+
+/* Animation for divider */
+
+@keyframes slideinDivider {
+    0% {
+        margin-top: -500rem;
+    }
+    100% {
+        margin-top: 0rem;
+    }
+}
+
+
+/* Animation for Welcome Page */
+
+@keyframes slideinOverall {
+    0% {
+        margin-left: -200rem;
+    }
+    100% {
+        margin-top: 0rem;
+    }
+}

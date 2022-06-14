@@ -1,0 +1,56 @@
+/* Side Navigation */
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+        a,
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+
+/* Login Page */
+
+@media screen and (max-width: 952px) {
+    .logintable {
+        tr {
+            td {
+                .login {
+                    margin-right: 2rem;
+                }
+                .newAccount {
+                    margin-left: 2rem;
+                }
+            }
+        }
+    }
+}
+
+
+/* Welcome Page */
+
+@media screen and (max-width: 613px) {
+    .welcome-main {
+        display: block;
+        .welcome1,
+        .welcome2 {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+
+/* Bilanz Page */
+
+@media screen and (max-width: 1122px) {
+    .bilanz-main {
+        display: block;
+        .bilanz1,
+        .bilanz2,
+        .bilanz3 {
+            margin-bottom: 2rem;
+        }
+    }
+}
