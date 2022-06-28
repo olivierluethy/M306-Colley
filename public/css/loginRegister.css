@@ -186,11 +186,19 @@ textarea {
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .logintable tr td .newAccount .password_strength_area {
   margin: 8px 0;
   display: inline-block;
   width: 60%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .logintable tr td .newAccount .password_strength_area .indicator {
   height: 10px;
@@ -210,6 +218,10 @@ textarea {
   margin-top: 0.7rem;
   transform: translateY(-50%);
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   margin-left: -3.5rem;
   font-weight: 600;
   font-size: 25px;

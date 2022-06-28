@@ -158,11 +158,13 @@
                                         cursor: pointer;
                                         font-size: 15px;
                                         font-weight: 600;
+                                        user-select: none;
                                     }
                                     .password_strength_area {
                                         margin: 8px 0;
                                         display: inline-block;
                                         width: 60%;
+                                        user-select: none;
                                         .indicator {
                                             height: 10px;
                                             display: flex;
@@ -182,6 +184,7 @@
                                         margin-top: 0.7000000000000002rem;
                                         transform: translateY(-50%);
                                         cursor: pointer;
+                                        user-select: none;
                                         margin-left: -3.5rem;
                                         font-weight: 600;
                                         font-size: 25px;
